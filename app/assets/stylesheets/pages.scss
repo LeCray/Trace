@@ -1,3 +1,25 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.parallax { 
+    background-image: url("https://ak6.picdn.net/shutterstock/videos/27478426/thumb/10.jpg");
+    z-index: 1;
+    height: 450px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#main{
+position:relative;
+}
+.overlay {
+   background: rgba(0, 0, 0, 0.1)
+}
+
+
