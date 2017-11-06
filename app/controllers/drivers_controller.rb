@@ -1,6 +1,7 @@
 class DriversController < ApplicationController
 
 	def index
+		@drivers = Driver.all.order('created_at')
 	end
 
 	def show
@@ -8,5 +9,5 @@ class DriversController < ApplicationController
 
 	def create
 	end
-	
+
 end

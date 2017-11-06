@@ -4,8 +4,19 @@
 			<h1 style="font-family: Voltaire; margin-top: 80px; font-size: 50px"> TRACE </h1>
 		</div>
 	</div>
+</div>
 
-	<div class="row">
-		<div class="col-xs-4">
-			
+<div class="container-fluid" style="background-color: #4d4d4d">
+	<div class="container" style="height: 500px">
+		<div class="row" style="margin-top: 40px">
+			<div class="col-xs-6" style="background-color: #808080; padding: 20px; border-radius: 5px">
+				<h3 style="color: white"> Drivers </h3>
+				<div style="background-color: white; padding: 20px; border-radius: 5px">
+					
+					<%= render partial: 'list', locals: { drivers: @drivers} %>
+				</div>
+
+			</div>
+		</div>
+	</div>
 </div>

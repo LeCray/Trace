@@ -1,0 +1,24 @@
+<table class="table">
+  <thead>
+    <tr>
+    <th><b>Name</b></th>
+    <th><b>ID</b></th>
+    <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% drivers.each do |d| %>
+      <tr>
+        <td>#{d}</td>
+        <td>#{d.id_number}</td>
+        <td>
+          <div >
+            <%= link_to driver_path(d.id), class: 'btn btn-default' do %>
+              View
+            <% end %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
