@@ -20,9 +20,20 @@
 <div class="container" style="margin-top: 20px; margin-bottom: 500px">
 	<div class="row" style="text-align: ; color: white">
 		<div class="col-xs-12">
-			<%= button_to drivers_path, :method => "get", class: 'btn btn-danger btn-large' do %>
-		  		View Drivers
-			<% end %>
+
+			
+				<div style="margin: 5px; display: inline-block;">
+					<%= button_to drivers_path, method: 'get', class: 'btn btn-danger btn-large' do %>
+				  		View Drivers
+					<% end %> 
+				</div>
+				<div style="margin: 5px; display: inline-block;">
+					<%= button_to new_driver_path,method: 'get', class: 'btn btn-primary' do %>
+				  		New Driver
+					<% end %>	
+				</div>
+			
+
 		</div>
 	</div>
 </div>

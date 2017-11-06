@@ -4,10 +4,18 @@ class DriversController < ApplicationController
 		@drivers = Driver.all.order('created_at')
 	end
 
-	def show
+
+	def new
+		@driver = Driver.new
 	end
+
 
 	def create
 	end
+
+
+	def show
+	end
+
 
 end
