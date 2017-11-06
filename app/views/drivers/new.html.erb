@@ -1,18 +1,35 @@
 
+
+
+	<div class="container" style="height: 500px">
+		<div class="row" style="margin-top: 125px">
+			<div class="col-xs-6 col-md-offset-2" >
+			
+
+					<%= bootstrap_form_for(@driver) do |f| %>
+
+					<%= f.text_field :first_name, label: 'First Name'%> <br>
+					<%= f.text_field :last_name, label: 'Last Name' %> <br>
+					<%= f.text_field :id_number, label: 'ID Number' %> <br>
+
+					<%= f.submit "Create Driver", class: 'btn' %>
+
+					<% end %>
+		
+			</div>
+		</div>
+	</div>
+
+
+
+	
+
 <div class="container" style="margin-top: 150px">	
 	<div style="margin-bottom: 150px; border-color: red">
 		<div class='row'>
 			<div class = 'col-md-6 col-md-offset-3 '>
 
-			<%= bootstrap_form_for(@driver) do |f| %>
-
-				<%= f.text_field :first_name, label: 'First Name'%> <br>
-				<%= f.text_field :last_name, label: 'Last Name' %> <br>
-				<%= f.text_field :id_number, label: 'ID Number' %> <br>
-
-				<%= f.submit "Create Driver", class: 'btn' %>
-
-			<% end %>
+			
 			</div>
 		</div>
 	</div>
