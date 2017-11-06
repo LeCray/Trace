@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
 	root to: 'pages#index'
 
-	resources :drivers
+	resources :drivers do
+		resources :cars
+	end
 
 end

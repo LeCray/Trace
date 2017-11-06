@@ -9,11 +9,11 @@
   <tbody>
     <% drivers.each do |d| %>
       <tr>
-        <td>#{d}</td>
-        <td>#{d.id_number}</td>
+        <td><%= d.first_name%> <%= d.last_name%></td>
+        <td><%=d.id_number %></td>
         <td>
-          <div >
-            <%= link_to driver_path(d.id), class: 'btn btn-default' do %>
+          <div  style="margin-top: -5px">
+            <%= link_to driver_path(d.id), class: 'btn btn-warning' do %>
               View
             <% end %>
           </div>
