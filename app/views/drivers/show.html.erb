@@ -1,0 +1,25 @@
+<div class="container-fluid" style="background-color: #4d4d4d">
+	<div class="container" style="height: 1000px">
+		<div class="row" style="margin-top: 100px">
+			<%= button_to drivers_path,method: 'get', class: 'btn btn-primary' do %>
+		  		Back to Drivers
+			<% end %>	
+		</div>
+
+
+			<div class="col-xs-6" style="background-color: #808080; padding: 20px; border-radius: 5px">
+
+				<h5 style="color: white"> Driver </h5>
+				<div style="background-color: white; padding: 20px; border-radius: 5px">
+					First Name: <%= @driver.first_name%> <br>
+					<hr>
+					Last Name: <%= @driver.last_name %> <br>
+					<hr>
+					ID Number: <%= @driver.id_number %> <br>
+				</div>
+			</div>
+
+			</div>
+		</div>
+	</div>
+</div>
