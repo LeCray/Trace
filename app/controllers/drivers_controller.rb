@@ -12,8 +12,9 @@ class DriversController < ApplicationController
 
 	def create
 		@driver = Driver.new(driver_params)
+		@car = @driver.id.build_car(driver_id: @driver.id, make: "", model: "", vehicle_reg: "")
 
-		if @driver.save!
+		if @driver.save! && @car.save
       		flash.now[:info] = "Success"
       		redirect_to @driver
 		else
@@ -24,6 +25,9 @@ class DriversController < ApplicationController
 
 	def show
 		@driver = Driver.find(params[:id])
+		@cars = @driver.cars.all.order('created_at')
+
+		@car = Car.new
 	end
 
 private

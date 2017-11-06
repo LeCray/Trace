@@ -1,0 +1,17 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th><b>Make</b></th>
+      <th><b>Model</b></th>
+      <th><b>Registration Number</b></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% cars.each do |c| %>
+      <tr>
+        <td><%= c.make%> <%= c.model%></td>
+        <td><%= c.vehicle_reg %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
