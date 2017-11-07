@@ -1,5 +1,5 @@
 class Car < ApplicationRecord
-
+	attr_accessor :driver
 	has_one :driver
 
 

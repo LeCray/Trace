@@ -10,10 +10,12 @@ class CarsController < ApplicationController
 
 	def new 
 		@car = Car.new
+		@driver = Driver.find(params[:driver_id])
 	end
 
 	def create
-		@car = Car.new(car_params)
+		@driver = Driver.find(params[:driver_id])
+		car = driver.cars.new params(:car)
 
 		if @car.save!
       		flash.now[:info] = "Success"
@@ -25,9 +27,9 @@ class CarsController < ApplicationController
 
 	private
 
-	params.require(:car).permit(:driver_id)
-
-
+	def car_params
+		params.require(:car).permit(:driver_id, :make, :model, :vehicle_reg)		
+	end
 
 
 end
