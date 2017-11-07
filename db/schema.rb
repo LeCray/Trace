@@ -19,9 +19,10 @@ ActiveRecord::Schema.define(version: 20171107055137) do
     t.string "make"
     t.string "model"
     t.string "vehicle_reg"
+    t.bigint "driver_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "driver_id"
+    t.index ["driver_id"], name: "index_cars_on_driver_id"
   end
 
   create_table "drivers", force: :cascade do |t|

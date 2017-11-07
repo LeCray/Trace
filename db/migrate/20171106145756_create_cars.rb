@@ -4,9 +4,7 @@ class CreateCars < ActiveRecord::Migration[5.1]
       t.string :make
       t.string :model
       t.string :vehicle_reg
-
-    
-
+ 
       t.timestamps
     end
   end
