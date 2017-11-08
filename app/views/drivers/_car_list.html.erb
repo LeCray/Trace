@@ -3,14 +3,23 @@
     <tr>
       <th><b>Make</b></th>
       <th><b>Model</b></th>
-      <th><b>Registration Number</b></th>
+      <th><b>Vehicle Reg</b></th>
+      <th><b>View Data Stream</b></th>
     </tr>
   </thead>
   <tbody>
     <% cars.each do |c| %>
       <tr>
-        <td><%= c.make%> <%= c.model%></td>
+        <td><%= c.make%></td>
+        <td><%= c.model%></td>
         <td><%= c.vehicle_reg %></td>
+        <td>
+          <div  style="margin-top: -5px; margin-left: -5px">
+            <%= link_to '#', class: 'btn btn-success' do %>
+                Data Stream
+            <% end %>
+          </div>
+        </td>
       </tr>
     <% end %>
   </tbody>

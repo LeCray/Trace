@@ -4,4 +4,7 @@ class Car < ApplicationRecord
 
 
 	validates :driver, presence: true
+	validates :make, presence: true
+	validates :model, presence: true
+	validates :vehicle_reg, presence: true
 end

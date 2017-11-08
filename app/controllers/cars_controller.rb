@@ -9,15 +9,17 @@ class CarsController < ApplicationController
 	end
 
 	def new 
+		@driver = Driver.find(params[:driver_id])
 		@car = Car.new
 	end
 
 	def create
-		@car = Car.new(car_params)
+		@driver = Driver.find(params[:driver_id])
+		@car = @driver.cars.build(car_params)
 
 		if @car.save!
       		flash.now[:info] = "Success"
-      		redirect_to @car
+      		redirect_to @driver
 		else
 			render 'new'
 		end
@@ -25,7 +27,9 @@ class CarsController < ApplicationController
 
 	private
 
-	params.require(:car).permit(:driver_id)
+	def car_params
+		params.require(:car).permit(:driver_id, :make, :model, :vehicle_reg)
+	end
 
 
 

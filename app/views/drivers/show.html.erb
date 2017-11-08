@@ -15,7 +15,12 @@
 					<hr>
 					Last Name: <%= @driver.last_name %> <br>
 					<hr>
-					ID Number: <%= @driver.id_number %> <br>
+					ID Number: <%= @driver.id_number %> <br><br>
+
+					<%= link_to new_driver_car_path(@driver.id), class: 'btn btn-outline-warning' do %>
+		              Register New Car
+		            <% end %>
+		            
 				</div>
 			</div>
 
