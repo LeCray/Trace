@@ -9,9 +9,15 @@
 				<%= f.text_field :first_name, label: 'First Name'%> <br>
 				<%= f.text_field :last_name, label: 'Last Name' %> <br>
 				<%= f.text_field :email, label: 'Email Address' %> <br>
-				<%= f.text_field :role, label: 'Role' %> <br>
 
-				<%= f.submit "Create Admin", class: 'btn btn-outline' %>
+				<%= f.password_field :password, label: 'Password' %> <br>
+				<%= f.password_field :password_confirmation, label: 'Confirm Password' %> <br>
+
+				<%= f.select :role, options_for_select(Admin::ROLES), {}, class: "form-control" %>
+
+				<div style="margin-top: 30px">
+					<%= f.submit "Create Admin", class: 'btn btn-outline' %>
+				</div>
 
 				<% end %>
 				

@@ -39,10 +39,31 @@
 					<a class="navbar-brand active" href="/" style="margin-top: 11px; margin-bottom: -11px">TRACE</a>
 				</div>
 				<ul class="nav navbar-nav pull-right" >
-				<li><a href="#">About</a></li>
-				<li><a href="#">Contact</a></li>
-				<li><a href="#">Login</a></li>
-				</ul>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+					
+
+					<% if logged_in? %>
+			         	<li class="dropdown" style="text-align: left" >
+				            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+			              		<%= @current_admin.first_name %> 
+				            </a>
+				            <ul class="dropdown-menu" style="text-align: left">
+								<% if @current_admin.admin? %>
+									<li><%= link_to "Admin Dashboard", admin_index_path %></li>
+								<% else %>
+								<% end %>
+								<li><%= link_to "Dashboard", current_admin %></li>
+								<li class="divider"></li>
+								<li>
+				              		<%= link_to "Log out", logout_path, method: :delete %>
+				              	</li>
+				            </ul>
+			          	</li>
+			        <% else %>
+			        	<li><%= link_to "Log in", login_path %></li>
+			        <% end %>
+			    </ul>
 			</div>
 		</nav>
 

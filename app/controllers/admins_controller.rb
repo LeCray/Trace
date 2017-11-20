@@ -1,5 +1,5 @@
 class AdminsController < ApplicationController
-	
+
 
 	def index
 	end
@@ -17,7 +17,7 @@ class AdminsController < ApplicationController
 
 		if @admin.save!
       		flash.now[:info] = "Success"
-      		redirect_to 'admins_path'
+      		redirect_to admins_path
 		else
 			render 'new'
 		end
@@ -27,7 +27,7 @@ class AdminsController < ApplicationController
 	private
 
 	def admin_params
-		params.require(:admin).permit(:first_name, :last_name, :email, :role)
+		params.require(:admin).permit(:first_name, :last_name, :email,:password, :password_confirmation, :role)
 	end
 
 

@@ -1,16 +1,22 @@
 class Admin < ApplicationRecord
 
+	
+	has_secure_password
+
+	ROLES = ["Super", "Manager"]
 
 	validates :first_name, presence: true
 	validates :last_name, presence: true
 	validates :email, presence: true
-	validates :role, presence: true
+	validates :role, presence: true, inclusion: {in: ROLES}
+	validates_confirmation_of :password
 
-end
 
 
 	before_save :format_name
 	before_save :format_role
+
+	
 	
 	def to_s
 		"#{first_name} #{last_name}"
@@ -64,3 +70,6 @@ end
 	def Admin.new_token
 		SecureRandom.urlsafe_base64
 	end
+
+
+end
