@@ -4,7 +4,8 @@
 	<div class="container" style="height: 500px">
 		<div class="row" style="margin-top: 125px">
 			<div class="col-xs-6 col-md-offset-2" >
-			
+				<h5 style="color: grey"> NEW DRIVER </h5>
+				<hr style="margin-bottom: 30px">
 
 					<%= bootstrap_form_for(@driver) do |f| %>
 
@@ -12,9 +13,13 @@
 					<%= f.text_field :last_name, label: 'Last Name' %> <br>
 					<%= f.text_field :id_number, label: 'ID Number' %> <br>
 
-					<%= f.submit "Create Driver", class: 'btn' %>
+					<%= f.submit "Register Driver", class: 'btn btn-outline' %>
 
 					<% end %>
+					
+					<%= link_to drivers_path, class: 'btn btn-outline-warning' do %>
+		              Cancel
+		            <% end %>
 		
 			</div>
 		</div>

@@ -1,0 +1,34 @@
+<div class="container" style="height: 500px">
+	<div class="row" style="margin-top: 125px">
+		<div class="col-xs-6 col-md-offset-2" >
+			<h5 style="color: grey"> NEW ADMIN </h5>
+			<hr style="margin-bottom: 30px">
+
+				<%= bootstrap_form_for(@admin) do |f| %>
+
+				<%= f.text_field :first_name, label: 'First Name'%> <br>
+				<%= f.text_field :last_name, label: 'Last Name' %> <br>
+				<%= f.text_field :email, label: 'Email Address' %> <br>
+				<%= f.text_field :role, label: 'Role' %> <br>
+
+				<%= f.submit "Create Admin", class: 'btn btn-outline' %>
+
+				<% end %>
+				
+				<%= link_to admins_path, class: 'btn btn-outline-warning' do %>
+	              Cancel
+	            <% end %>
+	
+		</div>
+	</div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script src="https://cdn.rawgit.com/HubSpot/tether/v1.3.4/dist/js/tether.min.js"></script>
+<script src="https://cdn.rawgit.com/FezVrasta/bootstrap-material-design/dist/dist/bootstrap-material-design.iife.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+<script>
+  $('body').bootstrapMaterialDesign();
+</script>

@@ -1,7 +1,7 @@
 <div class="container-fluid" style="background-color: #4d4d4d">
 	<div class="container" style="height: 1000px">
-		<div class="row" style="margin-top: 100px">
-			<%= button_to drivers_path,method: 'get', class: 'btn btn-primary' do %>
+		<div class="row" style="margin-top: 100px; margin-left: 0px">
+			<%= button_to drivers_path,method: 'get', class: 'btn btn-outline-primary' do %>
 		  		Back to Drivers
 			<% end %>	
 		</div>
@@ -20,7 +20,7 @@
 					<%= link_to new_driver_car_path(@driver.id), class: 'btn btn-outline-warning' do %>
 		              Register New Car
 		            <% end %>
-		            
+
 				</div>
 			</div>
 
@@ -29,10 +29,17 @@
 				<h5 style="color: white"> Cars </h5>
 				<div style="background-color: white; padding: 20px; border-radius: 5px; height: 300px">
 
-					<%= render partial: 'car_list', locals: { cars: @cars} %>
-					
-			</div>
-				
+					<% if @driver.cars.size > 0 %>
+						<%= render partial: 'car_list', locals: { cars: @cars} %>
+					<% else %>
+						<div style="text-align: center; margin-top: 20px; padding: 40px">
+							<strong>No Cars</strong>
+							<hr>
+						</div>
+					<% end %>
+
+				</div>
+			</div>	
 		</div>
 	</div>
 </div>

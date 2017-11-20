@@ -6,17 +6,26 @@
 	</div>
 </div>
 
-<div class="container-fluid" style="background-color: #4d4d4d">
+<div class="container-fluid" style="background-color: #4d4d4d; height: 1000px">
 	<div class="container" style="height: 500px">
-		<div class="row" style="margin-top: 40px">
+		<div class="row" style="margin-top: 40px;">
 			<div class="col-xs-6" style="background-color: #808080; padding: 20px; border-radius: 5px">
-				<h3 style="color: white"> Drivers </h3>
-				<div style="background-color: white; padding: 20px; border-radius: 5px">
-					
+				<h5 style="color: white"> Drivers </h5>
+				<div style="background-color: white; padding: 20px; border-radius: 5px; height: 300px">
+					<%= button_to new_driver_path,method: 'get', class: 'btn btn-outline-primary' do %>
+				  		Register New Driver
+					<% end %>
 					<%= render partial: 'list', locals: { drivers: @drivers} %>
 				</div>
 
 			</div>
+			<div class="col-xs-5" style="background-color: #808080; padding: 20px; border-radius: 5px; margin-left: 20px; height: 280px">
+				<h5 style="color: white"> Analytics </h5>
+				<div style="background-color: white; padding: 20px; border-radius: 5px; height: 200px">	
+				</div>
+			</div>
+		</div>
+
 		</div>
 	</div>
 </div>
