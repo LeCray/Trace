@@ -1,5 +1,5 @@
 class Admin < ApplicationRecord
-
+	attr_accessor :remember_token, :activation_token
 	
 	has_secure_password
 
@@ -15,6 +15,9 @@ class Admin < ApplicationRecord
 
 	before_save :format_name
 	before_save :format_role
+
+	before_create :create_activation_digest
+
 
 	
 	
@@ -59,6 +62,11 @@ class Admin < ApplicationRecord
 		self.activation_digest = Admin.digest(activation_token)
     end
 
+  	# Returns a random token.
+	def Admin.new_token
+		SecureRandom.urlsafe_base64
+	end
+
     # Returns the hash digest of the given string.
 	def Admin.digest(string)
 		cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -66,10 +74,6 @@ class Admin < ApplicationRecord
 		BCrypt::Password.create(string, cost: cost)
 	end
 
-     # Returns a random token.
-	def Admin.new_token
-		SecureRandom.urlsafe_base64
-	end
-
+   
 
 end

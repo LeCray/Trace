@@ -12,8 +12,7 @@
 
 
 <div class="container">
-	<h2 style="color: rgb(204, 122, 0); margin-left: 50%; margin-top: 100px" class="glyphicon glyphicon-menu-down" aria-hidden="true">	
-	</h2> 
+
 
 	<hr style="margin-bottom: 50px; margin-top: 50px">
 
@@ -21,13 +20,22 @@
 	<div style="overflow: hidden;">
 		<% provide(:title, "Log in") %>
 		<div class="row">
-			<div class="col-md-6 col-md-offset-3">
+			<div class="col-md-6 col-md-offset-2">
+				<h5 style="color: grey"> ADMIN LOGIN </h5>
+				<hr style="margin-bottom: 30px">
 
 				<%= bootstrap_form_for(:session, url: login_path) do |f| %>
 				<%= f.email_field :email, label: 'Email'%><br>
 			    <%= f.password_field :password, label: 'Password'%>
-			    <%= f.submit "Log in", class: "btn" %><br>
+
+			    <div style="margin-top: 30px">
+			    	<%= f.submit "Log in", class: "btn btn-outline" %><br>
+			    </div>
 			    <% end %>
+
+			    <%= link_to root_path, class: 'btn btn-outline-warning' do %>
+		              Cancel
+		            <% end %>
 
 			</div>
 			

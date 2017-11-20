@@ -1,0 +1,9 @@
+Mahele Auto Doctor
+Welcome <%= @client.first_name %> :)
+Click on the link below to activate your account:
+
+<%= link_to "Activate my admin account", edit_account_activation_url(@admin.activation_token,
+			                                                    email: @admin.email) %>
+
+Kind Regards,
+The MAD Team 

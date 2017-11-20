@@ -1,0 +1,25 @@
+<div class="container">
+
+			<div style=" text-align: center; max-width: 50%">
+
+			<h2>Mahele Auto Doctor</h2>
+			<hr>
+
+			<p>Welcome <%= @admin.first_name %> :)</p>
+
+			<p>	Click on the link below to activate your account:</p>
+		
+
+		
+			<%= link_to "Activate my admin account", edit_account_activation_url(@admin.activation_token,
+			                                                    email: @admin.email) %>
+			</br>
+			</br>
+			</br>
+
+			Kind Regards, </br>
+			The MAD Team 
+				
+			</div>	                                                    
+		
+</div>
