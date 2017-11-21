@@ -1,16 +1,14 @@
 class SessionsController < ApplicationController
-
-	class SessionsController < ApplicationController
 	include SessionsHelper
   
 	def new
 	end
 
 	def create	
-		admin = Admin.find_by(email: params[:session][:email].downcase)
+		admin = Admin.find_by(email: params[:session][:email])
 		if admin && admin.authenticate(params[:session][:password])
 			log_in admin
-			redirect_to admin	
+			redirect_to admins_path	
 		else
 			flash.now[:error] = 'Invalid email/password combination'
 			render 'new' 
@@ -24,4 +22,4 @@ class SessionsController < ApplicationController
 
 end
 
-end
+

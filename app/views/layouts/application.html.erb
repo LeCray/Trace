@@ -49,11 +49,9 @@
 			              		<%= @current_admin.first_name %> 
 				            </a>
 				            <ul class="dropdown-menu" style="text-align: left">
-								<% if @current_admin.admin? %>
-									<li><%= link_to "Admin Dashboard", admin_index_path %></li>
-								<% else %>
-								<% end %>
-								<li><%= link_to "Dashboard", current_admin %></li>
+								<li><%= link_to "Dashboard", '#' %></li>
+								<li><%= link_to "My Drivers", '#' %></li>
+								<li><%= link_to "Settings", '#' %></li>
 								<li class="divider"></li>
 								<li>
 				              		<%= link_to "Log out", logout_path, method: :delete %>

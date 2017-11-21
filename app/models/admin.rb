@@ -1,5 +1,6 @@
 class Admin < ApplicationRecord
 	attr_accessor :remember_token, :activation_token
+	before_create :create_activation_digest
 	
 	has_secure_password
 
@@ -11,16 +12,11 @@ class Admin < ApplicationRecord
 	validates :role, presence: true, inclusion: {in: ROLES}
 	validates_confirmation_of :password
 
-
-
 	before_save :format_name
 	before_save :format_role
 
-	before_create :create_activation_digest
+	before_save :format_activation
 
-
-	
-	
 	def to_s
 		"#{first_name} #{last_name}"
 	end
@@ -34,11 +30,17 @@ class Admin < ApplicationRecord
 		self.role = self.role.capitalize
 	end
 
-  	def random_token
-  		if self.new_record?
-  			self.token = SecureRandom.uuid
-  		end
-  	end
+	def format_activation
+		if self.activated.nil?
+			self.activated = false
+		end
+	end
+
+  	#def random_token
+  		#if self.new_record?
+  		#	self.token = SecureRandom.uuid
+  		#end
+  	#end
 
 
 	 # Returns true if the given token matches the digest.
