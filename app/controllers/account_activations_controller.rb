@@ -6,8 +6,8 @@ class AccountActivationsController < ApplicationController
 			admin.update_attribute(:activated, true)
 			admin.update_attribute(:activated_at, Time.zone.now)																																																																																																																																		
 			log_in admin
-			flash.now[:success] = "Your account is now active."
 			redirect_to admins_path
+			flash.now[:success] = "Your account is now active."
 		else
 		flash[:danger] = "Invalid activation link"
 		redirect_to new_admin_path

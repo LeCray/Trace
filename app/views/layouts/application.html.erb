@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TRACE</title>
+    <title>M.A.D</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
@@ -36,7 +36,7 @@
 		<nav class="navbar navbar-inverse navbar-fixed-top" style="font-family: Voltaire; z-index: 10">
 			<div class="container">
 				<div class="navbar-header">
-					<a class="navbar-brand active" href="/" style="margin-top: 11px; margin-bottom: -11px">TRACE</a>
+					<a class="navbar-brand active" href="/" style="margin-top: 11px; margin-bottom: -11px">M.A.D</a>
 				</div>
 				<ul class="nav navbar-nav pull-right" >
 					<li><a href="#">About</a></li>
@@ -49,7 +49,7 @@
 			              		<%= @current_admin.first_name %> 
 				            </a>
 				            <ul class="dropdown-menu" style="text-align: left">
-								<li><%= link_to "Dashboard", '#' %></li>
+								<li><%= link_to "Admin", admins_path %></li>
 								<li><%= link_to "My Drivers", '#' %></li>
 								<li><%= link_to "Settings", '#' %></li>
 								<li class="divider"></li>

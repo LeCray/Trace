@@ -1,7 +1,10 @@
 <div class="container">
 	<div class="row" style="margin-bottom: 20px">
 		<div class="col-xs-12">
-			<h1 style="font-family: Voltaire; margin-top: 80px; font-size: 50px"> TRACE </h1>
+			<h1 style="font-family: Voltaire; margin-top: 80px; font-size: 50px"> M.A.D </h1><br>
+			<%= button_to admins_path, method: 'get', class: 'btn btn-outline-danger btn-large' do %>
+		  		Back to Admin Home
+			<% end %>
 		</div>
 	</div>
 </div>
@@ -9,9 +12,9 @@
 <div class="container-fluid" style="background-color: #4d4d4d; height: 1000px">
 	<div class="container" style="height: 500px">
 		<div class="row" style="margin-top: 40px;">
-			<div class="col-xs-6" style="background-color: #808080; padding: 20px; border-radius: 5px">
+			<div class="col-xs-6" style="background-color: #808080; padding: 20px; border-radius: 2px">
 				<h5 style="color: white"> Drivers </h5>
-				<div style="background-color: white; padding: 20px; border-radius: 5px; height: 300px">
+				<div style="background-color: white; padding: 20px; border-radius: 3px; height: 300px">
 					<%= button_to new_driver_path,method: 'get', class: 'btn btn-outline-primary' do %>
 				  		Register New Driver
 					<% end %>
@@ -19,13 +22,12 @@
 				</div>
 
 			</div>
-			<div class="col-xs-5" style="background-color: #808080; padding: 20px; border-radius: 5px; margin-left: 20px; height: 280px">
+			<div class="col-xs-5" style="background-color: #808080; padding: 20px; border-radius: 2px; margin-left: 20px; height: 280px">
 				<h5 style="color: white"> Analytics </h5>
-				<div style="background-color: white; padding: 20px; border-radius: 5px; height: 200px">	
+				<div style="background-color: white; padding: 20px; border-radius: 3px; height: 200px">	
+					<!-- Analytics things -->
 				</div>
 			</div>
-		</div>
-
 		</div>
 	</div>
 </div>

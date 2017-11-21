@@ -18,7 +18,7 @@ class AdminsController < ApplicationController
 		if @admin.save!
       		flash.now[:info] = "Success"
       		AdminMailer.account_activation(@admin).deliver_now
-      		flash.now[:info] = "An activation link has been sent to your email address"
+      		flash.now[:info] = "An activation link has been sent their email address"
       		render new_admin_path
 		else
 			render 'new'

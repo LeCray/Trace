@@ -1,45 +1,52 @@
-<div class="container-fluid" style="background-color: #4d4d4d">
-	<div class="container" style="height: 1000px">
-		<div class="row" style="margin-top: 100px; margin-left: 0px">
-			<%= button_to drivers_path,method: 'get', class: 'btn btn-outline-primary' do %>
+
+<div class="container">
+	<div class="row" style="margin-bottom: 20px">
+		<div class="col-xs-12">
+			<h1 style="font-family: Voltaire; margin-top: 80px; font-size: 50px"> M.A.D </h1><br>
+			<%= button_to drivers_path, method: 'get', class: 'btn btn-outline-danger btn-large' do %>
 		  		Back to Drivers
-			<% end %>	
-		</div>
-
-
-			<div class="col-xs-4" style="background-color: #808080; padding: 20px; border-radius: 5px">
-
-				<h5 style="color: white"> Driver </h5>
-				<div style="background-color: white; padding: 20px; border-radius: 5px">
-					First Name: <%= @driver.first_name%> <br>
-					<hr>
-					Last Name: <%= @driver.last_name %> <br>
-					<hr>
-					ID Number: <%= @driver.id_number %> <br><br>
-
-					<%= link_to new_driver_car_path(@driver.id), class: 'btn btn-outline-warning' do %>
-		              Register New Car
-		            <% end %>
-
-				</div>
-			</div>
-
-			<div class="col-xs-7" style="background-color: #808080; margin-left: 20px; padding: 20px; border-radius: 5px">
-
-				<h5 style="color: white"> Cars </h5>
-				<div style="background-color: white; padding: 20px; border-radius: 5px; height: 300px">
-
-					<% if @driver.cars.size > 0 %>
-						<%= render partial: 'car_list', locals: { cars: @cars} %>
-					<% else %>
-						<div style="text-align: center; margin-top: 20px; padding: 40px">
-							<strong>No Cars</strong>
-							<hr>
-						</div>
-					<% end %>
-
-				</div>
-			</div>	
+			<% end %>
 		</div>
 	</div>
 </div>
+
+
+
+<div class="container-fluid" style="background-color: #4d4d4d; height: 1000px">
+	<div class="container" style="height: 500px">
+		<div class="row" style="margin-top: 40px;">
+		<div class="col-xs-4" style="background-color: #808080; padding: 20px; border-radius: 5px">
+
+			<h5 style="color: white"> Driver </h5>
+			<div style="background-color: white; padding: 20px; border-radius: 5px">
+				First Name: <%= @driver.first_name%> <br>
+				<hr>
+				Last Name: <%= @driver.last_name %> <br>
+				<hr>
+				ID Number: <%= @driver.id_number %> <br><br>
+
+				<%= link_to new_driver_car_path(@driver.id), class: 'btn btn-outline-primary' do %>
+	              Register New Car
+	            <% end %>
+
+			</div>
+		</div>
+
+		<div class="col-xs-7" style="background-color: #808080; margin-left: 20px; padding: 20px; border-radius: 5px">
+
+			<h5 style="color: white"> Cars </h5>
+			<div style="background-color: white; padding: 20px; border-radius: 5px; height: 300px">
+
+				<% if @driver.cars.size > 0 %>
+					<%= render partial: 'car_list', locals: { cars: @cars} %>
+				<% else %>
+					<div style="text-align: center; margin-top: 20px; padding: 40px">
+						<strong>No Cars</strong>
+						<hr>
+					</div>
+				<% end %>
+
+			</div>
+		</div>	
+		</div>
+	</div>
