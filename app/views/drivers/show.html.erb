@@ -13,7 +13,7 @@
 
 
 
-<div class="container-fluid" style="background-color: #4d4d4d; height: 1000px">
+<div class="container-fluid" style="background-color: #262626; height: 1000px">
 	<div class="container" style="height: 500px">
 
 		<% if !flash[:notice].blank? %>
@@ -27,23 +27,23 @@
 		<% end %>
 
 		<div class="row" style="margin-top: 40px;">
-		<div class="col-xs-4" style="background-color: #808080; padding: 20px; border-radius: 5px">
+		<div class="col-xs-4" style="background-color: #404040; padding: 20px; border-radius: 3px">
 
-			<h5 style="color: white"> Driver </h5>
-			<div style="background-color: white; padding: 20px; border-radius: 5px">
-				First Name: <%= @driver.first_name%> <br>
+			<h3 style="color: white; font-family: Voltaire; text-align: center"> Driver </h3>
+			<div style="background-color: white; padding: 20px; border-radius: 3px">
+				<strong>First Name:</strong>  <%= @driver.first_name%> <br>
 				<hr>
-				Last Name: <%= @driver.last_name %> <br>
+				<strong>Last Name:</strong>  <%= @driver.last_name %> <br>
 				<hr>
-				ID Number: <%= @driver.id_number %> <br><br>
+				<strong>ID Number:</strong>  <%= @driver.id_number %> <br><br>
 
-	            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal">New Invoice</button>
+	            <button type="button" class="btn btn-outline" data-toggle="modal" data-target="#myModal">New Invoice</button> <br>
 
-				<%= link_to driver_invoices_path(@driver.id), class: 'btn btn-outline-primary' do %>
+				<%= link_to driver_invoices_path(@driver.id), class: 'btn btn-outline' do %>
 	              View Invoices
 	            <% end %> <br>
 
-				<%= link_to new_driver_car_path(@driver.id), class: 'btn btn-outline-warning' do %>
+				<%= link_to new_driver_car_path(@driver.id), class: 'btn btn-outline-danger' do %>
 	              Register New Car
 	            <% end %>
 	            
@@ -51,10 +51,10 @@
 			</div>
 		</div>
 
-		<div class="col-xs-7" style="background-color: #808080; margin-left: 20px; padding: 20px; border-radius: 5px">
+		<div class="col-xs-7" style="background-color: #404040; margin-left: 20px; padding: 20px; border-radius: 3px">
 
-			<h5 style="color: white"> Cars </h5>
-			<div style="background-color: white; padding: 20px; border-radius: 5px; height: 300px">
+			<h3 style="color: white; font-family: Voltaire; text-align: center"> Cars </h3>
+			<div style="background-color: white; padding: 20px; border-radius: 3px; height: 300px">
 
 				<% if @driver.cars.size > 0 %>
 					<%= render partial: 'car_list', locals: { cars: @cars} %>
@@ -84,7 +84,14 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title" style="text-align: center">INVOICE FOR <%= @driver.first_name.upcase %></h4>
+        <div class="modal-title" > 
+	        <h5 style="text-align: center">
+	        	NEW INVOICE FOR<br>
+	        </h5>
+	        <h4 style="font-style: italic; margin-left: 35%">
+	        	<%=@driver.first_name.upcase %> <%=@driver.last_name.upcase%>
+	        </h4>
+	    </div>
       </div>
       <div class="modal-body">
         <%= render partial: 'new_invoice'%>

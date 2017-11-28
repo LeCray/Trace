@@ -7,15 +7,17 @@
 		<% end %>
 	</div>	
 
+	<% if !flash[:notice].blank? %>
+		<div style="margin-bottom: -130px; text-align: center">
+		   <div class = "alert alert-danger">
+		      <%= flash[:notice] %>
+		   </div>
+		</div>
+	<% end %>
 
 
 
-
-<div class="container">
-
-
-	<hr style="margin-bottom: 50px; margin-top: 50px">
-
+<div class="container" style="margin-top: 200px">
 
 	<div style="overflow: hidden;">
 		<% provide(:title, "Log in") %>

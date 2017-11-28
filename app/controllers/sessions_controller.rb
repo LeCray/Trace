@@ -8,10 +8,9 @@ class SessionsController < ApplicationController
 		admin = Admin.find_by(email: params[:session][:email])
 		if admin && admin.authenticate(params[:session][:password])
 			log_in admin
-			redirect_to admins_path	
-		else
-			flash.now[:error] = 'Invalid email/password combination'
-			render 'new' 
+			redirect_to drivers_path
+		else		
+			redirect_to login_path , notice: "Incorrect Combination"	
 		end
 	end
 
