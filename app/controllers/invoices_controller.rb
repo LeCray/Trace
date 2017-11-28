@@ -1,7 +1,7 @@
 class InvoicesController < ApplicationController
 
 	def index
-      @invoices = Invoice.all.order('created_at DESC').paginate(page: params[:page], per_page:6)
+      @invoices = Invoice.all.order('created_at DESC').paginate(page: params[:page], per_page:10)
       @driver = Driver.find(params[:driver_id])
 	end
    

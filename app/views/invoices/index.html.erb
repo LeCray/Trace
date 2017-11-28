@@ -18,6 +18,7 @@
 	   <thead>.
 	      <tr>
 	         <th>CREATED AT</th>
+	         <th>DESCRIPTION</th>
 	         <th>DOWNLOAD</th>
 	      </tr>
 	   </thead>
@@ -27,6 +28,7 @@
 	         
 	         <tr>
 	            <td><%= invoice.created_at.strftime("%Y-%m-%d, %X") %></td>
+	            <td><%= invoice.attachment.file.filename %></td>
 	            <td><%= link_to "Download Invoice", invoice.attachment_url %></td>
 	         </tr>
 	         
@@ -34,5 +36,7 @@
 	   </tbody>
 	   
 	</table>
-	<%= will_paginate @invoices, renderer: BootstrapPagination::Rails %>
+	<div style="text-align: center">
+		<%= will_paginate @invoices, renderer: BootstrapPagination::Rails %>
+	</div>
 </div>
