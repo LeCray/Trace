@@ -14,7 +14,7 @@
 	<% end %>
 
 	<div class = "well">
-	   <%= bootstrap_form_for @invoice, html: { multipart: true } do |f| %>
+	   <%= bootstrap_form_for [@driver, @invoice], html: { multipart: true } do |f| %>
 	      <%= f.text_field :first_name %><br>
 	      <%= f.text_field :last_name %><br>
 

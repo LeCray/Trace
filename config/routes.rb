@@ -10,12 +10,12 @@ Rails.application.routes.draw do
 
 	resources :drivers do
 		resources :cars
+		resources :invoices
 	end
 
 	resources :admins
 
 	resources :account_activations, only: [:edit]
 
-	resources :invoices
 
 end

@@ -28,6 +28,7 @@ class DriversController < ApplicationController
 		@cars = @driver.cars.all.order('created_at')
 
 		@car = Car.new
+		@invoice = Invoice.new
 	end
 
 private

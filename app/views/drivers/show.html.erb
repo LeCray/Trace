@@ -12,8 +12,14 @@
 
 
 
+
 <div class="container-fluid" style="background-color: #4d4d4d; height: 1000px">
 	<div class="container" style="height: 500px">
+		<% if !flash[:notice].blank? %>
+		   <div class = "alert alert-info">
+		      <%= flash[:notice] %>
+		   </div>
+		<% end %>
 		<div class="row" style="margin-top: 40px;">
 		<div class="col-xs-4" style="background-color: #808080; padding: 20px; border-radius: 5px">
 
@@ -28,6 +34,9 @@
 				<%= link_to new_driver_car_path(@driver.id), class: 'btn btn-outline-primary' do %>
 	              Register New Car
 	            <% end %>
+	            
+	 
+	            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal">New Invoice</button>
 
 			</div>
 		</div>
@@ -49,4 +58,31 @@
 			</div>
 		</div>	
 		</div>
+
+		<div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+
 	</div>
+
+<!-- Trigger the modal with a button -->
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">New Invoice for <%= @driver.first_name %></h4>
+      </div>
+      <div class="modal-body">
+        <%= render partial: 'new_invoice'%>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
