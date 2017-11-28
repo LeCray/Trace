@@ -1,25 +1,25 @@
-<% if !@invoice.errors.empty? %>
-   <div class = "alert alert-error">
-      
-      <ul>
-         <% @invoice.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-         <% end %>
-      </ul>
-      
-   </div>
-<% end %>
+<div class="container" style="padding-top: 100px">
+	<div class="col-xs-6 col-md-offset-2">
 
-<div class = "well">
-   <%= form_for @invoice, html: { multipart: true } do |f| %>
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name %>
+	<% if !@invoice.errors.empty? %>
+	   <div class = "alert alert-error">
+	      
+	      <ul>
+	         <% @invoice.errors.full_messages.each do |msg| %>
+	            <li><%= msg %></li>
+	         <% end %>
+	      </ul>
+	      
+	   </div>
+	<% end %>
 
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name %>
-      
-      <%= f.label :attachment %>
-      <%= f.file_field :attachment %>
-      <%= f.submit "Save", class: "btn btn-primary" %>
-   <% end %>
+	<div class = "well">
+	   <%= bootstrap_form_for @invoice, html: { multipart: true } do |f| %>
+	      <%= f.text_field :first_name %><br>
+	      <%= f.text_field :last_name %><br>
+
+	      <%= f.file_field :attachment %><br>
+	      <%= f.submit "Save", class: "btn btn-outline" %>
+	   <% end %>
+	</div>
 </div>
