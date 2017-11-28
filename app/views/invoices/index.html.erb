@@ -1,2 +1,35 @@
-<h1>Invoices#index</h1>
-<p>Find me in app/views/invoices/index.html.erb</p>
+<% if !flash[:notice].blank? %>
+   <div class = "alert alert-info">
+      <%= flash[:notice] %>
+   </div>
+<% end %>
+
+<br />
+
+<%= link_to "New Invoice", new_invoice_path, class: "btn btn-primary" %>
+<br />
+<br />
+
+<table class = "table table-bordered table-striped">
+   <thead>.
+      <tr>
+         <th>Name</th>
+         <th>Download Link</th>
+         <th> </th>
+      </tr>
+   </thead>
+   
+   <tbody>
+      <% @invoices.each do |invoice| %>
+         
+         <tr>
+            <td><%= invoice.first_name %></td>
+            <td><%= link_to "Download invoice", invoice.attachment_url %></td>
+            <td><%= button_to "Delete",  invoice, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete for #{invoice.first_name}?" %></td>
+         </tr>
+         
+      <% end %>
+   </tbody>
+   
+</table>
+
