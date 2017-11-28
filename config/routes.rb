@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'invoices/index'
+
+  get 'invoices/new'
+
+  get 'invoices/create'
+
+  get 'invoices/destroy'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   	get '/login' => 'sessions#new'
 	post '/login' => 'sessions#create'

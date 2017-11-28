@@ -59,3 +59,7 @@ gem 'bootstrap_form'
 
 
 gem 'bootstrap-sass'
+
+gem 'carrierwave'
+
+gem 'aws-sdk'
