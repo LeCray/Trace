@@ -19,7 +19,7 @@
 	      <tr>
 	         <th>CREATED AT</th>
 	         <th>DESCRIPTION</th>
-	         <th>DOWNLOAD</th>
+	         <th></th>
 	      </tr>
 	   </thead>
 	   
@@ -29,7 +29,7 @@
 	         <tr>
 	            <td><%= invoice.created_at.strftime("%Y-%m-%d, %X") %></td>
 	            <td><%= invoice.attachment.file.filename %></td>
-	            <td><%= link_to "Download Invoice", invoice.attachment_url %></td>
+	            <td><%= link_to "View Invoice", invoice.attachment_url %></td>
 	         </tr>
 	         
 	      <% end %>
