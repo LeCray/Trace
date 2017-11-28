@@ -27,47 +27,76 @@
 		<% end %>
 
 		<div class="row" style="margin-top: 40px;">
-		<div class="col-xs-4" style="background-color: #404040; padding: 20px; border-radius: 3px">
+			<!-- Driver -->
+			<div class="col-xs-4" style="background-color: #404040; padding: 20px; border-radius: 3px">
+				<h3 style="color: white; font-family: Voltaire; text-align: center"> Driver </h3>
+				<div style="background-color: white; padding: 20px; border-radius: 3px">
+					<strong>First Name:</strong>  <%= @driver.first_name%> <br>
+					<hr>
+					<strong>Last Name:</strong>  <%= @driver.last_name %> <br>
+					<hr>
+					<strong>ID Number:</strong>  <%= @driver.id_number %> <br><br>
 
-			<h3 style="color: white; font-family: Voltaire; text-align: center"> Driver </h3>
-			<div style="background-color: white; padding: 20px; border-radius: 3px">
-				<strong>First Name:</strong>  <%= @driver.first_name%> <br>
-				<hr>
-				<strong>Last Name:</strong>  <%= @driver.last_name %> <br>
-				<hr>
-				<strong>ID Number:</strong>  <%= @driver.id_number %> <br><br>
+		            <button type="button" class="btn btn-outline" data-toggle="modal" data-target="#myModal">New Invoice</button> <br>
 
-	            <button type="button" class="btn btn-outline" data-toggle="modal" data-target="#myModal">New Invoice</button> <br>
+					<%= link_to driver_invoices_path(@driver.id), class: 'btn btn-outline' do %>
+		              View Invoices
+		            <% end %> <br>
 
-				<%= link_to driver_invoices_path(@driver.id), class: 'btn btn-outline' do %>
-	              View Invoices
-	            <% end %> <br>
-
-				<%= link_to new_driver_car_path(@driver.id), class: 'btn btn-outline-danger' do %>
-	              Register New Car
-	            <% end %>
-	            
-
+					<%= link_to new_driver_car_path(@driver.id), class: 'btn btn-outline-danger' do %>
+		              Register New Car
+		            <% end %>
+				</div>
 			</div>
+			<!-- END -->
+
+			
+			<div  class="col-xs-7" style="background-color: #404040; margin-left: 20px; padding: 20px; border-radius: 3px;">
+
+				<h3 id="invoices-heading" style="color: white; font-family: Voltaire; "> 
+					Invoices 
+				</h3>
+				<h3 id="cars-heading" style="color: white; font-family: Voltaire; display: none; ">
+					Cars 
+				</h3>
+
+				<div class="" style="display: inline-block;">	
+					<button id="invoices-btn" class="btn btn-outline-danger" style="">Invoices</button>
+					<button id="cars-btn" class="btn btn-outline-danger" >Cars</button>
+				</div>
+
+				<!-- Invoices -->
+				<div id="invoices" style="background-color: white; padding: 20px; border-radius: 3px; height: 300px">
+
+					<% if @driver.invoices.size > 0 %>
+						<%= render partial: 'invoices_list', locals: { invoices: @invoices} %>
+					<% else %>
+						<div style="text-align: center; margin-top: 20px; padding: 40px">
+							<strong>No Invoices</strong>
+							<hr>
+						</div>
+					<% end %>
+				</div>
+				<!-- END -->
+
+				<!-- Cars -->
+				<div id="cars" style="background-color: white; padding: 20px; border-radius: 3px; height: 300px; display: none">
+
+					<% if @driver.cars.size > 0 %>
+						<%= render partial: 'car_list', locals: { cars: @cars} %>
+					<% else %>
+						<div style="text-align: center; margin-top: 20px; padding: 40px">
+							<strong>No Cars</strong>
+							<hr>
+						</div>
+					<% end %>
+				</div>
+				<!-- END -->
+
+			</div>	
+			<!-- END -->
 		</div>
-
-		<div class="col-xs-7" style="background-color: #404040; margin-left: 20px; padding: 20px; border-radius: 3px">
-
-			<h3 style="color: white; font-family: Voltaire; text-align: center"> Cars </h3>
-			<div style="background-color: white; padding: 20px; border-radius: 3px; height: 300px">
-
-				<% if @driver.cars.size > 0 %>
-					<%= render partial: 'car_list', locals: { cars: @cars} %>
-				<% else %>
-					<div style="text-align: center; margin-top: 20px; padding: 40px">
-						<strong>No Cars</strong>
-						<hr>
-					</div>
-				<% end %>
-
-			</div>
-		</div>	
-		</div>
+		<!-- ROW END -->
 
 		<div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
 
@@ -88,7 +117,7 @@
 	        <h5 style="text-align: center">
 	        	NEW INVOICE FOR<br>
 	        </h5>
-	        <h4 style="font-style: italic; margin-left: 35%">
+	        <h4 style="font-style: italic; text-align: center">
 	        	<%=@driver.first_name.upcase %> <%=@driver.last_name.upcase%>
 	        </h4>
 	    </div>
@@ -103,3 +132,24 @@
 
   </div>
 </div>
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		$('#cars-btn').click(function(){
+			$('#cars').show();
+			$('#cars-heading').show();
+			$('#invoices').hide(); 
+			$('#invoices-heading').hide();
+		});	
+
+		$('#invoices-btn').click(function(){
+			$('#cars').hide();
+			$('#cars-heading').hide();
+			$('#invoices').show(); 
+			$('#invoices-heading').show();
+		});	
+
+	});
+</script>
