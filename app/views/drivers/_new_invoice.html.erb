@@ -1,24 +1,20 @@
+<% if !@invoice.errors.empty? %>
+   <div class = "alert alert-error">
+      
+      <ul>
+         <% @invoice.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+         <% end %>
+      </ul>
+      
+   </div>
+<% end %>
 
+<div class = "well">
 
+   <%= bootstrap_form_for [@driver, @invoice], html: { multipart: true } do |f| %>
+      <%= f.file_field :attachment %><br>
+      <%= f.submit "Save", class: "btn btn-outline" %>
+   <% end %>
 
-	<% if !@invoice.errors.empty? %>
-	   <div class = "alert alert-error">
-	      
-	      <ul>
-	         <% @invoice.errors.full_messages.each do |msg| %>
-	            <li><%= msg %></li>
-	         <% end %>
-	      </ul>
-	      
-	   </div>
-	<% end %>
-
-	<div class = "well">
-
-	   <%= bootstrap_form_for [@driver, @invoice], html: { multipart: true } do |f| %>
-
-	      <%= f.file_field :attachment %><br>
-	      <%= f.submit "Save", class: "btn btn-outline" %>
-	   <% end %>
-	   
-	</div>
+</div>

@@ -26,7 +26,7 @@
 	      <% @invoices.each do |invoice| %>
 	         
 	         <tr>
-	            <td><%= invoice.created_at.strftime("%Y-%m-%d") %></td>
+	            <td><%= invoice.created_at.strftime("%Y-%m-%d, %X") %></td>
 	            <td><%= link_to "Download Invoice", invoice.attachment_url %></td>
 	         </tr>
 	         
@@ -34,4 +34,5 @@
 	   </tbody>
 	   
 	</table>
+	<%= will_paginate @invoices, renderer: BootstrapPagination::Rails %>
 </div>

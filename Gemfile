@@ -63,3 +63,5 @@ gem 'bootstrap-sass'
 gem 'carrierwave'
 
 gem 'aws-sdk'
+
+gem 'will_paginate-bootstrap'
