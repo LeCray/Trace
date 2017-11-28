@@ -2,6 +2,7 @@ class InvoicesController < ApplicationController
 
 	def index
       @invoices = Invoice.all
+      @driver = Driver.find(params[:driver_id])
 	end
    
 	def new
@@ -17,7 +18,7 @@ class InvoicesController < ApplicationController
 	  @invoice.driver_id = @driver.id
 
 	  if @invoice.save!
-	     redirect_to driver_path(@driver.id), notice: "The invoice for #{@invoice.first_name} has been uploaded."
+	     redirect_to driver_path(@driver.id), notice: "#{@invoice.first_name}'s new invoice has been uploaded."
 	  else
 	     redirect_to driver_path(@driver.id)
 	  end
