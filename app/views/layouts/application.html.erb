@@ -67,6 +67,7 @@
 			              		<%= @current_driver.first_name %> 
 				            </a>
 				            <ul class="dropdown-menu" style="text-align: left">
+				            	<li><%= link_to "My Dashboard", driver_path(@current_driver.id) %></li>
 								<li><%= link_to "Settings", '#' %></li>
 								<li class="divider"></li>
 								<li>
@@ -74,7 +75,7 @@
 				              	</li>
 				            </ul>
 			          	</li>
-			          	
+
 			        <% else %>
 			        	<li><%= link_to "Log in", login_path %></li>
 			        <% end %>

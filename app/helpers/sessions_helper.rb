@@ -49,4 +49,9 @@ module SessionsHelper
 	def driver_logged_in?
 		!current_driver.nil?
 	end
+
+
+
+
+
 end

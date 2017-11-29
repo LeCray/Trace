@@ -20,8 +20,13 @@ class SessionsController < ApplicationController
 	end
 
 	def destroy
-	    log_out
-	    redirect_to root_url
+		if admin_logged_in?
+	    	log_out
+	    	redirect_to root_url
+	    else
+	    	driver_log_out
+	    	redirect_to root_url
+	    end
 	 end
 
 end

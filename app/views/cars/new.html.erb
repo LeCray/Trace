@@ -1,7 +1,12 @@
 <div class="container" style="height: 500px">
 	<div class="row" style="margin-top: 125px">
 		<div class="col-xs-6 col-md-offset-2" >
-			<h4 style="color: grey; font-family: Voltaire"> NEW CAR</h4>
+			<h4 style="color:; font-family: Voltaire"> 
+				NEW CAR FOR 
+			</h4>
+			<h3 style="color: grey; font-family: Voltaire">
+				<%= @driver.first_name.upcase%> <%= @driver.last_name.upcase%>
+			</h3>
 			<hr style="margin-bottom: 20px">
 
 				<%= bootstrap_form_for([@driver, @car]) do |f| %>

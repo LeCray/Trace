@@ -1,6 +1,6 @@
 class DriversController < ApplicationController
-
-	
+	include SessionsHelper
+	before_action :check_if_admin, only: :index
 
 	def index
 		@drivers = Driver.all.order('created_at')
@@ -42,7 +42,11 @@ private
 
 
 
-
+	def check_if_admin
+		if !admin_logged_in?
+			redirect_to root_path
+		end
+	end
 	
 
 end

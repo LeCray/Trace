@@ -2,9 +2,13 @@
 <div class="container">
 	<div class="row" style="margin-bottom: 20px">
 		<div class="col-xs-12">
-			<h1 style="font-family: Voltaire; margin-top: 80px; font-size: 50px"> M.A.D </h1><br>
-			<%= button_to drivers_path, method: 'get', class: 'btn btn-outline-danger btn-large' do %>
-		  		Back to Drivers
+			<h1 style="font-family: Voltaire; margin-top: 80px; margin-bottom: -20px; font-size: 50px"> M.A.D </h1><br>
+			<% if admin_logged_in? %>
+				<div style="margin-bottom: -15px">
+					<%= button_to drivers_path, method: 'get', class: 'btn btn-outline-danger btn-large' do %>
+			  			Back to Drivers
+					<% end %>
+				</div>
 			<% end %>
 		</div>
 	</div>
@@ -37,13 +41,16 @@
 					<hr>
 					<strong>Email:</strong>  <%= @driver.email %> <br>
 					<hr>
-					<strong>Tel:</strong>  0<%=  number_to_phone(@driver.tel).chomp('.0') %> <br><br>
+					<strong>Tel:</strong>  0<%=  number_to_phone(@driver.tel).chomp('.0') %> <br>
 
-		            <button type="button" class="btn btn-outline" data-toggle="modal" data-target="#myModal">New Invoice</button> <br>
+					<% if admin_logged_in? %>
+						<br>
+			            <button type="button" class="btn btn-outline" data-toggle="modal" data-target="#myModal">New Invoice</button> <br>
 
-					<%= link_to new_driver_car_path(@driver.id), class: 'btn btn-outline' do %>
-		              Register New Car
-		            <% end %>
+						<%= link_to new_driver_car_path(@driver.id), class: 'btn btn-outline' do %>
+			              Register New Car
+			            <% end %>
+			        <% end %>
 				</div>
 				<div style="padding: 20px">	
 					<button id="invoices-btn" class="btn btn-outline-danger btn-block" style="margin-bottom: -20px">Invoices</button><br>
