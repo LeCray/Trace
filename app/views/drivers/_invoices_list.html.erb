@@ -9,9 +9,9 @@
   <tbody>
     <% invoices.each do |i| %>
         <tr>
-          <td><%= i.created_at.strftime("%Y-%m-%d, %X") %></td>
+          <td><%= i.created_at.strftime("%Y-%m-%d") %></td>
           <td><%= i.attachment.file.filename %></td>
-          <td><%= link_to "View Invoice", i.attachment_url %></td>
+          <td><%= link_to "View Invoice", i.attachment_url, target: :_blank %></td>
         </tr>
     <% end %>
   </tbody>

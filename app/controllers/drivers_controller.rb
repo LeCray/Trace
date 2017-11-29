@@ -1,5 +1,7 @@
 class DriversController < ApplicationController
 
+	#before_action :format_tel
+
 	def index
 		@drivers = Driver.all.order('created_at')
 	end
@@ -35,8 +37,10 @@ class DriversController < ApplicationController
 private
 
 	def driver_params
-		params.require(:driver).permit(:first_name, :last_name, :id_number)
+		params.require(:driver).permit(:first_name, :last_name, :email, :tel)
 	end
 
+
+	
 
 end

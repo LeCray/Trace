@@ -6,9 +6,9 @@
 
 				<%= bootstrap_form_for([@driver, @car]) do |f| %>
 
+				<%= f.text_field :vehicle_reg, label: 'Registration Number' %> <br>
 				<%= f.text_field :make, label: 'Car Make'%> <br>
 				<%= f.text_field :model, label: 'Car Model' %> <br>
-				<%= f.text_field :vehicle_reg, label: 'Registration Number' %> <br>
 
 				<%= f.submit "Register New Car", class: 'btn btn-outline' %>
 

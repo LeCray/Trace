@@ -2,7 +2,8 @@
   <thead>
     <tr>
     <th><b>Name</b></th>
-    <th><b>ID Number</b></th>
+    <th><b>Email</b></th>
+    <th><b>Contact</b></th>
     <th></th>
     </tr>
   </thead>
@@ -10,10 +11,11 @@
     <% drivers.each do |d| %>
       <tr>
         <td><%= d.first_name%> <%= d.last_name%></td>
-        <td><%=d.id_number %></td>
+        <td><%=d.email %></td>
+        <td>0<%=  number_to_phone(d.tel).chomp('.0') %></td>
         <td>
           <div  style="margin-top: -5px">
-            <%= link_to driver_path(d.id), class: 'btn btn-warning' do %>
+            <%= link_to driver_path(d.id), class: 'btn btn-outline-warning' do %>
               Manage
             <% end %>
           </div>

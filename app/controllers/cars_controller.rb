@@ -18,8 +18,7 @@ class CarsController < ApplicationController
 		@car = @driver.cars.build(car_params)
 
 		if @car.save!
-      		flash.now[:info] = "Success"
-      		redirect_to @driver
+      		redirect_to driver_path(@driver.id), notice: "#{@driver.first_name}'s new car has been added."
 		else
 			render 'new'
 		end
