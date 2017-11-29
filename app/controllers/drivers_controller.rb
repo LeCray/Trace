@@ -1,6 +1,9 @@
 class DriversController < ApplicationController
 	include SessionsHelper
-	before_action :check_if_admin, only: :index
+
+	before_action :only_see_own_page, only: :show unless :admin?
+
+	before_action :keep_drivers_out_of_index, only: :index
 
 	def index
 		@drivers = Driver.all.order('created_at')
@@ -42,9 +45,20 @@ private
 
 
 
-	def check_if_admin
-		if !admin_logged_in?
-			redirect_to root_path
+	def admin?
+		admin_logged_in?
+	end
+
+	def only_see_own_page
+	@driver = Driver.find(params[:id])
+	  if current_driver != @driver 
+	    redirect_to driver_path(current_driver.id)
+	  end
+	end
+
+	def keep_drivers_out_of_index
+		if driver_logged_in?
+			redirect_to driver_path(current_driver.id)
 		end
 	end
 	
