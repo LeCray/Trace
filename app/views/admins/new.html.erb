@@ -6,12 +6,12 @@
 			</div>
 		<% end %>
 	</div>	
-	
+
 
 
 	<div class="row" style="margin-top: 200px; margin-bottom: 100px">
 		<div class="col-xs-6 col-md-offset-2" >
-			<h5 style="color: grey"> NEW ADMIN </h5>
+			<h5 style="color: grey"> NEW USER </h5>
 			<hr style="margin-bottom: 30px">
 
 				<%= bootstrap_form_for(@admin) do |f| %>
@@ -22,6 +22,7 @@
 				<%= f.text_field :first_name, label: 'First Name'%> <br>
 				<%= f.text_field :last_name, label: 'Last Name' %> <br>
 				<%= f.text_field :email, label: 'Email Address' %> <br>
+				<%= f.telephone_field :tel, label: 'Contact Number'%> <br>
 
 				<%= f.password_field :password, label: 'Password' %> <br>
 				<%= f.password_field :password_confirmation, label: 'Confirm Password' %> <br>

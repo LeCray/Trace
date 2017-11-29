@@ -43,14 +43,16 @@
 					<li><a href="#">Contact</a></li>
 					
 
-					<% if logged_in? %>
+					<% if admin_logged_in? %>
 			         	<li class="dropdown" style="text-align: left" >
 				            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 			              		<%= @current_admin.first_name %> 
 				            </a>
 				            <ul class="dropdown-menu" style="text-align: left">
-								<li><%= link_to "Admin", admins_path %></li>
-								<li><%= link_to "Drivers", drivers_path %></li>
+				            	<% if current_admin.role == "Admin" %>
+									<li><%= link_to "Drivers", drivers_path %></li>
+									<li><%= link_to "New Customer", new_admin_path %></li>
+								<% end %>
 								<li><%= link_to "Settings", '#' %></li>
 								<li class="divider"></li>
 								<li>
@@ -58,6 +60,21 @@
 				              	</li>
 				            </ul>
 			          	</li>
+
+			        <% elsif driver_logged_in? %>
+			        	<li class="dropdown" style="text-align: left" >
+				            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+			              		<%= @current_driver.first_name %> 
+				            </a>
+				            <ul class="dropdown-menu" style="text-align: left">
+								<li><%= link_to "Settings", '#' %></li>
+								<li class="divider"></li>
+								<li>
+				              		<%= link_to "Log out", logout_path, method: :delete %>
+				              	</li>
+				            </ul>
+			          	</li>
+			          	
 			        <% else %>
 			        	<li><%= link_to "Log in", login_path %></li>
 			        <% end %>

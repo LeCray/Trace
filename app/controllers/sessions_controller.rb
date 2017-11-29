@@ -6,10 +6,15 @@ class SessionsController < ApplicationController
 
 	def create	
 		admin = Admin.find_by(email: params[:session][:email])
-		if admin && admin.authenticate(params[:session][:password])
-			log_in admin
+		driver = Driver.find_by(email: params[:session][:email])
+
+		if admin && admin.role == "Admin"
+			admin_log_in admin
 			redirect_to drivers_path
-		else		
+		elsif driver 
+			driver_log_in driver
+			redirect_to driver_path(driver.id)
+		else
 			redirect_to login_path , notice: "Incorrect Combination"	
 		end
 	end

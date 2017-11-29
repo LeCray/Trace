@@ -9,19 +9,33 @@ class AdminsController < ApplicationController
 
 	def new
 		@admin = Admin.new
+		@driver = Driver.new
 	end
 
 	def create
 		@admin = Admin.new(admin_params)
 		
+		if @admin.role == "Admin"
+			if @admin.save!
+	      		flash.now[:info] = "Success"
+	      		#AdminMailer.account_activation(@admin).deliver_now
+	      		flash.now[:info] = "An activation link has been sent their email address"
+	      		render new_admin_path
+			else
+				render 'new'
+			end
 
-		if @admin.save!
-      		flash.now[:info] = "Success"
-      		#AdminMailer.account_activation(@admin).deliver_now
-      		flash.now[:info] = "An activation link has been sent their email address"
-      		render new_admin_path
-		else
-			render 'new'
+		elsif @admin.role == "Driver"
+			@driver = Driver.new(driver_params)
+
+			if @driver.save!
+	      		flash.now[:info] = "Success"
+	      		#AdminMailer.account_activation(@admin).deliver_now
+	      		#flash.now[:info] = "An activation link has been sent their email address"
+	      		redirect_to drivers_path
+			else
+				render 'new'
+			end
 		end
 	end
 
@@ -29,7 +43,11 @@ class AdminsController < ApplicationController
 	private
 
 	def admin_params
-		params.require(:admin).permit(:first_name, :last_name, :email,:password, :password_confirmation, :role)
+		params.require(:admin).permit(:first_name, :last_name, :email, :tel, :password, :password_confirmation, :role)
+	end
+
+	def driver_params
+		params.require(:admin).permit(:first_name, :last_name, :email, :tel, :password, :password_confirmation)
 	end
 
 

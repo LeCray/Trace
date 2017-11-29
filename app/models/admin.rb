@@ -4,7 +4,7 @@ class Admin < ApplicationRecord
 	
 	has_secure_password
 
-	ROLES = ["Super", "Manager"]
+	ROLES = ["Driver","Admin"]
 
 	validates :first_name, presence: true
 	validates :last_name, presence: true
