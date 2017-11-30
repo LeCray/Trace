@@ -1,0 +1,6 @@
+@media (max-width: 480px) {
+  #cards {
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+}

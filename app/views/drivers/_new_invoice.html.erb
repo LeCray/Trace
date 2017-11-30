@@ -13,8 +13,8 @@
 <div class = "well">
 
    <%= bootstrap_form_for [@driver, @invoice], html: { multipart: true } do |f| %>
-      <%= f.file_field :attachment %><br>
-      <%= f.submit "Upload", class: "btn btn-outline-success" %>
+      <%= f.file_field :attachment, :required => 'required' %><br>
+      <%= f.submit "Upload", class: "btn btn-outline-success", data: { disable_with: "Please wait..." } %>
    <% end %>
 
 </div>

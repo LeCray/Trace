@@ -36,52 +36,56 @@
 		<nav class="navbar navbar-inverse navbar-fixed-top" style="font-family: Voltaire; z-index: 10">
 			<div class="container">
 				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" >
+						<span class="icon-bar color"></span>
+						<span class="icon-bar color"></span>
+						<span class="icon-bar color"></span> 
+					</button>
 					<a class="navbar-brand active" href="/" style="margin-top: 11px; margin-bottom: -11px">M.A.D</a>
 				</div>
-				<ul class="nav navbar-nav pull-right" >
-					<li><a href="#">About</a></li>
-					<li><a href="#">Contact</a></li>
+				<div class="collapse navbar-collapse" id="myNavbar">
+      				<ul class="nav navbar-nav navbar-right" style="text-align: left">
+						<li><a href="#">About</a></li>
+						<li><a href="#">Contact</a></li>
 					
+						<% if admin_logged_in? %>
+				         	<li class="dropdown" style="text-align: left" >
+					            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				              		<%= @current_admin.first_name %> (ADMIN)
+					            </a>
+					            <ul class="dropdown-menu" style="text-align: left">
+					            	<% if current_admin.role == "Admin" %>
+					            		<li><%= link_to "Admin", admins_path %></li>
+										<li><%= link_to "Drivers", drivers_path %></li>
+										<li><%= link_to "Create User", new_admin_path %></li>
+									<% end %>
+									<li><%= link_to "Settings", '#' %></li>
+									<li class="divider"></li>
+									<li>
+					              		<%= link_to "Log out", logout_path, method: :delete %>
+					              	</li>
+					            </ul>
+				          	</li>
 
-					<% if admin_logged_in? %>
-			         	<li class="dropdown" style="text-align: left" >
-				            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-			              		<%= @current_admin.first_name %> (ADMIN)
-				            </a>
-				            <ul class="dropdown-menu" style="text-align: left">
-				            	<% if current_admin.role == "Admin" %>
-				            		<li><%= link_to "Admin", admins_path %></li>
-									<li><%= link_to "Drivers", drivers_path %></li>
-									<li><%= link_to "Create User", new_admin_path %></li>
-								<% end %>
-								<li><%= link_to "Settings", '#' %></li>
-								<li class="divider"></li>
-								<li>
-				              		<%= link_to "Log out", logout_path, method: :delete %>
-				              	</li>
-				            </ul>
-			          	</li>
+				        <% elsif driver_logged_in? %>
+				        	<li class="dropdown" style="text-align: left" >
+					            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				              		<%= @current_driver.first_name %> 
+					            </a>
+					            <ul class="dropdown-menu" style="text-align: left">
+					            	<li><%= link_to "My Dashboard", driver_path(@current_driver.id) %></li>
+									<li><%= link_to "Settings", '#' %></li>
+									<li class="divider"></li>
+									<li>
+					              		<%= link_to "Log out", logout_path, method: :delete %>
+					              	</li>
+					            </ul>
+				          	</li>
 
-
-			        <% elsif driver_logged_in? %>
-			        	<li class="dropdown" style="text-align: left" >
-				            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-			              		<%= @current_driver.first_name %> 
-				            </a>
-				            <ul class="dropdown-menu" style="text-align: left">
-				            	<li><%= link_to "My Dashboard", driver_path(@current_driver.id) %></li>
-								<li><%= link_to "Settings", '#' %></li>
-								<li class="divider"></li>
-								<li>
-				              		<%= link_to "Log out", logout_path, method: :delete %>
-				              	</li>
-				            </ul>
-			          	</li>
-
-			        <% else %>
-			        	<li><%= link_to "Log in", login_path %></li>
-			        <% end %>
-			    </ul>
+				        <% else %>
+				        	<li><%= link_to "Log in", login_path %></li>
+				        <% end %>
+			    	</ul>
 			</div>
 		</nav>
 

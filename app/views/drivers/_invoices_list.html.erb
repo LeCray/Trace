@@ -4,6 +4,8 @@
       <th><b>CREATED AT</b></th>
       <th><b>DESCRIPTION</b></th>
       <th></th>
+      <th></th>
+
     </tr>
   </thead>
   <tbody>
@@ -20,7 +22,7 @@
             <td>
               <div style="margin-top: -3px">
                 <% if admin_logged_in? %>
-                  <%= link_to "Delete",driver_invoice_path(i.id), method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure that you wish to delete #{i.attachment.file.filename}?" }%>
+                  <%= link_to "Delete",driver_invoice_path(i.id), method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure that you wish to delete #{i.attachment.file.filename}?", disable_with: "Deleting..." }%>
                 <% end %>
               </div>
             </td>

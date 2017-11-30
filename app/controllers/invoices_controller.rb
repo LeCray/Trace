@@ -11,15 +11,19 @@ class InvoicesController < ApplicationController
 	end
 
 	def create
-	  @driver = Driver.find(params[:driver_id])
-	  @invoice = @driver.invoices.build(invoice_params)
+		@driver = Driver.find(params[:driver_id])
+		@invoice = @driver.invoices.build(invoice_params)
 
+			if @invoice 
 
-	  if @invoice.save!
-	     redirect_to driver_path(@driver.id), notice: "#{@driver.first_name}'s new invoice has been uploaded."
-	  else
-	     redirect_to driver_path(@driver.id)
-	  end
+				if @invoice.save!
+				redirect_to driver_path(@driver.id), notice: "#{@driver.first_name}'s new invoice has been uploaded."
+				else
+				redirect_to driver_path(@driver.id)
+				end
+			else 
+				redirect_to driver_path(@driver.id)
+			end
 	  
 	end
 
