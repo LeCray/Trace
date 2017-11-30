@@ -11,12 +11,18 @@
         <tr>
           <td><%= i.created_at.strftime("%Y-%m-%d") %></td>
           <td><%= i.attachment.file.filename %></td>
-          <td><%= link_to "View Invoice", i.attachment_url, target: :_blank %></td>
+          <td style="width: 50px"><%= link_to "View", i.attachment_url, target: :_blank, class: "btn btn-primary" %></td>
+
+          <% if admin_logged_in? %>
+            <td><%= link_to "Delete",driver_invoice_path(i.id), method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure that you wish to delete #{i.attachment.file.filename}?" }%>
+            </td>
+          <% end %>
+
         </tr>
-    <% end %>
+    <% end %> 
   </tbody>
 </table>
 
-<div style="text-align: center">
+<div style="text-align: center">    
   <%= will_paginate @invoices, renderer: BootstrapPagination::Rails %>
 </div>

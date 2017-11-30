@@ -13,7 +13,7 @@ class InvoicesController < ApplicationController
 	def create
 	  @driver = Driver.find(params[:driver_id])
 	  @invoice = @driver.invoices.build(invoice_params)
-	  
+
 
 	  if @invoice.save!
 	     redirect_to driver_path(@driver.id), notice: "#{@driver.first_name}'s new invoice has been uploaded."
@@ -24,9 +24,15 @@ class InvoicesController < ApplicationController
 	end
 
 	def destroy
-	  @invoice = Invoice.find(params[:id])
-	  @invoice.destroy
-	  redirect_to invoices_path, notice:  "The invoice #{@invoice.first_name} has been deleted."
+		@driver = Driver.find(params[:id])	
+		@invoice = Invoice.find(params[:driver_id])
+
+	  	@invoice.remove_attachment
+	  	redirect_to driver_path(@driver.id), notice:  "#{@invoice.attachment.file.filename} has been deleted."
+	  	@invoice.destroy
+	  	
+
+	  
 	end
 
 	private
