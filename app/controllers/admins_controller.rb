@@ -1,5 +1,5 @@
 class AdminsController < ApplicationController
-
+	include SessionsHelper
 
 	def index
 	end
@@ -17,9 +17,8 @@ class AdminsController < ApplicationController
 		
 		if @admin.role == "Admin"
 			if @admin.save!
-	      		flash.now[:info] = "Success"
+	      		flash.now[:success] = "Admin has been created"
 	      		#AdminMailer.account_activation(@admin).deliver_now
-	      		flash.now[:info] = "An activation link has been sent their email address"
 	      		render new_admin_path
 			else
 				render 'new'

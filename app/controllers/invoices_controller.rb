@@ -28,7 +28,7 @@ class InvoicesController < ApplicationController
 		@invoice = Invoice.find(params[:driver_id])
 
 	  	@invoice.remove_attachment
-	  	redirect_to driver_path(@driver.id), notice:  "#{@invoice.attachment.file.filename} has been deleted."
+	  	redirect_to driver_path(@driver.id), notice:  "#{@invoice.attachment.file.filename} has been deleted."	
 	  	@invoice.destroy
 	  	
 

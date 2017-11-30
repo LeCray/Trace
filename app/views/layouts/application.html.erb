@@ -50,8 +50,9 @@
 				            </a>
 				            <ul class="dropdown-menu" style="text-align: left">
 				            	<% if current_admin.role == "Admin" %>
+				            		<li><%= link_to "Admin", admins_path %></li>
 									<li><%= link_to "Drivers", drivers_path %></li>
-									<li><%= link_to "Create Driver", new_admin_path %></li>
+									<li><%= link_to "Create User", new_admin_path %></li>
 								<% end %>
 								<li><%= link_to "Settings", '#' %></li>
 								<li class="divider"></li>

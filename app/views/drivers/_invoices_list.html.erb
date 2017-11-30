@@ -11,13 +11,19 @@
         <tr>
           <td><%= i.created_at.strftime("%Y-%m-%d") %></td>
           <td><%= i.attachment.file.filename %></td>
-          <td style="width: 50px"><%= link_to "View", i.attachment_url, target: :_blank, class: "btn btn-primary" %></td>
-
-          <% if admin_logged_in? %>
-            <td><%= link_to "Delete",driver_invoice_path(i.id), method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure that you wish to delete #{i.attachment.file.filename}?" }%>
+         
+            <td style="width: 50px">
+              <div style="margin-top: -3px">
+                <%= link_to "View", i.attachment_url, target: :_blank, class: "btn btn-primary" %>
+              </div>
             </td>
-          <% end %>
-
+            <td>
+              <div style="margin-top: -3px">
+                <% if admin_logged_in? %>
+                  <%= link_to "Delete",driver_invoice_path(i.id), method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure that you wish to delete #{i.attachment.file.filename}?" }%>
+                <% end %>
+              </div>
+            </td>
         </tr>
     <% end %> 
   </tbody>
