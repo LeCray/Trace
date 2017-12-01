@@ -1,28 +1,9 @@
-<div class="table-responsive">
-  <table class="table">
-    <thead>
-      <tr>
-      <th><b>Name</b></th>
-      <th><b>Email</b></th>
-      <th><b>Contact</b></th>
-      <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% drivers.each do |d| %>
-        <tr>
-          <td><%= d.first_name%> <%= d.last_name%></td>
-          <td><%=d.email %></td>
-          <td>0<%=  number_to_phone(d.tel).chomp('.0') %></td>
-          <td>
-            <div  style="margin-top: -5px">
-              <%= link_to driver_path(d.id), class: 'btn btn-outline-warning', data: { disable_with: "Please wait..." } do %>
-                Manage
-              <% end %>
-            </div>
-          </td>
-        </tr>
+<% drivers.each do |d| %>
+  <p><strong>Name:</strong> <%= d.first_name %> <%=d.last_name %><br>
+    <strong>Email:</strong> <%= d.email %><br>
+    <strong>Contact:</strong> <%= d.tel %></p>
+      <%= link_to driver_path(d.id), class: 'btn btn-outline-warning', data: { disable_with: "Please wait..." } do %>
+        Manage
       <% end %>
-    </tbody>
-  </table>
-</div>
+    <hr>
+    <% end %>

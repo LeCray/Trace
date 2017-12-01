@@ -8,6 +8,7 @@
 					<%= button_to new_admin_path,method: 'get', class: 'btn btn-outline-primary' do %>
 				  		Register New Driver
 					<% end %>
+					<hr>
 					<%= render partial: 'list', locals: { drivers: @drivers} %>
 				</div>
 
