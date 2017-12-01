@@ -8,10 +8,10 @@ class SessionsController < ApplicationController
 		admin = Admin.find_by(email: params[:session][:email])
 		driver = Driver.find_by(email: params[:session][:email])
 
-		if admin && admin.role == "Admin"
+		if admin && admin.authenticate(params[:session][:password])
 			admin_log_in admin
 			redirect_to drivers_path
-		elsif driver 
+		elsif driver && driver.authenticate(params[:session][:password])
 			driver_log_in driver
 			redirect_to driver_path(driver.id)
 		else
@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
 	    	admin_log_out
 	    	redirect_to root_url
 	    else
-	    	driver_log_out
+	    	driver_log_out	
 	    	redirect_to root_url
 	    end
 	 end

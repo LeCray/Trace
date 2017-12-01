@@ -10,7 +10,7 @@ class Admin < ApplicationRecord
 	validates :last_name, presence: true
 	validates :email, presence: true
 	validates :role, presence: true, inclusion: {in: ROLES}
-	validates_confirmation_of :password
+	
 
 	before_save :format_name
 	before_save :format_role

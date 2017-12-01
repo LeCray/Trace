@@ -1,25 +1,14 @@
 <div class="container">
-	<div style="margin-top: 25px">
-		<% flash.each do |key, value| %>
-			<div style="text-align: center; " class="alert alert-<%= key %>">
-				<%= value %>
+	<div class="body">
+
+		<% if !flash[:notice].blank? %>
+			<div class="incorrect">
+			   <div class = "alert alert-danger">
+			      <%= flash[:notice] %>
+			   </div>
 			</div>
 		<% end %>
-	</div>	
 
-	<% if !flash[:notice].blank? %>
-		<div style="margin-bottom: -130px; text-align: center">
-		   <div class = "alert alert-danger">
-		      <%= flash[:notice] %>
-		   </div>
-		</div>
-	<% end %>
-
-
-
-<div class="container" style="margin-top: 200px; margin-bottom: 50px">
-
-	<div style="overflow: hidden;">
 		<% provide(:title, "Log in") %>
 		<div class="row">
 			<div class="col-md-6 col-md-offset-2">
@@ -44,7 +33,7 @@
 		</div>
 	</div>
 
-</div>
+</d	iv>
 
 
 <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>

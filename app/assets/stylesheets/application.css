@@ -21,6 +21,10 @@
 /*
 *= require drivers
 */
+/*
+*= require sessions
+*/
+
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';

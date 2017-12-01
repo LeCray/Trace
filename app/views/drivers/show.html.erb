@@ -1,24 +1,17 @@
 
-<div class="container">
-	<div class="row" style="margin-bottom: 20px">
-		<div class="col-xs-12">
-			<h1 style="font-family: Voltaire; margin-top: 80px; margin-bottom: -20px; font-size: 50px"> M.A.D </h1><br>
-			<% if admin_logged_in? %>
-				<div style="margin-bottom: -15px">
-					<%= button_to drivers_path, method: 'get', class: 'btn btn-outline-danger btn-large' do %>
-			  			Back to Drivers
-					<% end %>
-				</div>
-			<% end %>
-		</div>
-	</div>
-</div>
-
-
-
 
 <div class="container-fluid" style="background-color: #262626; height: 1100px">
-	<div class="container" style="">
+	<div class="container" style="padding-top: 110px">
+
+		<h1 class="dashboard"> DASHBOARD </h1>	
+
+		<% if admin_logged_in? %>
+			<div style="margin-bottom: -15px; text-align: center">
+				<%= button_to drivers_path, method: 'get', class: 'btn btn-outline-danger btn-large' do %>
+		  			Back to Drivers
+				<% end %>
+			</div>
+		<% end %>
 
 		<% if !flash[:notice].blank? %>
 			<div class="row" style="margin-top: 40px; margin-bottom: -20px">
