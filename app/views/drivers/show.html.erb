@@ -45,12 +45,13 @@
 			              Register New Car
 			            <% end %>
 			        <% end %>
+			        <button type="button" class="btn btn-outline btn-block" data-toggle="modal" data-target="#bookingModal">New Booking</button>
 				</div>
 				<div style="padding: 20px">	
-					<button type="button" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#bookingModal">New Booking</button>
+				
 
 					<button id="invoices-btn" class="btn btn-outline-danger btn-block" style="margin-bottom: -20px">Invoices</button><br>
-
+					<button id="bookings-btn" class="btn btn-outline-danger btn-block" >Bookings</button>
 					<button id="cars-btn" class="btn btn-outline-danger btn-block" >Cars</button>
 				</div>
 			</div>
@@ -62,6 +63,9 @@
 				<!-- Headings -->
 				<h3 id="invoices-heading" class="cards-heading"> 
 					INVOICES 
+				</h3>
+				<h3 id="bookings-heading"  class="cards-heading" style="display: none">
+					BOOKINGS
 				</h3>
 				<h3 id="cars-heading"  class="cards-heading" style="display: none">
 					CARS
@@ -81,6 +85,20 @@
 					<% end %>
 				</div>
 				<!-- END of Invoices -->
+
+				<!-- Bookings -->
+				<div id="bookings" class="bookings">
+
+					<% if @driver.bookings.size > 0 %>
+						<%= render partial: 'bookings_list', locals: { bookings: @bookings} %>
+					<% else %>
+						<div style="text-align: center; margin-top: 20px; padding: 40px">
+							<strong>No Bookings</strong>
+							<hr>
+						</div>
+					<% end %>
+				</div>
+				<!-- END of Bookings -->
 
 				<!-- Cars -->
 				<div id="cars" class="cars">
@@ -115,16 +133,34 @@
 		$('#cars-btn').click(function(){
 			$('#cars').show();
 			$('#cars-heading').show();
+
 			$('#invoices').hide(); 
 			$('#invoices-heading').hide();
+			$('#bookings').hide(); 
+			$('#bookings-heading').hide();
 		});	
 
 		$('#invoices-btn').click(function(){
-			$('#cars').hide();
-			$('#cars-heading').hide();
 			$('#invoices').show(); 
 			$('#invoices-heading').show();
+
+			$('#cars').hide();
+			$('#cars-heading').hide();
+			$('#bookings').hide(); 
+			$('#bookings-heading').hide();
+
 		});	
+
+		$('#bookings-btn').click(function(){
+			$('#bookings').show(); 
+			$('#bookings-heading').show();
+			
+			$('#cars').hide();
+			$('#cars-heading').hide();
+			$('#invoices').hide(); 
+			$('#invoices-heading').hide();
+
+		});
 
 	});
 </script>

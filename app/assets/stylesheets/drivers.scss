@@ -2,6 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.invoices {
+	background-color: white; 
+	padding: 20px; 
+	border-radius: 3px; 
+	height: 400px
+}
+
+.bookings {
+	background-color: white;
+	padding: 20px; 
+	border-radius: 3px; 
+	height: 400px;
+	display: none
+}
+
 .cars {
 	background-color: white;
 	padding: 20px; 
@@ -10,12 +25,6 @@
 	display: none
 }
 
-.invoices {
-	background-color: white; 
-	padding: 20px; 
-	border-radius: 3px; 
-	height: 400px
-}
 
 #cards {
 	background-color: #404040; 

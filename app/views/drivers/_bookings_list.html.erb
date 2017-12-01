@@ -1,0 +1,20 @@
+<div class="table-responsive">  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th><b>DATE</b></th>
+        <th><b>TIME</b></th>
+        <th><b>DESCRIPTION</b></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% bookings.each do |b| %>
+        <tr>
+          <td style="width: 100px"><%= b.date %></td>
+          <td style="width: 100px"><%= b.time.strftime("%X")  %></td>
+          <td><%= b.description %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
