@@ -1,10 +1,9 @@
 <% bookings.each do |b| %>
   <p><strong>  <%= b.date %> at <%= b.time.strftime("%X")  %></strong><br>
-  <i style="font-style: italic"><%= b.description %></i> 
+    <i style="font-style: italic"><%= b.description %></i> 
   </p>
   <%= link_to "Cancel",driver_booking_path(b.id), method: :delete, class: "btn btn-outline-danger", data: {confirm: "Cancel booking for #{b.date} at #{b.time.strftime('%X')}?", disable_with: "Cancelling..." } %>
   <hr>
-
 <% end %>
 
           

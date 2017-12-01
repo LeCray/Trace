@@ -39,9 +39,8 @@
 
 					<% if admin_logged_in? %>
 						<br>
-			            <button type="button" class="btn btn-outline" data-toggle="modal" data-target="#invoiceModal">New Invoice</button> <br>
-
-						<%= link_to new_driver_car_path(@driver.id), class: 'btn btn-outline' do %>
+			            <button type="button" class="btn btn-outline btn-block" data-toggle="modal" data-target="#invoiceModal">New Invoice</button> 
+						<%= link_to new_driver_car_path(@driver.id), class: 'btn btn-outline btn-block' do %>
 			              Register New Car
 			            <% end %>
 			        <% end %>
