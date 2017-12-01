@@ -35,6 +35,7 @@ class DriversController < ApplicationController
 
 		@car = Car.new
 		@invoice = Invoice.new
+		@booking = Booking.new
 	end
 
 private

@@ -34,9 +34,6 @@ class InvoicesController < ApplicationController
 	  	@invoice.remove_attachment
 	  	redirect_to driver_path(@driver.id), notice:  "#{@invoice.attachment.file.filename} has been deleted."	
 	  	@invoice.destroy
-	  	
-
-	  
 	end
 
 	private

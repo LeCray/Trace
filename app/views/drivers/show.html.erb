@@ -39,7 +39,7 @@
 
 					<% if admin_logged_in? %>
 						<br>
-			            <button type="button" class="btn btn-outline" data-toggle="modal" data-target="#myModal">New Invoice</button> <br>
+			            <button type="button" class="btn btn-outline" data-toggle="modal" data-target="#invoiceModal">New Invoice</button> <br>
 
 						<%= link_to new_driver_car_path(@driver.id), class: 'btn btn-outline' do %>
 			              Register New Car
@@ -47,7 +47,10 @@
 			        <% end %>
 				</div>
 				<div style="padding: 20px">	
+					<button type="button" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#bookingModal">New Invoice</button>
+
 					<button id="invoices-btn" class="btn btn-outline-danger btn-block" style="margin-bottom: -20px">Invoices</button><br>
+
 					<button id="cars-btn" class="btn btn-outline-danger btn-block" >Cars</button>
 				</div>
 			</div>
@@ -100,7 +103,9 @@
 	</div>
 	<!-- END of Container -->
 
-<%= render partial: "modal" %>
+<%= render partial: "invoice_modal" %>
+<%= render partial: "booking_modal" %>
+
 
 
 
