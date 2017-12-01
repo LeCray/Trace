@@ -1,0 +1,82 @@
+@media (max-width: 480px) {
+  /* line 5, C:/mahele_project/trace/app/assets/stylesheets/drivers.scss */
+  #cards {
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+}
+/* line 12, C:/mahele_project/trace/app/assets/stylesheets/drivers.scss */
+#invoice-heading {
+  color: red;
+}
+@media (max-width: 480px) {
+  #cards {
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+}
+
+
+#invoice-heading {
+
+	color: red;
+}
+/* line 6, C:/mahele_project/trace/app/assets/stylesheets/pages.scss */
+.parallax {
+  background-image: url("https://ak6.picdn.net/shutterstock/videos/27478426/thumb/10.jpg");
+  z-index: 1;
+  height: 450px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* line 18, C:/mahele_project/trace/app/assets/stylesheets/pages.scss */
+#main {
+  position: relative;
+}
+
+/* line 21, C:/mahele_project/trace/app/assets/stylesheets/pages.scss */
+.overlay {
+  background: rgba(0, 0, 0, 0.1);
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+ /*
+
+ */
+
+/*
+
+*/
+
+
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+.rails-bootstrap-forms-date-select select,
+.rails-bootstrap-forms-time-select select,
+.rails-bootstrap-forms-datetime-select select {
+  display: inline-block;
+  width: auto;
+}
+
+.rails-bootstrap-forms-error-summary {
+  margin-top: 10px;
+}

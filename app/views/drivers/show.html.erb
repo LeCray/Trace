@@ -17,8 +17,8 @@
 
 
 
-<div class="container-fluid" style="background-color: #262626; height: 1000px">
-	<div class="container" style="height: 500px">
+<div class="container-fluid" style="background-color: #262626; height: 1100px">
+	<div class="container" style="">
 
 		<% if !flash[:notice].blank? %>
 			<div class="row" style="margin-top: 40px; margin-bottom: -20px">
@@ -33,6 +33,7 @@
 		<div class="row" style="margin-top: 40px;">
 			<!-- Driver -->
 			<div class="col-xs-12 col-lg-4" style="background-color: #404040; padding: 20px; border-radius: 3px">
+
 				<h3 style="color: white; font-family: Voltaire; text-align: center"> DRIVER </h3>
 				<div style="background-color: white; padding: 20px; border-radius: 3px">
 					<strong>First Name:</strong>  <%= @driver.first_name%> <br>
@@ -60,19 +61,19 @@
 			<!-- END -->
 
 			
-			<div  class="col-xs-12 col-lg-7" id="cards"  style="background-color: #404040; margin-left: 30px; padding: 20px; border-radius: 3px;">
+			<div  class="col-xs-12 col-lg-7" id="cards" >
 
 				<!-- Headings -->
-				<h3 id="invoices-heading" style="color: white; font-family: Voltaire; text-align: center "> 
+				<h3 id="invoices-heading" class="cards-heading"> 
 					INVOICES 
 				</h3>
-				<h3 id="cars-heading" style="color: white; font-family: Voltaire; display: none; text-align: center ">
+				<h3 id="cars-heading"  class="cards-heading" style="display: none">
 					CARS
 				</h3>
 				<!-- END of Headings -->
 
 				<!-- Invoices -->
-				<div id="invoices" style="background-color: white; padding: 20px; border-radius: 3px; height: 400px">
+				<div id="invoices" class="invoices">
 
 					<% if @driver.invoices.size > 0 %>
 						<%= render partial: 'invoices_list', locals: { invoices: @invoices} %>
@@ -86,7 +87,7 @@
 				<!-- END of Invoices -->
 
 				<!-- Cars -->
-				<div id="cars" style="background-color: white; padding: 20px; border-radius: 3px; height: 400px; display: none">
+				<div id="cars" class="cars">
 
 					<% if @driver.cars.size > 0 %>
 						<%= render partial: 'car_list', locals: { cars: @cars} %>

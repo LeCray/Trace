@@ -18,6 +18,10 @@
  *= require rails_bootstrap_forms
  */
 
+/*
+*= require drivers
+*/
+
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
