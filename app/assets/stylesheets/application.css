@@ -24,6 +24,12 @@
 /*
 *= require sessions
 */
+/*
+*= require bookings
+*/
+/*
+*= require invoices
+*/
 
 
 @import 'bootstrap-sprockets';

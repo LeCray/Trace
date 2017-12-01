@@ -1,42 +1,33 @@
+<div class="container-fluid" style="background-color: #262626; height: 1000px">
+	<div class="container">
+	
+		<div class="row" style="margin-top: 130px;">
+			 <%= link_to driver_path(@driver.id), class: 'btn btn-outline-warning', data: { disable_with: "Please wait..." } do %>
+		  		 Back
+              <% end %> <br>
 
-<div class="container" style="padding-top: 100px">
-	<div class="col-xs-9 col-md-offset-1">
+			<div class="col-xs-12 col-lg-8 col-lg-offset-2" style="	background-color: #404040; padding: 20px; 
+	border-radius: 3px;">
+				<h3 id="cards-heading"> 
+					INVOICES 
+				</h3>
+				<div id="invoices">
 
-	<% if !flash[:notice].blank? %>
-	   <div class = "alert alert-info">
-	      <%= flash[:notice] %>
-	   </div>
-	<% end %>
+					<% @invoices.each do |i| %>
+					  <p>
+					    <strong><%= i.created_at.strftime("%Y-%m-%d") %></strong><br>
+					    <i style="font-style: italic"> <%= i.attachment.file.filename %></i><br>
+					  </p>
+					    <%= link_to "View", i.attachment_url, target: :_blank, class: "btn btn-outline-primary" %>
+					      
+				      <% if admin_logged_in? %>
+				        <%= link_to "Delete",driver_invoice_path(i.id), method: :delete, class: "btn btn-outline-danger", data: {confirm: "Are you sure that you wish to delete #{i.attachment.file.filename}?", disable_with: "Deleting..." }%>
+				      <% end %>
+					   <hr>
 
-	<br />
-
-	<%= link_to "Back To Driver", driver_path(@driver.id), class: "btn btn-outline-danger" %>
-	<br />
-	<br />
-
-	<table class = "table table-striped">
-	   <thead>.
-	      <tr>
-	         <th>CREATED AT</th>
-	         <th>DESCRIPTION</th>
-	         <th></th>
-	      </tr>
-	   </thead>
-	   
-	   <tbody>
-	      <% @invoices.each do |invoice| %>
-	         
-	         <tr>
-	            <td><%= invoice.created_at.strftime("%Y-%m-%d, %X") %></td>
-	            <td><%= invoice.attachment.file.filename %></td>
-	            <td><%= link_to "View Invoice", invoice.attachment_url %></td>
-	         </tr>
-	         
-	      <% end %>
-	   </tbody>
-	   
-	</table>
-	<div style="text-align: center">
-		<%= will_paginate @invoices, renderer: BootstrapPagination::Rails %>
+					<% end %> 
+				</div>
+			</div>
+		</div>
 	</div>
 </div>

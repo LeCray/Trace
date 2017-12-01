@@ -1,28 +1,10 @@
-<div class="table-responsive">  
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th><b>REG</b></th>
-        <th><b>MAKE</b></th>
-        <th><b>MODEL</b></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% cars.each do |c| %>
-        <tr>
-          <td><%= c.vehicle_reg %></td>
-          <td><%= c.make%></td>
-          <td><%= c.model%></td>
-          <td>
-            <div  style="margin-top: -5px; margin-left: -5px">
-              <%= button_to '#', class: 'btn btn-success', :disabled => "disabled" do %>
-                  Data Stream
-              <% end %>
-            </div>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+<% cars.each do |c| %>
+  <p>
+    <strong>Registered Cars</strong> <br>
+    <hr>
+    <strong>Make:</strong> <i style="font-style: italic"> <%= c.make %></i><br>
+    <strong>Model:</strong> <i style="font-style: italic"> <%= c.make %></i><br>
+    <strong>Reg:</strong> <i style="font-style: italic"> <%= c.vehicle_reg %> </i>
+  </p>
+  <hr>
+<% end %> 

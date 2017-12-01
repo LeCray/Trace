@@ -1,0 +1,25 @@
+<div class="container-fluid" style="background-color: #262626; height: 1000px">
+	<div class="container">
+		<div class="row" style="margin-top: 130px;">
+		 <%= link_to driver_path(@driver.id), class: 'btn btn-outline-warning', data: { disable_with: "Please wait..." } do %>
+		  		 Back
+              <% end %>
+			<div class="col-xs-12 col-lg-8 col-lg-offset-2" style="	background-color: #404040; padding: 20px; 
+	border-radius: 3px;">
+				<h3 id="cards-heading">
+					BOOKINGS
+				</h3>
+				<div id="bookings">
+
+					<% @bookings.each do |b| %>
+					  <p><strong>  <%= b.date %> at <%= b.time.strftime("%X")  %></strong><br>
+					    <i style="font-style: italic"><%= b.description %></i> 
+					  </p>
+				
+					  <hr>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>    

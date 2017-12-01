@@ -1,45 +1,19 @@
-<div class="table-responsive">
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><b>CREATED AT</b></th>
-      <th><b>DESCRIPTION</b></th>
-      <th></th>
-      <th></th>
+<% invoices.each do |i| %>
+  <p>
+    <strong><%= i.created_at.strftime("%Y-%m-%d") %></strong><br>
+    <i style="font-style: italic"> <%= i.attachment.file.filename %></i><br>
+  </p>
+    <%= link_to "View", i.attachment_url, target: :_blank, class: "btn btn-outline-primary" %>
+      
+      <% if admin_logged_in? %>
+        <%= link_to "Delete",driver_invoice_path(i.id), method: :delete, class: "btn btn-outline-danger", data: {confirm: "Are you sure that you wish to delete #{i.attachment.file.filename}?", disable_with: "Deleting..." }%>
+      <% end %>
+    <hr>
 
-    </tr>
-  </thead>
-  <tbody>
-    <% invoices.each do |i| %>
-        <tr>
-          <td><%= i.created_at.strftime("%Y-%m-%d") %></td>
-          <td><%= i.attachment.file.filename %></td>
-         
-            <td style="width: 50px">
-              <div style="margin-top: -3px">
-                <%= link_to "View", i.attachment_url, target: :_blank, class: "btn btn-primary" %>
-              </div>
-            </td>
-            <td>
-              <div style="margin-top: -3px">
-                <% if admin_logged_in? %>
-                  <%= link_to "Delete",driver_invoice_path(i.id), method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure that you wish to delete #{i.attachment.file.filename}?", disable_with: "Deleting..." }%>
-                <% end %>
-              </div>
-            </td>
-        </tr>
     <% end %> 
-  </tbody>
-</table>
-</div>
 
-
-
-
-
-
-
-
-<div style="text-align: center">    
-  <%= will_paginate @invoices, renderer: BootstrapPagination::Rails %>
+<div style="text-align: center">
+  <% if invoices.count > 2  %>
+    <%= link_to "See Older",driver_invoices_path(@driver.id), class: "btn btn-outline" %>  
+  <% end %>
 </div>

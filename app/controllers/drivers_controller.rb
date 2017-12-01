@@ -6,7 +6,7 @@ class DriversController < ApplicationController
 	before_action :keep_drivers_out_of_index, only: :index
 
 	def index
-		@drivers = Driver.all.order('created_at')
+		@drivers = Driver.all.order('created_at DESC')
 	end
 
 
@@ -30,9 +30,9 @@ class DriversController < ApplicationController
 
 	def show
 		@driver = Driver.find(params[:id])
-		@cars = @driver.cars.all.order('created_at')
-		@invoices = @driver.invoices.all.order('created_at').paginate(page: params[:page], per_page:10)
-		@bookings = @driver.bookings.all.order('created_at').paginate(page: params[:page], per_page:10)
+		@cars = @driver.cars.all.order('created_at DESC')
+		@invoices = @driver.invoices.all.order('created_at DESC').paginate(page: params[:page], per_page:10)
+		@bookings = @driver.bookings.all.order('created_at DESC').paginate(page: params[:page], per_page:10)
 
 		@car = Car.new
 		@invoice = Invoice.new

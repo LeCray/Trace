@@ -1,3 +1,22 @@
 // Place all the styles related to the invoices controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#cards {
+	background-color: #404040; 
+	margin-left: px; 
+	padding: 20px; 
+	border-radius: 3px;
+}
+
+#invoices {
+	background-color: white;
+	padding: 20px; 
+	border-radius: 3px; 
+	min-height: 400px;
+}
+
+#cards-heading {
+	color: white; 
+	font-family: Voltaire; 
+	text-align: center
+}
