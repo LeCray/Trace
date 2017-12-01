@@ -1,20 +1,11 @@
-<div class="table-responsive">  
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th><b>DATE</b></th>
-        <th><b>TIME</b></th>
-        <th><b>DESCRIPTION</b></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% bookings.each do |b| %>
-        <tr>
-          <td style="width: 100px"><%= b.date %></td>
-          <td style="width: 100px"><%= b.time.strftime("%X")  %></td>
-          <td><%= b.description %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+<% bookings.each do |b| %>
+  <p><strong>  <%= b.date %> at <%= b.time.strftime("%X")  %></strong><br>
+  <i style="font-style: italic"><%= b.description %></i> 
+  </p>
+  <%= link_to "Cancel",driver_booking_path(b.id), method: :delete, class: "btn btn-outline-danger", data: {confirm: "Cancel booking for #{b.date} at #{b.time.strftime('%X')}?", disable_with: "Cancelling..." } %>
+  <hr>
+
+<% end %>
+
+          
+
