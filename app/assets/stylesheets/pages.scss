@@ -6,7 +6,7 @@
 .parallax { 
     background-image: url("https://ak6.picdn.net/shutterstock/videos/27478426/thumb/10.jpg");
     z-index: 1;
-    height: 450px; 
+    height: 900px; 
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -20,6 +20,22 @@ position:relative;
 }
 .overlay {
    background: rgba(0, 0, 0, 0.1)
+}
+
+.heading {
+	margin-top: 200px; 
+	margin-bottom: 20px; 
+	margin-left: 50px; 
+	color: white;
+	font-family: Voltaire;
+	font-size: 50px; 
+}
+
+.phrase {
+	font-family: Voltaire;
+	font-style: italic;
+	color: white;
+	margin-left: 50px;
 }
 
 
