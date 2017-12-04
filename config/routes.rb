@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
  	
-  get 'password_reset/new'
-
-  get 'password_reset/edit'
+ 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   	get '/login' => 'sessions#new'
@@ -21,6 +19,10 @@ Rails.application.routes.draw do
 	resources :admins
 
 	resources :account_activations, only: [:edit]
+
+	resources :password_reset
+
+
 
 
 end

@@ -1,2 +1,28 @@
-<h1>PasswordReset#new</h1>
-<p>Find me in app/views/password_reset/new.html.erb</p>
+<div class="container">
+	<div class="body">
+
+		<% if !flash[:notice].blank? %>
+			<div class="incorrect">
+			   <div class = "alert alert-danger">
+			      <%= flash[:notice] %>
+			   </div>
+			</div>
+		<% end %>
+
+		<div class="row">
+		  <div class="col-md-6 col-md-offset-3">
+
+			<% provide(:title, "Forgot password") %>
+			<h2>Forgot Password</h2>
+			<hr style="margin-bottom: 20px">
+		    <%= form_for(:password_reset, url: password_reset_index_path) do |f| %>
+		      <%= f.label :email %>
+		      <%= f.email_field :email, class: 'form-control' %>
+
+		      <%= f.submit "Submit", class: "btn btn-primary" %>
+		    <% end %>
+		  </div>
+		</div>
+
+	</div>
+</div>
