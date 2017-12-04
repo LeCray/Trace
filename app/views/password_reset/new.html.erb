@@ -3,9 +3,15 @@
 
 		<% if !flash[:notice].blank? %>
 			<div class="incorrect">
-			   <div class = "alert alert-danger">
-			      <%= flash[:notice] %>
-			   </div>
+				<% if flash[:notice] == "Email not found" %>
+				   <div class = "alert alert-danger">
+				      <%= flash[:notice] %>
+				   </div>
+				<% else %>
+					<div class = "alert alert-info">
+				      <%= flash[:notice] %>
+				   </div>
+				<% end %>
 			</div>
 		<% end %>
 

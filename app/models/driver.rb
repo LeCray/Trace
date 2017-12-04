@@ -1,5 +1,7 @@
 class Driver < ApplicationRecord
 
+	attr_accessor :reset_token
+
 	has_secure_password
 
 	has_many :cars
@@ -26,4 +28,16 @@ class Driver < ApplicationRecord
     def downcase_email
       self.email = email.downcase
     end
+
+    	# Returns a random token.
+	def Driver.new_token
+		SecureRandom.urlsafe_base64
+	end
+
+    # Returns the hash digest of the given string.
+	def Driver.digest(string)
+		cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+		                                          BCrypt::Engine.cost
+		BCrypt::Password.create(string, cost: cost)
+	end
 end
