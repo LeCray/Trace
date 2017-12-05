@@ -22,7 +22,7 @@
 			<% provide(:title, 'Change password') %>
 			<h2>Change Password</h2>
 			<hr style="margin-bottom: 20px">
-		    <%= form_for(@driver, url: password_change_path(params[:id])) do |f| %>
+		    <%= form_for(@driver, url: driver_password_change_path(params[:id])) do |f| %>
 		      <%= render 'error_messages' %>
 
 		      <%= hidden_field_tag :email, @driver.email %>
