@@ -22,6 +22,11 @@ Rails.application.routes.draw do
 
 	resources :password_reset
 
+	get '/admin_password_change' => 'password_change#admin_edit'
+	patch '/admin_password_change' => 'password_change#admin_update'
+
+	get '/driver_password_change' => 'password_change#driver_edit'
+	patch '/driver_password_change' => 'password_change#driver_update'
 
 
 

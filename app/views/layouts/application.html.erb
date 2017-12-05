@@ -59,7 +59,7 @@
 										<li><%= link_to "Drivers", drivers_path %></li>
 										<li><%= link_to "Create User", new_admin_path %></li>
 									<% end %>
-									<li><%= link_to "Settings", '#' %></li>
+									<li><%= link_to "Change Password", admin_password_change_path(@current_admin) %></li>
 									<li class="divider"></li>
 									<li>
 					              		<%= link_to "Log out", logout_path, method: :delete %>
@@ -74,7 +74,7 @@
 					            </a>
 					            <ul class="dropdown-menu" style="text-align: left">
 					            	<li><%= link_to "My Dashboard", driver_path(@current_driver.id) %></li>
-									<li><%= link_to "Settings", '#' %></li>
+									<li><%= link_to "Change Password", driver_password_change_path(@current_driver) %></li>
 									<li class="divider"></li>
 									<li>
 					              		<%= link_to "Log out", logout_path, method: :delete %>
