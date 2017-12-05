@@ -1,7 +1,8 @@
 class PasswordResetController < ApplicationController
 	include SessionsHelper
 	before_action :get_driver, only: [:edit, :update]
-	#before_action :valid_driver, only: [:edit, :update]
+	before_action :valid_driver, only: [:edit, :update]
+	before_action :check_expiration, only: [:edit, :update]    # Case (1)
     
 
 
@@ -26,10 +27,8 @@ class PasswordResetController < ApplicationController
 
 	def update
 		 if params[:driver][:password].empty? 
-			 @driver.errors.add(:password, "can't be empty")
-		      render 'edit'
-		elsif @driver.check_expiration?
-			redirect_to new_password_reset_url, notice: "Password reset has expired."
+			@driver.errors.add(:password, "can't be empty")
+		    render 'edit'
 		elsif @driver.update_attributes(driver_params)          # Case (4)
 			driver_log_in @driver
 			redirect_to @driver, notice: "Password has been reset"
