@@ -20,9 +20,8 @@ class PasswordChangeController < ApplicationController
 	 	if params[:admin][:password].empty? 
 			@admin.errors.add(:password, "can't be empty")
 		    render 'admin_edit'
-		elsif @admin.update_attributes(admin_params)          # Case (4)
-				admin_log_in @admin
-				redirect_to @admin, notice: "Your password has been changed"
+		elsif @admin.update_attributes!(admin_params)          # Case (4)
+				redirect_to drivers_path, notice: "Your password has been changed"
 		else
 		render 'edit'                                     # Case (2)
 		end
@@ -33,13 +32,22 @@ class PasswordChangeController < ApplicationController
 	 	if params[:driver][:password].empty? 
 			@driver.errors.add(:password, "can't be empty")
 		    render 'driver_edit'
-		elsif @driver.update_attributes(driver_params)          # Case (4)
-				driver_log_in @driver
+		elsif @driver.update_attributes!(driver_params)          # Case (4
 				redirect_to @driver, notice: "You password has been changed"
 		else
 		render 'edit'                                     # Case (2)
 		end
 	end
+
+private
+
+	def admin_params
+      params.require(:admin).permit(:password, :password_confirmation)
+    end
+
+	def driver_params
+      params.require(:driver).permit(:password, :password_confirmation)
+    end
 
 
 end
