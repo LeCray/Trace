@@ -21,11 +21,12 @@
 			<% provide(:title, "Forgot password") %>
 			<h2>Forgot Password</h2>
 			<hr style="margin-bottom: 20px">
+			
 		    <%= form_for(:password_reset, url: password_reset_index_path) do |f| %>
-		      <%= f.label :email %>
-		      <%= f.email_field :email, class: 'form-control' %>
+				<%= f.label :email %>
+				<%= f.email_field :email, class: 'form-control' %>
 
-		      <%= f.submit "Submit", class: "btn btn-primary" %>
+				<%= f.submit "Submit", class: "btn btn-primary" %>
 		    <% end %>
 		  </div>
 		</div>

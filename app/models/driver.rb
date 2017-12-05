@@ -1,6 +1,6 @@
 class Driver < ApplicationRecord
 
-	attr_accessor :reset_token
+	attr_accessor :reset_token, :resent_sent_at
 
 	has_secure_password
 
@@ -23,6 +23,13 @@ class Driver < ApplicationRecord
 	def send_password_reset_email
 		DriverMailer.password_reset(self).deliver_now
 	end
+
+	 # Returns true if the given token matches the digest.
+	def authenticated?(attribute, token)
+		digest = send("#{attribute}_digest")
+		return false if digest.nil?
+		BCrypt::Password.new(digest).is_password?(token)
+	end
 	
 	  # Converts email to all lower-case.
     def downcase_email
@@ -39,5 +46,10 @@ class Driver < ApplicationRecord
 		cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
 		                                          BCrypt::Engine.cost
 		BCrypt::Password.create(string, cost: cost)
+	end
+
+	# Returns true if a password reset has expired.
+	def password_reset_expired?
+		reset_sent_at < 2.hours.ago
 	end
 end

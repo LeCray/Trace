@@ -1,2 +1,43 @@
-<h1 style="margin-top: 50px">PasswordReset#edit</h1>
-<p>Find me in app/views/password_reset/edit.html.erb</p>
+<div class="container">
+	<div class="body">
+
+		<% if !flash[:notice].blank? %>
+			<div class="incorrect">
+				<% if flash[:notice] == "Email not found" || "Can't be empty" %>
+				   <div class = "alert alert-danger">
+				      <%= flash[:notice] %>
+				   </div>
+				<% else %>
+					<div class = "alert alert-info">
+				      <%= flash[:notice] %>
+				   </div>
+				<% end %>
+			</div>
+		<% end %>
+
+
+
+		<div class="row">
+		  <div class="col-md-6 col-md-offset-3">
+			<% provide(:title, 'Reset password') %>
+			<h2>Reset Password</h2>
+			<hr style="margin-bottom: 20px">
+		    <%= form_for(@driver, url: password_reset_path(params[:id])) do |f| %>
+		      <%= render 'error_messages' %>
+
+		      <%= hidden_field_tag :email, @driver.email %>
+
+		      <%= f.label :password %>
+		      <%= f.password_field :password, class: 'form-control' %>
+
+		      <%= f.label :password_confirmation, "Confirmation" %>
+		      <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+		      <%= f.submit "Update password", class: "btn btn-primary" %>
+		    <% end %>
+		  </div>
+		</div>
+
+	</div>
+</div>
+
