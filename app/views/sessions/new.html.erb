@@ -20,16 +20,17 @@
 				<hr style="margin-bottom: 30px">
 
 				<%= bootstrap_form_for(:session, url: login_path) do |f| %>
-				<%= f.email_field :email, label: 'Email'%><br>
-			    <%= f.password_field :password, label: 'Password'%>
+					<%= f.email_field :email, label: 'Email'%><br>
+				    <%= f.password_field :password, label: 'Password'%>
 
-			    <%= link_to "Forgot Password", new_password_reset_path %>
-			    <div style="margin-top: 30px">
-			    	<%= f.submit "Log in", class: "btn btn-outline" %><br>
-			    </div>
-			    <% end %>
-
-			  
+				    <%= link_to "Forgot Password", new_password_reset_path %>
+				    <div style="margin-top: 30px">
+				    	<%= f.submit "Log in", class: "btn btn-outline" %>
+				    	<%= link_to root_path, class: 'btn btn-outline-warning' do %>
+			              Cancel
+			            <% end %>
+				    </div>
+			    <% end %>			  		   
 
 			</div>
 			
