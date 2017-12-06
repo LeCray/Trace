@@ -92,4 +92,7 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :mailgun
   config.action_mailer.mailgun_settings = {domain: 'sandboxe77937ba5d82405b89b778812a2bc57a.mailgun.org'}
+
+  # Default Mailer Host
+  Rails.application.routes.default_url_options[:host] = 'sandboxe77937ba5d82405b89b778812a2bc57a.mailgun.org'
 end
