@@ -36,6 +36,9 @@
 
 					<div style="margin-top: 30px">
 						<%= f.submit "Update password", class: "btn btn-outline" %>
+						<%= link_to driver_path(@driver.id), class: 'btn btn-outline-warning' do %>
+			              Cancel
+			            <% end %>
 					</div>	
 			    <% end %>
 		  </div>

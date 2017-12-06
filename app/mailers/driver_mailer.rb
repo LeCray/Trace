@@ -7,6 +7,8 @@
   #
 	def password_reset(driver)
 	    @driver = driver
-	    mail to: driver.email, subject: "Password reset"
+	    mail to: driver.email, subject: "M.A.D Password Reset"
 	end
+
+
 end

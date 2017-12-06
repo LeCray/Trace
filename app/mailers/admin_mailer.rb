@@ -5,10 +5,10 @@ class AdminMailer < ApplicationMailer
 	    mail to: admin.email, subject: "MAD Account Activation"
   	end
 
-  	def admin_password_reset(driver)
+  	def admin_password_reset(admin)
 	    @admin = admin
 	    mail to: admin.email, subject: "Password reset"
 	end
 
-	
+
 end

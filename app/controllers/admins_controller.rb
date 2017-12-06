@@ -18,7 +18,7 @@ class AdminsController < ApplicationController
 		if @admin.role == "Admin"
 			if @admin.save!
 	      		flash.now[:success] = "Admin has been created"
-	      		#AdminMailer.account_activation(@admin).deliver_now
+	      		#AdminMailer.send_simple_message.deliver_now
 	      		render new_admin_path
 			else
 				render 'new'
