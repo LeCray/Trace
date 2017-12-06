@@ -13,7 +13,7 @@ class PasswordResetController < ApplicationController
 		@driver = Driver.find_by(email: params[:password_reset][:email].downcase)
 		if @driver
 			@driver.create_reset_digest
-			@driver.send_password_reset_email
+			
 			DriverMailer.password_reset(@driver).deliver_now
 			redirect_to new_password_reset_path, notice: "An email to reset your password has been sent"
 		else
