@@ -1,7 +1,7 @@
 <% drivers.each do |d| %>
   <p><strong>Name:</strong> <%= d.first_name %> <%=d.last_name %><br>
     <strong>Email:</strong> <%= d.email %><br>
-    <strong>Contact:</strong> <%= d.tel %></p>
+    <strong>Contact:</strong> 0<%=  number_to_phone(d.tel).chomp('.0') %></p>
       <%= link_to driver_path(d.id), class: 'btn btn-outline-warning', data: { disable_with: "Please wait..." } do %>
         Manage
       <% end %>

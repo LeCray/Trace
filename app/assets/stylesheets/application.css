@@ -29,7 +29,11 @@
 */
 /*
 *= require invoices
+*= require password_change
+*= requre admins
+*= require password_reset
 */
+	
 
 
 @import 'bootstrap-sprockets';

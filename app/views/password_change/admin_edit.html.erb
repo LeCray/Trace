@@ -1,43 +1,55 @@
 <div class="container">
 	<div class="body">
 
-		<% if !flash[:notice].blank? %>
-			<div class="incorrect">
-				<% if flash[:notice] == "Email not found" || "Can't be empty" %>
-				   <div class = "alert alert-danger">
-				      <%= flash[:notice] %>
-				   </div>
-				<% else %>
-					<div class = "alert alert-info">
-				      <%= flash[:notice] %>
-				   </div>
+		<div class="row change" >
+			<div class="col-xs-12 col-lg-6 col-lg-offset-2">
+				<% if !flash[:notice].blank? %>
+					<div class="incorrect">
+						<% if flash[:notice] == "Email not found" || "Can't be empty" %>
+						   <div class = "alert alert-danger" style="border-radius: 2px">
+						      <%= flash[:notice] %>
+						   </div>
+						<% else %>
+							<div class = "alert alert-info" style="border-radius: 2px">
+						      <%= flash[:notice] %>
+						   </div>
+						<% end %>
+					</div>
 				<% end %>
 			</div>
-		<% end %>
+		</div>
 
 
 
-		<div class="row">
-		  <div class="col-md-6 col-md-offset-3">
-			<% provide(:title, 'Change password') %>
-			<h2>Change Password</h2>
-			<hr style="margin-bottom: 20px">
-		    <%= form_for(@admin, url: admin_password_change_path(params[:id])) do |f| %>
-		      <%= render 'error_messages' %>
+		<% provide(:title, "Change password") %>
+		<div id="change" class="row">
+			<div class="col-xs-12 col-lg-6 col-lg-offset-2 change">
+				<h5 style="color: grey"> CHANGE PASSWORD </h5>
+				<hr style="margin-bottom: 30px">
+		    
+		    	<%= bootstrap_form_for(@admin, url: admin_password_change_path(params[:id])) do |f| %>
+					
 
-		      <%= hidden_field_tag :email, @admin.email %>
+					<%= hidden_field_tag :email, @admin.email %>
+					<%= f.password_field :password, class: 'form-control' %><br>
+					<%= f.password_field :password_confirmation, class: 'form-control' %>
 
-		      <%= f.label :password %>
-		      <%= f.password_field :password, class: 'form-control' %>
-
-		      <%= f.label :password_confirmation, "Confirmation" %>
-		      <%= f.password_field :password_confirmation, class: 'form-control' %>
-
-		      <%= f.submit "Update password", class: "btn btn-primary" %>
-		    <% end %>
+					<div style="margin-top: 30px">
+						<%= f.submit "Update password", class: "btn btn-outline" %>
+					</div>	
+			    <% end %>
 		  </div>
 		</div>
 
 	</div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script src="https://cdn.rawgit.com/HubSpot/tether/v1.3.4/dist/js/tether.min.js"></script>
+<script src="https://cdn.rawgit.com/FezVrasta/bootstrap-material-design/dist/dist/bootstrap-material-design.iife.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+<script>
+  $('body').bootstrapMaterialDesign();
+</script>
 

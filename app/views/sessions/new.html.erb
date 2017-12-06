@@ -1,17 +1,21 @@
 <div class="container">
 	<div class="body">
 
-		<% if !flash[:notice].blank? %>
-			<div class="incorrect">
-			   <div class = "alert alert-danger">
-			      <%= flash[:notice] %>
-			   </div>
+		<div class="row change" >
+			<div class="col-xs-12 col-lg-6 col-lg-offset-2">
+				<% if !flash[:notice].blank? %>
+					<div class="incorrect">
+					   <div class = "alert alert-danger" style="border-radius: 2px">
+					      <%= flash[:notice] %>
+					   </div>
+					</div>
+				<% end %>
 			</div>
-		<% end %>
+		</div>
 
 		<% provide(:title, "Log in") %>
-		<div class="row">
-			<div class="col-md-6 col-md-offset-2">
+		<div class="row change">
+			<div class="col-xs-12 col-lg-6 col-lg-offset-2">
 				<h5 style="color: grey"> LOGIN </h5>
 				<hr style="margin-bottom: 30px">
 
@@ -19,7 +23,7 @@
 				<%= f.email_field :email, label: 'Email'%><br>
 			    <%= f.password_field :password, label: 'Password'%>
 
-			    <%= link_to "forgot password", new_password_reset_path %>
+			    <%= link_to "Forgot Password", new_password_reset_path %>
 			    <div style="margin-top: 30px">
 			    	<%= f.submit "Log in", class: "btn btn-outline" %><br>
 			    </div>
@@ -34,7 +38,7 @@
 		</div>
 	</div>
 
-</d	iv>
+</div>
 
 
 <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>

@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
 		if @booking 
 
 			if @booking.save!
-			redirect_to driver_path(@driver.id), notice: "Your booking has been placed"
+			redirect_to driver_path(@driver.id), notice: "Your booking has been placed"	
 			else
 			redirect_to driver_path(@driver.id)
 			end
