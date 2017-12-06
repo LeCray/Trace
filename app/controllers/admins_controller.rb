@@ -1,6 +1,8 @@
 class AdminsController < ApplicationController
 	include SessionsHelper
 
+	
+
 	def index
 	end
 
@@ -28,6 +30,7 @@ class AdminsController < ApplicationController
 			@driver = Driver.new(driver_params)
 
 			if @driver.save!
+				@driver.email = @driver.email.downcase
 	      		flash.now[:info] = "Success"
 	      		#AdminMailer.account_activation(@admin).deliver_now
 	      		#flash.now[:info] = "An activation link has been sent their email address"
@@ -53,6 +56,7 @@ class AdminsController < ApplicationController
 	def format_name
 		self.first_name = self.first_name.capitalize
 		self.last_name = self.last_name.capitalize
+		self.email = self.email.downcase
 	end
 
 	def format_role
