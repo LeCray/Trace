@@ -15,8 +15,12 @@
  */
 
 /*
-*= require rails_bootstrap_forms
 *= require drivers
+*/
+
+/*
+*= require rails_bootstrap_forms
+
 *= require sessions
 *= require bookings
 *= require invoices
