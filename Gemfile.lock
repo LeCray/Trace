@@ -217,7 +217,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   compass-rails!
   jbuilder (~> 2.5)
-  mailgunner
+  mailgunner (~> 2.4)
   pg
   puma (~> 3.7)
   rails (~> 5.1.4)

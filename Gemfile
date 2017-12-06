@@ -62,7 +62,7 @@ gem 'bootstrap-sass'
 
 gem 'carrierwave'
 
-gem 'mailgunner'
+gem 'mailgunner', '~> 2.4'
 
 gem 'will_paginate-bootstrap'
 
