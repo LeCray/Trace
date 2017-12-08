@@ -35,7 +35,7 @@
 					<%= f.password_field :password_confirmation, :required => 'required', class: 'form-control' %>
 
 					<div style="margin-top: 30px">
-						<%= f.submit "Update password", class: "btn btn-outline" %>
+						<%= f.submit "Update password", class: "btn btn-outline", data: {confirm: "You are about to change your password.", disable_with: "Updating..."} %>
 						<%= link_to drivers_path, class: 'btn btn-outline-warning' do %>
 			              Cancel
 			            <% end %>

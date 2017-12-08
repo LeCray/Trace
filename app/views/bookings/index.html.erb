@@ -12,10 +12,9 @@
 				<div id="bookings">
 
 					<% @bookings.each do |b| %>
-					  <p><strong>  <%= b.date %> at <%= b.time.strftime("%X")  %></strong><br>
-					    <strong><%= b.make %></strong> 
-					    <strong><%= b.model %></strong>  
-					    <i style="font-style: italic"><%= b.description %></i> 
+					  <p><strong>  <%= b.date %></strong> at <strong><%= b.time.strftime("%I:%M")  %></strong><br>
+					    <strong><%= b.make %> <%= b.model %></strong><br>
+					    <i style="font-style: italic"><%= b.description %></i>  
 					    
 					  </p>
 				

@@ -3,7 +3,7 @@
     <strong><%= b.make %> <%= b.model %></strong><br>
     <i style="font-style: italic"><%= b.description %></i> 
   </p>
-  <%= link_to "Cancel",driver_booking_path(b.id), method: :delete, class: "btn btn-outline-danger", data: {confirm: "Cancel booking for #{b.date} at #{b.time.strftime('%X')}?", disable_with: "Cancelling..." } %>
+  <%= link_to "Cancel",driver_booking_path(b.id), method: :delete, class: "btn btn-outline-danger", data: {confirm: "Cancel booking for #{b.date} at #{b.time.strftime('%I:%M')}?", disable_with: "Cancelling..." } %>
   <hr>
 <% end %>
 
