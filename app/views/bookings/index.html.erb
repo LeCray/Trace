@@ -13,7 +13,10 @@
 
 					<% @bookings.each do |b| %>
 					  <p><strong>  <%= b.date %> at <%= b.time.strftime("%X")  %></strong><br>
+					    <strong><%= b.make %></strong> 
+					    <strong><%= b.model %></strong>  
 					    <i style="font-style: italic"><%= b.description %></i> 
+					    
 					  </p>
 				
 					  <hr>
