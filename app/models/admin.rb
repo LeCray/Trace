@@ -3,10 +3,13 @@ class Admin < ApplicationRecord
 	before_create :create_activation_digest
 	
 	has_secure_password
+	has_many :messages
 
 	ROLES = ["Driver","Admin"]
 
-	validates :first_name, presence: true
+	NAME_REGEX = /\w+/
+
+	validates :first_name, presence: true, uniqueness: { case_sensitive: false }, format: { with: /\A#{NAME_REGEX}\z/i }
 	validates :last_name, presence: true
 	validates :email, presence: true
 	validates :role, presence: true, inclusion: {in: ROLES}
