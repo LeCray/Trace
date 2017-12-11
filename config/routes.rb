@@ -30,6 +30,8 @@ Rails.application.routes.draw do
 	get '/driver_password_change' => 'password_change#driver_edit'
 	patch '/driver_password_change' => 'password_change#driver_update'
 
+	mount ActionCable.server, at: '/cable'
+
 
 
 end

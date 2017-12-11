@@ -2,16 +2,16 @@ class MessagesController < ApplicationController
 	 before_action :get_messages
 
 	def index
-	
+
 	end
 
 	def create 
 
 		message = current_driver.messages.build(message_params)
 	    if message.save
-	      redirect_to messages_url
-	    else
-	      render 'index'
+	   		ActionCable.server.broadcast 'room_channel',
+                                   content:  message.content,
+                                   username: message.driver.first_name
 	    end
 	end
 
