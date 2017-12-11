@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
 	resources :password_reset
 
+	resources :messages, only: [:index, :create]	
+
 	get '/admin_password_change' => 'password_change#admin_edit'
 	patch '/admin_password_change' => 'password_change#admin_update'
 

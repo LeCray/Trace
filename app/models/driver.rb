@@ -9,7 +9,9 @@ class Driver < ApplicationRecord
 	has_many :bookings
 	has_many :messages
 
-	validates :first_name, presence: true
+	NAME_REGEX = /\w+/
+
+	validates :first_name, presence: true, uniqueness: { case_sensitive: false }, format: { with: /\A#{NAME_REGEX}\z/i }
 	validates :last_name, presence: true
 	validates :tel, presence: true
 

@@ -1,6 +1,5 @@
 class Message < ApplicationRecord
 
-belongs_to :admin
 belongs_to :driver
 
 validates :content, presence: true
