@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: redis://localhost:6379/1
+  url: redis://redis://redistogo:110375f19a1090e8b7b48ac22577e14e@soldierfish.redistogo.com:9243/
   channel_prefix: Trace_production

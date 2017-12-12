@@ -96,4 +96,7 @@ Rails.application.configure do
 
   # Default Mailer Host
   Rails.application.routes.default_url_options[:host] = 'sandboxe77937ba5d82405b89b778812a2bc57a.mailgun.org'
+
+  config.web_socket_server_url = "wss://mad-beta.herokuapp.com/cable" 
+  config.action_cable.allowed_request_origins = ['https://mad-beta.herokuapp.com', 'http://mad-beta.herokuapp.com']
 end
