@@ -239,7 +239,7 @@ DEPENDENCIES
   pg
   puma (~> 3.7)
   rails (~> 5.1.4)
-  redis-rails (~> 5)
+  redis-rails
   sass-rails (~> 5.0)
   selenium-webdriver
   turbolinks (~> 5)
