@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+	include SessionsHelper
 	 before_action :get_messages
 
 	def index
@@ -12,6 +13,7 @@ class MessagesController < ApplicationController
 	   		ActionCable.server.broadcast 'room_channel',
                                    content:  message.content,
                                    username: message.driver.first_name
+          head :ok
 	    end
 	end
 

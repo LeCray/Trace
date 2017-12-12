@@ -1,4 +1,5 @@
 class RoomChannel < ApplicationCable::Channel
+	include SessionsHelper
 
   def subscribed
     # stream_from "some_channel"

@@ -66,5 +66,7 @@ gem 'mailgunner', '~> 2.4'
 
 gem 'will_paginate-bootstrap'
 
-gem 'redis'
+gem 'redis', '~> 3.3'
+
+gem 'coffee-script-source', '~> 1.8.0'
 
