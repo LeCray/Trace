@@ -10,10 +10,13 @@ App.room = App.cable.subscriptions.create "RoomChannel",
     # Called when there's incoming data on the websocket for this channel
     unless data.content.blank?
       $('#messages-table').append '<div>' + data.username + ": " + data.content + '</div>'
+      scroll_bottom()
+      console.log($('#messages')[0].scrollHeight)
       
 
  $(document).on 'turbolinks:load', ->
   submit_message()
+  scroll_bottom()
 
 
 submit_message = ->
@@ -22,4 +25,10 @@ submit_message = ->
       $('input').click()
       event.target.value = ""
       event.preventDefault()	
+
+scroll_bottom = ->
+  $('#messages').scrollTop($('#messages')[0].scrollHeight)
+  window.scrollTo 0, document.body.scrollHeight
+  console.log("Its running")
+
 
