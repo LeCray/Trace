@@ -8,4 +8,6 @@ App.room = App.cable.subscriptions.create "RoomChannel",
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    	console.log "ok"
+    unless data.content.blank?
+      $('#messages-table').append '<div>' + data.username + ": " + data.content + '</div>'	
+      

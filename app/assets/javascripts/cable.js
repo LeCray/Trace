@@ -3,7 +3,7 @@
 //
 //= require action_cable
 //= require_self
-//= require room
+//= require_tree ./channels
 
 
 
