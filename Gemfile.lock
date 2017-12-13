@@ -239,7 +239,7 @@ DEPENDENCIES
   pg
   puma (~> 3.7)
   rails (~> 5.1.4)
-  redis
+  redis (~> 3.3)
   redis-rails
   redis-store
   sass-rails (~> 5.0)
