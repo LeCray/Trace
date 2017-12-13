@@ -100,6 +100,6 @@ Rails.application.configure do
   
   config.action_cable.url = "wss://mad-beta.herokuapp.com/cable" 
   config.action_cable.allowed_request_origins = ['https://mad-beta.herokuapp.com', 'http://mad-beta.herokuapp.com']
-  config.cache_store = :redis_store, " redis://h:pf70cea6801d416eb9128996e27887a29aa625cc9556882fd2499e8855cbb6eb3@ec2-34-239-85-133.compute-1.amazonaws.com:49269"
+  config.cache_store = :redis_store, "redis://h:pf70cea6801d416eb9128996e27887a29aa625cc9556882fd2499e8855cbb6eb3@ec2-34-239-85-133.compute-1.amazonaws.com:49269"
   
 end
