@@ -97,9 +97,9 @@ Rails.application.configure do
   # Default Mailer Host
   Rails.application.routes.default_url_options[:host] = 'sandboxe77937ba5d82405b89b778812a2bc57a.mailgun.org'
 
-  config.web_socket_server_url = "wss://mad-beta.herokuapp.com/cable" 
+  
   config.action_cable.url = "wss://mad-beta.herokuapp.com/cable" 
   config.action_cable.allowed_request_origins = ['https://mad-beta.herokuapp.com', 'http://mad-beta.herokuapp.com']
-  config.cache_store = :redis_store, "redis://redistogo:0de94e2299f80fe2040010900e631df9@soldierfish.redistogo.com:9322/"
+  config.cache_store = :redis_store, " redis://h:pf70cea6801d416eb9128996e27887a29aa625cc9556882fd2499e8855cbb6eb3@ec2-34-239-85-133.compute-1.amazonaws.com:49269"
   
 end
