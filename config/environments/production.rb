@@ -100,5 +100,5 @@ Rails.application.configure do
   config.web_socket_server_url = "wss://mad-beta.herokuapp.com/cable" 
   config.action_cable.allowed_request_origins = ['https://mad-beta.herokuapp.com', 'http://mad-beta.herokuapp.com']
   config.cache_store = :redis_store, "redis://h:p3ee00d92e393bd6a1577eb0aff5436b0be365982c396a26c92924232fb3fc8cc@ec2-34-239-85-133.compute-1.amazonaws.com:45879"
-  config.cache_store = :redis_store, "redis://localhost:6379/0/cache"
+  
 end
