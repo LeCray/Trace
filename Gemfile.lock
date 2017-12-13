@@ -161,8 +161,6 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     redis (3.3.5)
-    redis-store (1.4.1)
-      redis (>= 2.2, < 5)
     rubyzip (1.2.1)
     sass (3.4.25)
     sass-rails (5.0.6)
@@ -226,7 +224,6 @@ DEPENDENCIES
   puma (~> 3.7)
   rails (~> 5.1.4)
   redis (~> 3.3)
-  redis-store
   sass-rails (~> 5.0)
   selenium-webdriver
   turbolinks (~> 5)
