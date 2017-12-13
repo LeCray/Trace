@@ -1,0 +1,280 @@
+@media (max-width: 992px) {
+  /* line 6, C:/mahele_project/trace/app/assets/stylesheets/admins.scss */
+  #change {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+/* line 4, C:/mahele_project/trace/app/assets/stylesheets/bookings.scss */
+#cards {
+  background-color: #404040;
+  padding: 20px;
+  border-radius: 3px;
+}
+
+/* line 10, C:/mahele_project/trace/app/assets/stylesheets/bookings.scss */
+#bookings {
+  background-color: white;
+  padding: 20px;
+  border-radius: 3px;
+  min-height: 400px;
+}
+
+/* line 17, C:/mahele_project/trace/app/assets/stylesheets/bookings.scss */
+#cards-heading {
+  color: white;
+  font-family: Voltaire;
+  text-align: center;
+}
+
+@media (max-width: 992px) {
+  /* line 24, C:/mahele_project/trace/app/assets/stylesheets/bookings.scss */
+  #cards {
+    margin-left: 0px;
+    margin-top: 30px;
+  }
+}
+@media (max-width: 992px) {
+  /* line 6, C:/mahele_project/trace/app/assets/stylesheets/cars.scss */
+  .change {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+/* line 5, C:/mahele_project/trace/app/assets/stylesheets/drivers.scss */
+.invoices {
+  background-color: white;
+  padding: 20px;
+  border-radius: 3px;
+  min-height: 400px;
+}
+
+/* line 12, C:/mahele_project/trace/app/assets/stylesheets/drivers.scss */
+.bookings {
+  background-color: white;
+  padding: 20px;
+  border-radius: 3px;
+  min-height: 400px;
+  display: none;
+}
+
+/* line 20, C:/mahele_project/trace/app/assets/stylesheets/drivers.scss */
+.cars {
+  background-color: white;
+  padding: 20px;
+  border-radius: 3px;
+  min-height: 400px;
+  display: none;
+}
+
+/* line 29, C:/mahele_project/trace/app/assets/stylesheets/drivers.scss */
+.cards {
+  background-color: #404040;
+  margin-left: 30px;
+  padding: 20px;
+  border-radius: 3px;
+}
+
+/* line 36, C:/mahele_project/trace/app/assets/stylesheets/drivers.scss */
+.cards-heading {
+  color: white;
+  font-family: Voltaire;
+  text-align: center;
+}
+
+/* line 42, C:/mahele_project/trace/app/assets/stylesheets/drivers.scss */
+.table {
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  /* line 47, C:/mahele_project/trace/app/assets/stylesheets/drivers.scss */
+  #cards #change {
+    margin-left: 0px;
+    margin-top: 30px;
+  }
+}
+/* line 55, C:/mahele_project/trace/app/assets/stylesheets/drivers.scss */
+.dashboard {
+  color: white;
+  text-align: center;
+  font-family: Voltaire;
+}
+@media (max-width: 480px) {
+  #cards {
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+}
+
+
+
+
+/* line 4, C:/mahele_project/trace/app/assets/stylesheets/invoices.scss */
+#cards {
+  background-color: #404040;
+  margin-left: px;
+  padding: 20px;
+  border-radius: 3px;
+}
+
+/* line 11, C:/mahele_project/trace/app/assets/stylesheets/invoices.scss */
+#invoices {
+  background-color: white;
+  padding: 20px;
+  border-radius: 3px;
+  min-height: 400px;
+}
+
+/* line 18, C:/mahele_project/trace/app/assets/stylesheets/invoices.scss */
+#cards-heading {
+  color: white;
+  font-family: Voltaire;
+  text-align: center;
+}
+
+@media (max-width: 992px) {
+  /* line 25, C:/mahele_project/trace/app/assets/stylesheets/invoices.scss */
+  #cards {
+    margin-left: 0px;
+    margin-top: 30px;
+  }
+}
+/* line 6, C:/mahele_project/trace/app/assets/stylesheets/pages.scss */
+.parallax {
+  background-image: url("https://ak6.picdn.net/shutterstock/videos/27478426/thumb/10.jpg");
+  z-index: 1;
+  height: 900px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* line 18, C:/mahele_project/trace/app/assets/stylesheets/pages.scss */
+#main {
+  position: relative;
+}
+
+/* line 21, C:/mahele_project/trace/app/assets/stylesheets/pages.scss */
+.overlay {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* line 25, C:/mahele_project/trace/app/assets/stylesheets/pages.scss */
+.heading {
+  margin-top: 200px;
+  margin-bottom: 20px;
+  margin-left: 50px;
+  color: white;
+  font-family: Voltaire;
+  font-size: 50px;
+}
+
+/* line 34, C:/mahele_project/trace/app/assets/stylesheets/pages.scss */
+.phrase {
+  font-family: Voltaire;
+  font-style: italic;
+  color: white;
+  margin-left: 50px;
+}
+@media (max-width: 480px) {
+  /* line 7, C:/mahele_project/trace/app/assets/stylesheets/password_change.scss */
+  .change {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media (max-width: 992px) {
+  /* line 15, C:/mahele_project/trace/app/assets/stylesheets/password_change.scss */
+  .change {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media (max-width: 480px) {
+  /* line 6, C:/mahele_project/trace/app/assets/stylesheets/password_reset.scss */
+  .change {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media (max-width: 992px) {
+  /* line 14, C:/mahele_project/trace/app/assets/stylesheets/password_reset.scss */
+  .change {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+/* line 6, C:/mahele_project/trace/app/assets/stylesheets/sessions.scss */
+.body {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  overflow: hidden;
+}
+
+/* line 12, C:/mahele_project/trace/app/assets/stylesheets/sessions.scss */
+.incorrect {
+  margin-top: -20px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  /* line 19, C:/mahele_project/trace/app/assets/stylesheets/sessions.scss */
+  .change {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+/*
+
+*/
+
+/*
+
+
+
+
+
+
+*= requre admins
+
+
+
+*/
+
+	
+
+
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+
+.rails-bootstrap-forms-date-select select,
+.rails-bootstrap-forms-time-select select,
+.rails-bootstrap-forms-datetime-select select {
+  display: inline-block;
+  width: auto;
+}
+
+.rails-bootstrap-forms-error-summary {
+  margin-top: 10px;
+}
