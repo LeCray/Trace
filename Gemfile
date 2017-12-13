@@ -66,7 +66,7 @@ gem 'mailgunner', '~> 2.4'
 
 gem 'will_paginate-bootstrap'
 
-gem 'redis'
+gem 'redis', '~> 3.3.1'
 gem 'redis-store'
 gem 'redis-rails'
 
