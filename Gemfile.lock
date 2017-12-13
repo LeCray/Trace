@@ -241,6 +241,7 @@ DEPENDENCIES
   rails (~> 5.1.4)
   redis (~> 3.3)
   redis-rails
+  redis-store
   sass-rails (~> 5.0)
   selenium-webdriver
   turbolinks (~> 5)
