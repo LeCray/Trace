@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 	post '/login' => 'sessions#create'
 	delete '/logout' => 'sessions#destroy'
 
+	get '/__api__/autoreload' => 'root'
+
 
 	root to: 'pages#index'
 
@@ -33,5 +35,10 @@ Rails.application.routes.draw do
 	mount ActionCable.server, at: '/cable'
 
 
+	namespace :api do
+		namespace :v1 do
+			post '/mobile_login' => 'mobile_login#create'
+		end
+	end
 
 end
