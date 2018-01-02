@@ -16,11 +16,17 @@ module Api
 				
 
 				if admin && admin.authenticate(password)
-					
-					render json: { admin_authenticated: true }
+					admin_log_in admin
+					render json: { 
+						admin_authenticated: true, 
+						first_name: admin.first_name 
+					}
 				elsif driver && driver.authenticate(password)
-					
-					render json: { driver_authenticated: true }
+					driver_log_in driver
+					render json: { 
+						driver_authenticated: true,
+					    first_name: admin.first_name  
+					}
 				else
 					render json: {authenticated: false, email: email}
 				end
