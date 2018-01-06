@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171210190610) do
+ActiveRecord::Schema.define(version: 20180102141553) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accounts", id: :serial, force: :cascade do |t|
+    t.integer "client_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.decimal "zar_balance"
+    t.decimal "btc_balance"
+    t.decimal "ltc_balance"
+    t.decimal "eth_balance"
+    t.index ["client_id"], name: "index_accounts_on_client_id"
+  end
 
   create_table "admins", force: :cascade do |t|
     t.string "first_name"
@@ -28,6 +39,7 @@ ActiveRecord::Schema.define(version: 20171210190610) do
     t.datetime "activated_at"
     t.boolean "admin"
     t.decimal "tel"
+    t.boolean "mobile_logged_in"
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -50,6 +62,28 @@ ActiveRecord::Schema.define(version: 20171210190610) do
     t.integer "driver_id"
   end
 
+  create_table "clients", id: :serial, force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email"
+    t.string "password_digest"
+    t.string "activation_digest"
+    t.boolean "activated"
+    t.datetime "activated_at"
+    t.integer "referral_id"
+    t.boolean "admin"
+  end
+
+  create_table "currencies", id: :serial, force: :cascade do |t|
+    t.integer "currency_type"
+    t.float "value"
+    t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "drivers", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -62,6 +96,7 @@ ActiveRecord::Schema.define(version: 20171210190610) do
     t.string "reset_digest"
     t.datetime "reset_sent_at"
     t.boolean "admin"
+    t.boolean "mobile_logged_in"
   end
 
   create_table "invoices", force: :cascade do |t|
@@ -81,4 +116,15 @@ ActiveRecord::Schema.define(version: 20171210190610) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "zar_transactions", id: :serial, force: :cascade do |t|
+    t.string "transaction_type"
+    t.decimal "amount"
+    t.integer "account_id"
+    t.decimal "transaction_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "status"
+  end
+
+  add_foreign_key "accounts", "clients"
 end

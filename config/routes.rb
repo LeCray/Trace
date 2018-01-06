@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 	post '/login' => 'sessions#create'
 	delete '/logout' => 'sessions#destroy'
 
-	get '/__api__/autoreload' => 'root'
+	
 
 
 	root to: 'pages#index'
@@ -38,6 +38,7 @@ Rails.application.routes.draw do
 	namespace :api do
 		namespace :v1 do
 			post '/mobile_login' => 'mobile_login#mobile_login'
+			post '/bookings' => 'bookings#get_bookings'
 		end
 	end
 
