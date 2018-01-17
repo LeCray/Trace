@@ -6,10 +6,25 @@ module Api
 		
 
 			def get_bookings	
+				email = params[:email]
 
-				render json: {get_bookings: true}
+				driver = Driver.find_by(email: email)
 
-			end
+				b_date = []
+
+				bookings = driver.bookings.all.order('created_at DESC')
+
+				bookings.each do |b|
+					b_date.push(b.date)
+				end
+
+				
+				respond_to do |format|
+					format.json { render :json => b_date }
+				end
+				
+
+			end    
 
 		end
 	end
