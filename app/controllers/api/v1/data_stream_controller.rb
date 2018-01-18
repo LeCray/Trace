@@ -7,10 +7,34 @@ module Api
 		
 
 			def data_stream	
-				email  		= params[:email]
-				obd2Data 	= params[:obd2Data]
+				email  					= params[:email]
+				speed 					= params[:SPEED] 
+		        engine_rpm 				= params[:ENGINE_RPM]
+		        engine_runtime 			= params[:ENGINE_RUNTIME]
+		        fuel_level	 			= params[:FUEL_LEVEL] 
+		        fuel_consumption_rate	= params[:FUEL_CONSUMPTION_RATE] 
+		        throttle_pos 			= params[:THROTTLE_POS] 
+		        air_fuel_ratio 			= params[:AIR_FUEL_RATIO] 
+		        engine_oil_temp 		= params[:ENGINE_OIL_TEMP]
+		        air_intake_temp 		= params[:AIR_INTAKE_TEMP]
+		        dtc_number 				= params[:DTC_NUMBER]
 
-				
+		        if speed.nil?
+		        	speed = "0km/h"
+		        end
+
+				ActionCable.server.broadcast 'data_stream_channel',
+                          	SPEED: 					speed,
+                          	ENGINE_RPM: 			engine_rpm,
+					        ENGINE_RUNTIME: 		engine_runtime,
+					        FUEL_LEVEL:	 			fuel_level,
+					        FUEL_CONSUMPTION_RATE:	fuel_consumption_rate, 
+					        THROTTLE_POS: 			throttle_pos,
+					        AIR_FUEL_RATIO: 		air_fuel_ratio,
+					        ENGINE_OIL_TEMP: 		engine_oil_temp,
+					        AIR_INTAKE_TEMP: 		air_intake_temp,
+					        DTC_NUMBER: 			dtc_number
+							head :ok		
 
 			end
 

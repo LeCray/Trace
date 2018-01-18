@@ -32,6 +32,8 @@ Rails.application.routes.draw do
 	get '/driver_password_change' => 'password_change#driver_edit'
 	patch '/driver_password_change' => 'password_change#driver_update'
 
+	
+
 	mount ActionCable.server, at: '/cable'
 
 
@@ -40,6 +42,7 @@ Rails.application.routes.draw do
 			post '/mobile_login' => 'mobile_login#mobile_login'
 			post '/bookings' => 'bookings#get_bookings'
 			post '/data_stream' => 'data_stream#data_stream'
+
 		end
 	end
 
