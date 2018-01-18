@@ -1,7 +1,7 @@
 App.room = App.cable.subscriptions.create "RoomChannel",
   connected: ->
     # Called when the subscription is ready for use on the server
-    console.log "connected"
+    console.log "Room is connected"
 
   disconnected: ->
     # Called when the subscription has been terminated by the server
@@ -10,13 +10,13 @@ App.room = App.cable.subscriptions.create "RoomChannel",
     # Called when there's incoming data on the websocket for this channel
      unless data.message.blank?
       $('#messages-table').append data.message
-      scroll_bottom()
+      #scroll_bottom()
       
       
 
  $(document).on 'turbolinks:load', ->
   submit_message()
-  scroll_bottom()
+  #scroll_bottom()
 
 
 submit_message = ->
@@ -26,9 +26,9 @@ submit_message = ->
       event.target.value = ""
       event.preventDefault()	
 
-scroll_bottom = ->
-  $('#messages').scrollTop($('#messages')[0].scrollHeight)
-  window.scrollTo 0, document.body.scrollHeight
+#scroll_bottom = ->
+ # $('#messages').scrollTop($('#messages')[0].scrollHeight)
+  #window.scrollTo 0, document.body.scrollHeight
   
 
 
