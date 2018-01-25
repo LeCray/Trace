@@ -236,7 +236,7 @@ DEPENDENCIES
   compass-rails!
   jbuilder (~> 2.5)
   mailgunner (~> 2.4)
-  pg
+  pg (~> 0.20)
   puma (~> 3.7)
   rails (~> 5.1.4)
   redis (~> 3.3)

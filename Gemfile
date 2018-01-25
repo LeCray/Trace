@@ -9,7 +9,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 
-gem 'pg', group: :production # Added postgres and made it production only.
+gem 'pg','~> 0.20' ,group: :production # Added postgres and made it production only.
 
 
 # Use Puma as the app server
