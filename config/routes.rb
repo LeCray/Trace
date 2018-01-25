@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 		resources :cars
 		resources :invoices
 		resources :bookings
-	end
+	end	
 
 	resources :admins
 
