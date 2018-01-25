@@ -100,6 +100,8 @@ Rails.application.configure do
   
   config.action_cable.url = "wss://mad-beta.herokuapp.com/cable" 
   config.action_cable.allowed_request_origins = ['https://mad-beta.herokuapp.com', 'http://mad-beta.herokuapp.com']
+  config.action_cable.allowed_request_origins = ['https://mad-beta.herokuapp.com/api/v1/data_stream', 
+                                                  'https://mad-beta.herokuapp.com/api/v1/data_stream']
   
   
 end
