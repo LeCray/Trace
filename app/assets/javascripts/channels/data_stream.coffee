@@ -40,6 +40,9 @@ App.room = App.cable.subscriptions.create { channel: "DataStreamChannel", pathID
       if data.DTC_NUMBER isnt null   
         document.getElementById("dtc_number").innerHTML = "Diagnostic Trouble Code: " + data.DTC_NUMBER.cmdResult
 
+      document.getElementById("dataStreamBtn").innerHTML = "Streaming..."
+
+
       console.log "Packets of car data recieved"
 
       
