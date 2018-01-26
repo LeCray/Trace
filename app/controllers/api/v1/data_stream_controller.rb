@@ -18,9 +18,12 @@ module Api
 		        engine_oil_temp 		= params[:ENGINE_OIL_TEMP]
 		        air_intake_temp 		= params[:AIR_INTAKE_TEMP]
 		        dtc_number 				= params[:DTC_NUMBER]
+
+		        driver = Driver.find_by(email: email)
+		        
 		       
 
-				ActionCable.server.broadcast 'data_stream_channel',
+				ActionCable.server.broadcast "data_stream_channel_/drivers/#{driver.id}",
                           	SPEED: 					speed,
                           	ENGINE_RPM: 			engine_rpm,
 					        ENGINE_RUNTIME: 		engine_runtime,

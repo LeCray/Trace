@@ -1,7 +1,8 @@
-App.room = App.cable.subscriptions.create "DataStreamChannel",
+App.room = App.cable.subscriptions.create { channel: "DataStreamChannel", pathID: window.location.pathname },
   connected: ->
     # Called when the subscription is ready for use on the server
-    console.log "Data Stream is connected"
+    console.log "DataStream: Connected"
+    #console.log $("#email").data("email")
 
   disconnected: ->
     # Called when the subscription has been terminated by the server

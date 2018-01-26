@@ -6,6 +6,7 @@
     <strong>Model:</strong> <i style="font-style: italic"> <%= c.model %></i><br>
     <strong>Reg:</strong> <i style="font-style: italic"> <%= c.vehicle_reg %> </i>
   </p>
+    <button id="dataStreamBtn" class="btn btn-outline-primary"> Live Data Stream </button>
 	
 	<hr>
 
@@ -35,5 +36,13 @@
   	<span id="dtc_number"> </span>
   </p> 
 <% end %> 
+
+<script type="text/javascript">
+
+  $('#dataStreamBtn').click(function(){
+    document.location.reload();
+  });
+   
+</script>
 
 

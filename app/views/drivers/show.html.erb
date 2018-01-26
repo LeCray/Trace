@@ -27,13 +27,13 @@
 			<!-- Driver -->
 			<div class="col-xs-12 col-lg-4" style="background-color: #404040; padding: 20px; border-radius: 3px">
 
-				<h3 style="color: white; font-family: Voltaire; text-align: center"> DRIVER </h3>
+				<h3 style="color: white; font-family: Voltaire; text-align: center" > DRIVER </h3>
 				<div style="background-color: white; padding: 20px; border-radius: 3px">
 					<strong>First Name:</strong>  <%= @driver.first_name%> <br>
 					<hr>
 					<strong>Last Name:</strong>  <%= @driver.last_name %> <br>
 					<hr>
-					<strong>Email:</strong>  <%= @driver.email %> <br>
+					<strong id="email" data-email="<%=@driver.email%>">Email:</strong> <%= @driver.email %><br>
 					<hr>
 					<strong>Tel:</strong>  0<%=  number_to_phone(@driver.tel).chomp('.0') %> <br>
 
@@ -55,9 +55,9 @@
 				<div style="padding: 20px">	
 				
 
-					<button id="invoices-btn" class="btn btn-outline-danger btn-block" style="margin-bottom: -20px">Invoices</button><br>
-					<button id="bookings-btn" class="btn btn-outline-danger btn-block" >Bookings</button>
 					<button id="cars-btn" class="btn btn-outline-danger btn-block" >Cars</button>
+					<button id="invoices-btn" class="btn btn-outline-danger btn-block" >Invoices</button>
+					<button id="bookings-btn" class="btn btn-outline-danger btn-block" >Bookings</button>
 				</div>
 			</div>
 			<!-- END -->
@@ -66,14 +66,14 @@
 			<div  class="col-xs-12 col-lg-7 cards" id="cards" >
 
 				<!-- Headings -->
-				<h3 id="invoices-heading" class="cards-heading"> 
+				<h3 id="cars-heading"  class="cards-heading" >
+					CARS
+				</h3>
+				<h3 id="invoices-heading" class="cards-heading" style="display: none"> 
 					INVOICES 
 				</h3>
 				<h3 id="bookings-heading"  class="cards-heading" style="display: none">
 					BOOKINGS
-				</h3>
-				<h3 id="cars-heading"  class="cards-heading" style="display: none">
-					CARS
 				</h3>
 				<!-- END of Headings -->
 
