@@ -5,27 +5,41 @@ module Api
 		
 		
 
-			def get_bookings	
-				email = params[:email]
-
-				driver = Driver.find_by(email: email)
-
-				b_date = []
-
-				bookings = driver.bookings.all.order('created_at DESC')
-
-				bookings.each do |b|
-					b_date.push(b.date)
-				end
+			def new_booking	
+				email 			= params[:email]
+				date 			= params[:date]
+				time 			= params[:time]
+				description 	= params[:description]
+				make 			= params[:carMake]
+				model 			= params[:carModel]
 
 				
-				respond_to do |format|
-					format.json { render :json => b_date }
-				end
+				bookings = ::MadMobile::PlaceBooking.new(
+					email: 			email,
+					date: 			date,
+					time:			time,
+					description: 	description,
+					make: 			make,
+					model: 			model
+				).execute!
 				
+
+				render json: { 
+					#status: zar_transaction,
+					#zar_balance: account_id
+				}								
+
+
+				
+			
 
 			end    
 
+			private
+
+			def booking_params
+			  params.require(:booking).permit(:date, :time,:make, :model, :description)
+			end
 		end
 	end
 end

@@ -1,4 +1,4 @@
-class Driver < ApplicationRecord
+	class Driver < ApplicationRecord
 
 	attr_accessor :reset_token, :resent_sent_at
 

@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
 
 	def index
 		@bookings = Booking.all.order('created_at DESC').paginate(page: params[:page], per_page:3)
-		@booking = Booking.find(params[:driver_id])
+		#@booking = Booking.find(params[:driver_id])
 		@driver = Driver.find(params[:driver_id])
 	end
 
