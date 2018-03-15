@@ -13,9 +13,11 @@ module MadMobile
 		def execute!
 			ActiveRecord::Base.transaction do
 
-				@booking = @driver.bookings.build(date: @date, time: @time, 
-												make: @make, model: @model, 
-												description: @description)
+				@booking = @driver.bookings.build(
+					date: @date, time: @time, make: @make, 
+					model: @model, description: @description
+				)
+				
 				@booking.save
 
 			end

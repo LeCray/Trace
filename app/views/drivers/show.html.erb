@@ -128,10 +128,9 @@
 
 <%= render partial: "invoice_modal" %>
 <%= render partial: "booking_modal" %>
+<%= render partial: "parameters" %>
 
-
-
-
+<%= javascript_include_tag 'drivers/Bookings.js' %>
 <script type="text/javascript">
 	$(document).ready(function(){
 
@@ -167,5 +166,10 @@
 
 		});
 
+		Bookings.init();
+
 	});
 </script>
+
+
+

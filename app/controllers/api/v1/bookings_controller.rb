@@ -27,9 +27,11 @@ module Api
 					#status: zar_transaction,
 					#zar_balance: account_id
 				}								
-
-
 			end    
+
+			def confirm_booking
+				
+			end
 
 		end
 	end

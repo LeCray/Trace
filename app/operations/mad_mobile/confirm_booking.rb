@@ -3,13 +3,13 @@ module MadMobile
 
 		def initialize(email:, date:)
 			@driver 		= Driver.find_by(email: email)
-			@date 			= @driver.bookings.find(date: date)
+			@booking		= @driver.bookings.find(date: date)
 		end
 
 		def execute!
 			ActiveRecord::Base.transaction do
 				
-				@booking.udpdate(status: "Confirmed")
+				@booking.update(status: "Confirmed")
 
 			end
 			
