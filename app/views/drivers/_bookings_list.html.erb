@@ -1,10 +1,22 @@
 <% bookings.each do |b| %>
-  <p><strong>  <%= b.date %></strong> at <strong><%= b.time.strftime("%I:%M")  %></strong><br>
-    <strong><%= b.make %> <%= b.model %></strong><br>
-    <i style="font-style: italic"><%= b.description %></i> 
-  </p>
-  <%= link_to "Cancel",driver_booking_path(b.id), method: :delete, class: "btn btn-outline-danger", data: {confirm: "Cancel booking for #{b.date} at #{b.time.strftime('%I:%M')}?", disable_with: "Cancelling..." } %>
-  <hr>
+
+	<p><strong> Date: </strong> <%= b.date %> </p>
+	<p><strong> Time: </strong> <%= b.time.strftime("%I:%M")  %></p>
+	<p><strong> Car: </strong> <%= b.make %>, <%= b.model %> </p>
+	<p><strong> Description: </strong> <i style="font-style: italic"><%= b.description %></i> </p>
+	
+	<button class="btn btn-outline" id="btn-confirm" type="button">
+		<span class="glyphicon glyphicon-ok" style="color: #cc7a00; margin-right: 10px"></span>
+		Confirm
+	</button>
+	<br>
+	<button class="btn btn-warning" id="btn-cancel" type="button">
+		<span class="glyphicon glyphicon-remove" style="color: #cc7a00; margin-right: 10px"></span>
+		Cancel 
+	</button>
+
+	
+	<hr>
 <% end %>
 
 <div style="text-align: center">

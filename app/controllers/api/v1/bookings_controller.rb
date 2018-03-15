@@ -4,7 +4,6 @@ module Api
 			skip_before_action :verify_authenticity_token
 		
 		
-
 			def new_booking	
 				email 			= params[:email]
 				date 			= params[:date]
@@ -30,16 +29,8 @@ module Api
 				}								
 
 
-				
-			
-
 			end    
 
-			private
-
-			def booking_params
-			  params.require(:booking).permit(:date, :time,:make, :model, :description)
-			end
 		end
 	end
 end
