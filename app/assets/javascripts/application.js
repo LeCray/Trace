@@ -11,13 +11,13 @@
 // about supported directives.
 //
 
-//= require rails-ujs
-//= require turbolinks
-//= require cable
-//= requre admin/Bookings
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+
+
+
+//= require cable
 
 
 

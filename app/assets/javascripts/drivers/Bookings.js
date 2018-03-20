@@ -10,7 +10,7 @@ var Bookings = (function() {
 
 
 
-	var fetchElements = function() 
+	var fetchElements = function() {
 		$parameters 			= $('#parameters');
 		$email 					= $parameters.data('email');
 		$booking				= $parameters.data('bookings');
@@ -21,7 +21,6 @@ var Bookings = (function() {
 
 
 	var initializeEvents = function() {
-	
 
 		$btnConfirm.on("click", function() {
 			var email = $email;
@@ -44,6 +43,7 @@ var Bookings = (function() {
 				}
 			});
 		});
+
 	};
 
 	var init = function() {

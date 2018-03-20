@@ -130,46 +130,13 @@
 <%= render partial: "booking_modal" %>
 <%= render partial: "parameters" %>
 
+
+
+<%= javascript_include_tag 'drivers/show.js' %>
 <%= javascript_include_tag 'drivers/Bookings.js' %>
-<script type="text/javascript">
-	$(document).ready(function(){
 
-		$('#cars-btn').click(function(){
-			$('#cars').show();
-			$('#cars-heading').show();
 
-			$('#invoices').hide(); 
-			$('#invoices-heading').hide();
-			$('#bookings').hide(); 
-			$('#bookings-heading').hide();
-		});	
 
-		$('#invoices-btn').click(function(){
-			$('#invoices').show(); 
-			$('#invoices-heading').show();
-
-			$('#cars').hide();
-			$('#cars-heading').hide();
-			$('#bookings').hide(); 
-			$('#bookings-heading').hide();
-
-		});	
-
-		$('#bookings-btn').click(function(){
-			$('#bookings').show(); 
-			$('#bookings-heading').show();
-
-			$('#cars').hide();
-			$('#cars-heading').hide();
-			$('#invoices').hide(); 
-			$('#invoices-heading').hide();
-
-		});
-
-		Bookings.init();
-
-	});
-</script>
 
 
 
