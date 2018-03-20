@@ -6,12 +6,12 @@
 	<p><strong> Car: </strong> <%= b.make %>, <%= b.model %> </p>
 	<p><strong> Description: </strong> <i style="font-style: italic"><%= b.description %></i> </p>
 	
-	<button class="btn btn-outline" id="btn-confirm" type="button">
+	<button class="btn btn-outline" id="btnConfirm" type="button">
 		<span class="glyphicon glyphicon-ok" style="color: #cc7a00; margin-right: 10px"></span>
 		Confirm
 	</button>
 	<br>
-	<button class="btn btn-warning" id="btn-cancel" type="button">
+	<button class="btn btn-warning" id="btnCancel" type="button">
 		<span class="glyphicon glyphicon-remove" style="color: #cc7a00; margin-right: 10px"></span>
 		Cancel 
 	</button>
@@ -19,6 +19,11 @@
 	
 	<hr>
 <% end %>
+
+	<button class="btn btn-warning" id="btnConfirm" type="button">
+		<span class="glyphicon glyphicon-remove" style="color: #cc7a00; margin-right: 10px"></span>
+		Confirm 
+	</button>
 
 <div style="text-align: center">
   <% if bookings.count > 2  %>
