@@ -31,7 +31,7 @@ var Bookings = (function() {
 				},
 
 				success: function(response) {
-					location.reload()
+					 document.getElementById("status").innerHTML = "CONFIRMED"
 				}
 			});
 		});
@@ -49,7 +49,7 @@ var Bookings = (function() {
 				},
 
 				success: function(response) {
-					location.reload()	
+					document.getElementById("status").innerHTML = "CANCELLED"
 				}
 			});
 		});

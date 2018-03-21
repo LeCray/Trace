@@ -2,7 +2,13 @@
 <p><strong> Time: </strong> <%= booking.time.strftime("%I:%M")  %></p>
 <p><strong> Car: </strong> <%= booking.make %>, <%= booking.model %> </p>
 <p><strong> Description: </strong> <i style="font-style: italic"><%= booking.description %></i> </p>
-<p><strong> Status: </strong> <%= booking.status %> </p>
+
+
+<p style="display: inline-block;"><strong > Status: </strong></p> 
+<div id="status" style="display: inline-block;"><%= booking.status %></div> 
+<br>
+
+
 
 <button class="btn btn-outline" id="btnConfirm" type="button">
 	<span class="glyphicon glyphicon-ok" style="color: #cc7a00; margin-right: 10px"></span>
