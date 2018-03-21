@@ -30,15 +30,11 @@ module Api
 			end    
 
 			def confirm_booking
-				email 		= params[:email]
-				booking 	= params[:booking]
-				bookings = ::MadMobile::ConfirmBooking.new(
-					email: email,
-					booking: booking
-				).execute!	
+				email 	= params[:email]
+				bookings = ::MadMobile::ConfirmBooking.new(email: email).execute!
 			end
 
-			def cancel_bookings
+			def cancel_booking
 				email = params[:email]
 				bookings = ::MadMobile::CancelBooking.new(email: email).execute!
 			end
