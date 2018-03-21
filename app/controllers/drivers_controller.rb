@@ -35,7 +35,7 @@ class DriversController < ApplicationController
 		
 		@cars = @driver.cars.all.order('created_at DESC')
 		@invoices = @driver.invoices.all.order('created_at DESC').paginate(page: params[:page], per_page:10)
-		@bookings = @driver.bookings.all.order('created_at DESC').paginate(page: params[:page], per_page:10)
+		@bookings = @driver.bookings
 
 		@driver_email = @driver.email.to_json
 
