@@ -4,7 +4,6 @@ module MadMobile
 		def initialize(email:, date:)
 			@driver 		= Driver.find_by(email: email)
 			@booking 		= @driver.bookings.find(date: date)
-
 		end
 
 		def execute!

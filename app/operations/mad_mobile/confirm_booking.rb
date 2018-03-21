@@ -1,9 +1,9 @@
 module MadMobile
 	class ConfirmBooking
 
-		def initialize(email:, date:)
+		def initialize(email:, booking:)
 			@driver 		= Driver.find_by(email: email)
-			@booking		= @driver.bookings.find(date: date)
+			@booking		= booking
 		end
 
 		def execute!
