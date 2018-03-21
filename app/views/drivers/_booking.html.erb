@@ -2,6 +2,7 @@
 <p><strong> Time: </strong> <%= booking.time.strftime("%I:%M")  %></p>
 <p><strong> Car: </strong> <%= booking.make %>, <%= booking.model %> </p>
 <p><strong> Description: </strong> <i style="font-style: italic"><%= booking.description %></i> </p>
+<p><strong> Status: </strong> <%= booking.status %> </p>
 
 <button class="btn btn-outline" id="btnConfirm" type="button">
 	<span class="glyphicon glyphicon-ok" style="color: #cc7a00; margin-right: 10px"></span>
@@ -11,9 +12,7 @@
 <button class="btn btn-warning" id="btnCancel" type="button">
 	<span class="glyphicon glyphicon-remove" style="color: #cc7a00; margin-right: 10px"></span>
 	Cancel 
-</button>
-
-	
+</button>	
 <hr>
 
 

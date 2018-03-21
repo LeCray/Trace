@@ -3,7 +3,7 @@ module MadMobile
 
 		def initialize(email:, booking:)
 			@driver 		= Driver.find_by(email: email)
-			@booking		= booking
+			@booking		= @driver.bookings.last
 		end
 
 		def execute!
