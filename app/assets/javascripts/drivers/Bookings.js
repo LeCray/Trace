@@ -4,7 +4,7 @@ var Bookings = (function() {
 	var $btnCancel;
 	var $email;
 	var $booking;
-	var $driverID
+	var $driver_id;
 	var $parameters;
 	var confirm_url = '/api/v1/bookings/confirm_booking';
 	var cancel_url = '/api/v1/bookings/cancel_booking';
@@ -14,8 +14,8 @@ var Bookings = (function() {
 	var fetchElements = function() {
 		$parameters 			= $('#parameters');
 		$email 					= $parameters.data('email');
+		$driver_id 				= $parameters.data('id');
 		$booking				= $parameters.data('bookings');
-		$driverID 				= $parameters.data('driverID');
 		$btnConfirm       		= $('#btnConfirm');
 		$btnCancel 				= $('#btnCancel');
 	};
@@ -27,8 +27,8 @@ var Bookings = (function() {
 		$btnConfirm.on("click", function() {
 			var email = $email;
 			var booking = $booking;
-			var driverID = $driverID
-			console.log("Booking Confirmed. Email: " + email + ", Booking: " + booking);		
+			var driver_id = $driver_id;
+			console.log("Booking Confirmed. Email: " + email + ", DriverID: " + driver_id + ", Booking: " + booking);		
 
 			$.ajax({
 				url: confirm_url,
@@ -40,7 +40,7 @@ var Bookings = (function() {
 				},
 
 				success: function(response) {
-					window.location.href = '/drivers/' +  driverID
+					
 				}
 			});
 		});

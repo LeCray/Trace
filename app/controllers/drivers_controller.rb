@@ -30,6 +30,7 @@ class DriversController < ApplicationController
 
 	def show
 		@driver = Driver.find(params[:id])
+		@driverID = @driver.id
 
 		
 		@cars = @driver.cars.all.order('created_at DESC')
