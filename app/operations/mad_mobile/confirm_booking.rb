@@ -20,12 +20,15 @@ module MadMobile
 			registration_ids= ["12", "13"] # an array of one or more client registration tokens
 
 			options = {
-				data: {
-					score: "123"
-				}, 
-				collapse_key: "updated_score"
+				priority: "high",
+				collapse_key: "updated_score", 
+				notification: {
+					title: "Message Title", 
+					body: "Hi, Worked perfectly",
+					icon: "myicon"
+				}
 			}
-			
+
 			response = fcm.send(registration_ids, options)
 		end
 
