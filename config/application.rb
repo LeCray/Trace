@@ -6,6 +6,7 @@ require 'redis'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
 module Trace
   class Application < Rails::Application
@@ -17,6 +18,7 @@ module Trace
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     Rails.application.config.autoload_paths << '#{Rails.root}/app/operations'
+
   end
 end
 
