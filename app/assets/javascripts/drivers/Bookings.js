@@ -4,8 +4,8 @@ var Bookings = (function() {
 	var $btnCancel;
 	var $email;
 	var $parameters;
-	var confirm_url = '/api/v1/bookings/confirm_booking';
-	var cancel_url = '/api/v1/bookings/cancel_booking';
+	var confirm_url = '/api/v1/confirm_booking';
+	var cancel_url = '/api/v1/cancel_booking';
 
 
 	var fetchElements = function() {

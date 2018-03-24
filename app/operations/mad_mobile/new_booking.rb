@@ -1,5 +1,5 @@
 module MadMobile
-	class PlaceBooking
+	class NewBooking
 
 		def initialize(email:, date:, time:, description:, make:, model:)
 			@driver 		= Driver.find_by(email: email)

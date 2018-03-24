@@ -11,18 +11,17 @@ module Api
 				description 	= params[:description]
 				make 			= params[:carMake]
 				model 			= params[:carModel]
-
-				
-				bookings = ::MadMobile::PlaceBooking.new(
+	
+				::MadMobile::NewBooking.new(
 					email: 			email,
 					date: 			date,
 					time:			time,
 					description: 	description,
 					make: 			make,
-					model: 			model
+					model: 			model,
+					status: 		"Pending"
 				).execute!
 				
-
 				render json: { 
 					#status: zar_transaction,
 					#zar_balance: account_id
@@ -31,12 +30,12 @@ module Api
 
 			def confirm_booking
 				email 	= params[:email]
-				bookings = ::MadMobile::ConfirmBooking.new(email: email).execute!
+				::MadMobile::ConfirmBooking.new(email: email).execute!
 			end
 
 			def cancel_booking
 				email = params[:email]
-				bookings = ::MadMobile::CancelBooking.new(email: email).execute!
+				::MadMobile::CancelBooking.new(email: email).execute!
 			end
 
 		end
