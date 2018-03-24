@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
 
 	def create
 		@driver = Driver.find(params[:driver_id])
-		@booking = @driver.bookings.build(booking_params)
+		@booking = @driver.build_booking(booking_params)
 
 		if @booking 
 

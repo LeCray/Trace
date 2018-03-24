@@ -4,9 +4,9 @@
 
 	has_secure_password
 
+	has_one :booking
 	has_many :cars
 	has_many :invoices
-	has_many :bookings
 	has_many :messages
 
 	NAME_REGEX = /\w+/

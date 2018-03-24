@@ -94,8 +94,8 @@
 				<!-- Bookings -->
 				<div id="bookings" class="bookings">
 
-					<% if @driver.bookings.size > 0 %>
-						<%= render partial: 'booking', locals: { booking: @bookings.last} %>
+					<% if @driver.booking %>
+						<%= render partial: 'booking', locals: { booking: @booking } %>
 					<% else %>
 						<div style="text-align: center; margin-top: 20px; padding: 40px">
 							<strong>No Bookings</strong>
