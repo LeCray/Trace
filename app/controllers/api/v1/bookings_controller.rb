@@ -39,7 +39,7 @@ module Api
 				email = params[:email]
 				@booking = Driver.find_by(email: email).booking
 			
-				render json: { booking: @booking }
+				render json: { booking: @booking.status }
 			end			
 				
 
