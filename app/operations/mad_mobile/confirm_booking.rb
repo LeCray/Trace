@@ -1,11 +1,9 @@
 module MadMobile
 	class ConfirmBooking
 
-		require 'fcm'
-
 		def initialize(email:)
 			@driver 		= Driver.find_by(email: email)
-			@booking		= @driver.bookings.last
+			@booking		= @driver.booking
 		end
 
 		def execute!
@@ -14,7 +12,6 @@ module MadMobile
 				@booking.update(status: "Confirmed")
 
 			end
-
 
 
 			fcm = FCM.new("AIzaSyDYgJqxuPWXdMXaafO2TR7qTwYWNLGlick")
@@ -29,7 +26,6 @@ module MadMobile
 					body: "Your vehicle booking has been confirmed",
 					icon: "ic_notif",
 					sound: "default",
-
 				}
 			}
 

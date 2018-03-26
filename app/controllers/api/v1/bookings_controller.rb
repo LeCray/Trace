@@ -20,12 +20,9 @@ module Api
 					make: 			make,
 					model: 			model,
 					status: 		"Pending"
-				).execute!
-				
-				render json: { 
-					#status: zar_transaction,
-					#zar_balance: account_id
-				}								
+				).execute!	
+
+				render json: {}						
 			end    
 
 			def confirm_booking
@@ -37,6 +34,14 @@ module Api
 				email = params[:email]
 				::MadMobile::CancelBooking.new(email: email).execute!
 			end
+
+			def mobile_check_booking
+				email = params[:email]
+				@booking = Driver.find_by(email: email).booking
+			
+				render json: { booking: @booking }
+			end			
+				
 
 		end
 	end

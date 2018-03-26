@@ -21,9 +21,7 @@ module MadMobile
 				
 				@booking.save
 
-			end
-			
+			end		
 		end
-
 	end
 end

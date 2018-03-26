@@ -1,6 +1,6 @@
 <div class = "well">
 
-   <%= bootstrap_form_for [@driver, @booking], html: { multipart: true } do |f| %>
+   <%= bootstrap_form_for [@driver, @new_booking], html: { multipart: true } do |f| %>
       <%= f.date_select :date, label: 'Date', :data => { :provide => :datepicker }%> <br>
       <%= f.time_select :time, label: 'Time', :required => 'required'%> <br>
       <%= f.text_field :make, label: 'Car Make', :required => 'required'%> <br>

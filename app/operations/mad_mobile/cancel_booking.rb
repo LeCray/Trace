@@ -3,13 +3,13 @@ module MadMobile
 
 		def initialize(email:)
 			@driver 		= Driver.find_by(email: email)
-			@booking 		= @driver.bookings.last
+			@booking 		= @driver.booking
 		end
 
 		def execute!
 			ActiveRecord::Base.transaction do
 				
-				@booking.update(status: "Cancelled")
+				@booking.destroy
 
 			end
 

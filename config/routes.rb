@@ -27,12 +27,13 @@ Rails.application.routes.draw do
 
 	namespace :api do
 		namespace :v1 do
-			post '/mobile_login' 		=> 'mobile_login#mobile_login'
+			post '/mobile_login' 			=> 'mobile_login#mobile_login'
 
-			post '/new_booking'			=> 'bookings#new_booking'
-			post '/cancel_booking' 		=> 'bookings#cancel_booking'
+			post '/new_booking'				=> 'bookings#new_booking'
+			post '/cancel_booking' 			=> 'bookings#cancel_booking'
+			post '/confirm_booking'			=> 'bookings#confirm_booking'
+			post '/mobile_check_booking'	=> 'bookings#mobile_check_booking'
 
-			post '/confirm_booking'		=> 'bookings#confirm_booking'
 			post '/fcm'					=> 'fcm#update_fcm_token'
 			post '/data_stream' 		=> 'data_stream#data_stream'
 		end
