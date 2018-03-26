@@ -38,8 +38,12 @@ module Api
 			def mobile_check_booking
 				email = params[:email]
 				@booking = Driver.find_by(email: email).booking
-			
-				render json: { booking: @booking.status }
+				
+				if @booking 
+					render json: { booking: @booking.status }
+				else 
+					render json: { booking: @booking }
+				end
 			end			
 				
 
