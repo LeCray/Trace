@@ -34,6 +34,8 @@ Rails.application.routes.draw do
 			post '/confirm_booking'			=> 'bookings#confirm_booking'
 			post '/mobile_check_booking'	=> 'bookings#mobile_check_booking'
 
+			post '/get_invoices'			=> 'invoices#get_invoices'			
+
 			post '/fcm'					=> 'fcm#update_fcm_token'
 			post '/data_stream' 		=> 'data_stream#data_stream'
 		end
