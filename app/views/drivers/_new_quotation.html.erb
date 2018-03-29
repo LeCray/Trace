@@ -1,0 +1,20 @@
+<% if !@quotation.errors.empty? %>
+   <div class = "alert alert-error">
+      
+      <ul>
+         <% @quotation.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+         <% end %>
+      </ul>
+      
+   </div>
+<% end %>
+
+<div class = "well">
+
+   <%= bootstrap_form_for [@driver, @quotation], html: { multipart: true } do |f| %>
+      <%= f.file_field :attachment, :required => 'required' %><br>
+      <%= f.submit "Upload", class: "btn btn-outline-success", data: { disable_with: "Please wait..." } %>
+   <% end %>
+
+</div>

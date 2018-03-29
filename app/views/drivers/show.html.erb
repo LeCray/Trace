@@ -39,15 +39,27 @@
 
 					<% if admin_logged_in? %>
 						<br>
-			            <button type="button" class="btn btn-outline btn-block" data-toggle="modal" data-target="#invoiceModal">New Invoice</button> 
-						<%= link_to new_driver_car_path(@driver.id), class: 'btn btn-outline btn-block' do %>
+
+			        	<button type="button" class="btn btn-outline btn-block" data-toggle="modal" data-target="#bookingModal" style="margin-top: 10px; text-align: left">
+			        		New Booking
+			        	</button>
+
+			            <button type="button" class="btn btn-outline btn-block" data-toggle="modal" data-target="#invoiceModal" style="margin-top: 10px; text-align: left">
+			            	New Invoice
+			        	</button> 
+
+			             <button type="button" class="btn btn-outline btn-block" data-toggle="modal" data-target="#quoationModal" style="margin-top: 10px; text-align: left">
+			             	New Quoation
+			         	</button>
+						
+						<%= link_to new_driver_car_path(@driver.id), class: 'btn btn-outline btn-block', 
+						style: "text-align: left" do %>
 			              Register New Car
 			            <% end %>
 			        <% end %>
 			        
-			        <button type="button" class="btn btn-outline btn-block" data-toggle="modal" data-target="#bookingModal" style="margin-top: 10px">New Booking</button>
 
-			        <%= link_to messages_path, class: 'btn btn-outline btn-block' do %>
+			        <%= link_to messages_path, class: 'btn btn-outline btn-block', style: "text-align: left" do %>
 			        	Enter Group Chat
 			        <% end %>
 			        
@@ -57,7 +69,7 @@
 
 					<button id="bookings-btn" class="btn btn-outline-danger btn-block" >Bookings</button>
 					<button id="invoices-btn" class="btn btn-outline-danger btn-block" >Invoices</button>
-					<button id="quotation-btn" class="btn btn-outline-danger btn-block" >Quotation</button>
+					<button id="quotations-btn" class="btn btn-outline-danger btn-block" >Quotations</button>
 					<button id="cars-btn" class="btn btn-outline-danger btn-block" >Cars</button>
 				</div>
 			</div>
@@ -67,17 +79,17 @@
 			<div  class="col-xs-12 col-lg-7 cards" id="cards" >
 
 				<!-- Headings -->
-				<h3 id="cars-heading"  class="cards-heading" style="display: none">
-					CARS
+				<h3 id="bookings-heading"  class="cards-heading" >
+					BOOKINGS
 				</h3>
 				<h3 id="invoices-heading" class="cards-heading" style="display: none"> 
 					INVOICES 
 				</h3>
-				<h3 id="bookings-heading"  class="cards-heading" >
-					BOOKINGS
-				</h3>
-				<h3 id="quotations-heading"  class="cards-heading" >
+				<h3 id="quotations-heading"  class="cards-heading" style="display: none">
 					QUOTATIONS
+				</h3>
+				<h3 id="cars-heading"  class="cards-heading" style="display: none">
+					CARS
 				</h3>
 				<!-- END of Headings -->
 
