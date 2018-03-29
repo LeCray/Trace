@@ -11,6 +11,8 @@ $(document).ready(function(){
         $('#invoices-heading').hide();
         $('#bookings').hide(); 
         $('#bookings-heading').hide();
+        $('#quotations').hide(); 
+        $('#quotations-heading').hide();
     }); 
 
     $('#invoices-btn').click(function(){
@@ -21,6 +23,21 @@ $(document).ready(function(){
         $('#cars-heading').hide();
         $('#bookings').hide(); 
         $('#bookings-heading').hide();
+        $('#quotations').hide(); 
+        $('#quotations-heading').hide();
+
+    }); 
+
+    $('#quotations-btn').click(function(){
+        $('#quotations').show(); 
+        $('#quotations-heading').show();
+
+        $('#cars').hide();
+        $('#cars-heading').hide();
+        $('#bookings').hide(); 
+        $('#bookings-heading').hide();
+        $('#invoices').hide(); 
+        $('#invoices-heading').hide();
 
     }); 
 
@@ -32,6 +49,8 @@ $(document).ready(function(){
         $('#cars-heading').hide();
         $('#invoices').hide(); 
         $('#invoices-heading').hide();
+        $('#quotations').hide(); 
+        $('#quotations-heading').hide();
 
     });
 

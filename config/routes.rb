@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
- 	
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   	get '/login' 		=> 'sessions#new'
 	post '/login' 		=> 'sessions#create'
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
 		resources :cars
 		resources :invoices
 		resources :bookings
+		resources :quotations
 	end	
 
 	resources :admins
@@ -34,7 +36,8 @@ Rails.application.routes.draw do
 			post '/confirm_booking'			=> 'bookings#confirm_booking'
 			post '/mobile_check_booking'	=> 'bookings#mobile_check_booking'
 
-			post '/get_invoices'			=> 'invoices#get_invoices'			
+			post '/get_invoices'			=> 'invoices#get_invoices'
+			post '/get_quotations'			=> 'quotations#get_quotations'			
 
 			post '/fcm'					=> 'fcm#update_fcm_token'
 			post '/data_stream' 		=> 'data_stream#data_stream'

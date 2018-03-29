@@ -2,14 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.cars {
+.bookings {
 	background-color: white;
 	padding: 20px; 
 	border-radius: 3px; 
 	min-height: 400px;
-	display: none;
 }
-
 .invoices {
 	background-color: white; 
 	padding: 20px; 
@@ -18,15 +16,21 @@
 	display: none;
 }
 
-.bookings {
+
+.quations {
+	background-color: white; 
+	padding: 20px; 
+	border-radius: 3px; 
+	min-height: 400px;
+	display: none;
+}
+.cars {
 	background-color: white;
 	padding: 20px; 
 	border-radius: 3px; 
 	min-height: 400px;
-	
+	display: none;
 }
-
-
 
 .cards {
 	background-color: #404040; 

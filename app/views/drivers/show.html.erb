@@ -56,8 +56,9 @@
 				
 
 					<button id="bookings-btn" class="btn btn-outline-danger btn-block" >Bookings</button>
-					<button id="cars-btn" class="btn btn-outline-danger btn-block" >Cars</button>
 					<button id="invoices-btn" class="btn btn-outline-danger btn-block" >Invoices</button>
+					<button id="quotation-btn" class="btn btn-outline-danger btn-block" >Quotation</button>
+					<button id="cars-btn" class="btn btn-outline-danger btn-block" >Cars</button>
 				</div>
 			</div>
 			<!-- END -->
@@ -75,6 +76,9 @@
 				<h3 id="bookings-heading"  class="cards-heading" >
 					BOOKINGS
 				</h3>
+				<h3 id="quotations-heading"  class="cards-heading" >
+					QUOTATIONS
+				</h3>
 				<!-- END of Headings -->
 
 				<!-- Invoices -->
@@ -90,6 +94,20 @@
 					<% end %>
 				</div>
 				<!-- END of Invoices -->
+
+				<!-- Quotations -->
+				<div id="quotations" class="quotations">
+
+					<% if @driver.quotations.size > 0 %>
+						<%= render partial: 'quotations_list', locals: { quotations: @quotations} %>
+					<% else %>
+						<div style="text-align: center; margin-top: 20px; padding: 40px">
+							<strong>No Quotations</strong>
+							<hr>
+						</div>
+					<% end %>
+				</div>
+				<!-- END of Quotationss -->
 
 				<!-- Bookings -->
 				<div id="bookings" class="bookings">
@@ -127,6 +145,7 @@
 	<!-- END of Container -->
 
 <%= render partial: "invoice_modal" %>
+<%= render partial: "quotations_modal" %>
 <%= render partial: "booking_modal" %>
 <%= render partial: "parameters" %>
 

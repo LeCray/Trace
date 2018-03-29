@@ -7,6 +7,7 @@
 	has_one :booking
 	has_many :cars
 	has_many :invoices
+	has_many :quotations
 	has_many :messages
 
 	NAME_REGEX = /\w+/

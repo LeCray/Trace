@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  approved: false
+  attachment: MyString
+  driver_id: 1
+
+two:
+  approved: false
+  attachment: MyString
+  driver_id: 1
