@@ -1,16 +1,20 @@
 module MadMobile
 	class UpdateQuotationStatus
 
-		def initialize(email:, status:, quo_url:, quo_id:)
+		def initialize(email:, quo_status:, quo_id:)
 			@driver 		= Driver.find_by(email: email)
 			@quotation 		= @driver.quotations.find(quo_id)
-			@status			= status
+			@quo_status		= quo_status
 		end
 
 		def execute!
 			ActiveRecord::Base.transaction do
 				
-				@quotation.update(status: "#{@status}")
+				if @quo_status == "approved"
+					@quotation.update(status: "Approved")
+				else 
+					@quotation.update(status: "Disapproved")
+				end
 
 			end
 		end

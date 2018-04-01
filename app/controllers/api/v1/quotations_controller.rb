@@ -28,15 +28,13 @@ module Api
 
 			def update_quotation_status
 				email 		= params[:email]
-				quo_url  	= params[:quo_url]
 				quo_id  	= params[:quo_id]
-				status 		= params[:status]
+				status 		= params[:quo_status]
 
 				::MadMobile::UpdateQuotationStatus.new(
-					email: 		email,
-					quo_url:    quo_url,
-					quo_id:    	quo_id,
-					status: 	status
+					email: 			email,
+					quo_id:    		quo_id,
+					quo_status: 	status
 				).execute!
 			end  	
 				
