@@ -2,6 +2,7 @@
   <p>
     <strong><%= q.created_at.strftime("%Y-%m-%d") %></strong><br>
     <i style="font-style: italic"> <%= q.attachment.file.filename %></i><br>
+    <i style="font-style: italic">Status <%= q.status%></i><br>
   </p>
     <%= link_to "View", q.attachment_url, target: :_blank, class: "btn btn-outline-primary" %>
       
