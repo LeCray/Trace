@@ -13,15 +13,17 @@ module Api
 				quo_url 	= []
 				quo_date 	= []
 				quo_id 		= []
+				quo_status 	= []
 
 				@quotations.each do |q|
 					quo_url.push(q.attachment_url)
 					quo_date.push(q.created_at)
 					quo_id.push(q.id)
+					quo_status.push(q.status)
 				end
 
 				quotations 	= []
-				quotations.push(quo_url, quo_date, quo_id)
+				quotations.push(quo_url, quo_date, quo_id, quo_status)
 	
 				render json: {quotations: quotations}						
 			end  
