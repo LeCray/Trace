@@ -12,14 +12,14 @@
 
 <div class = "well">
     <p style="display: inline-block">Select Vehicle </p>
-    <select id="vehicle-reg" style="width: 200px; margin-left: 10px; display: inline-block">
+    <select id="vehicle-reg" selected="selected" style="width: 200px; margin-left: 10px; display: inline-block">
         <% @cars.each do |c| %>
             <option value="#{c.vehicle_reg}"><%= c.vehicle_reg %></option>
         <% end %>
     </select><br>
 
     <p style="display: inline-block">Service Status</p>
-    <select id="car-status" style="width: 200px; margin-left: 10px; display: inline-block">
+    <select id="car-status" selected="selected" style="width: 200px; margin-left: 10px; display: inline-block">
         <option value="1">In Maintenance Bay</option>
         <option value="2">In Wash Bay</option>  
         <option value="3">Ready for Collection</option>

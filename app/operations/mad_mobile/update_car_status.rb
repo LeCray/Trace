@@ -3,7 +3,7 @@ module MadMobile
 
 		def initialize(email:, carStatus:, carID:)
 			@driver 		= Driver.find_by(email: email)
-			@car 			= @driver.car.find(:carID)
+			@car 			= @driver.cars.find(:carID)
 			@carStatus		= carStatus
 		end
 

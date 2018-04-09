@@ -10,7 +10,7 @@ var UpdateCarStatus = (function() {
 	var fetchElements = function() {
 		$notifyDriverBtn       	= $('#notifyDriverBtn');
 		$parameters 			= $('#parameters');
-		$email 					= $parameters.data('email');
+		$email 					= $parameters.data('email');		
 	};
 
 	var getSelectedOptions = function() {
