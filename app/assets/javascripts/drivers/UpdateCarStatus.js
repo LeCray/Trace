@@ -2,7 +2,7 @@ var UpdateCarStatus = (function() {
 
 	var $notifyDriverBtn;
 	var $email;
-	var $carID;
+	var $vehicleReg;
 	var $carStatus;
 	var $parameters;
 	var update_car_status_url = '/api/v1/update_car_status';
@@ -10,26 +10,18 @@ var UpdateCarStatus = (function() {
 	var fetchElements = function() {
 		$notifyDriverBtn       	= $('#notifyDriverBtn');
 		$parameters 			= $('#parameters');
-		$email 					= $parameters.data('email');		
+		$email 					= $parameters.data('email');	
 	};
 
-	var getSelectedOptions = function() {
-		$('#vehicle-reg').change(function(){
-			$vehicleReg = $(this).find(":selected").text();
-		});
-		$('#car-status').change(function(){
-			$carStatus = $(this).find(":selected").text();
-		});
-	 };
 
 
 	var initializeEvents = function() {
 
 		$notifyDriverBtn.on("click", function() {
 			var email = $email;
-			var vehicleReg = $vehicleReg;
-			var carStatus = $carStatus;
-			console.log("Car Status Updated. Status:" +carStatus+ ", Vehicle Reg:" +vehicleReg+ ", email:" +email )		
+			var vehicleReg = $('#vehicle-reg').find(":selected").text();
+			var carStatus = $('#car-status').find(":selected").text();
+			console.log("Car Status Updated. Vehicle Reg:" +vehicleReg+ ", Status:" +carStatus+ ", email:" +email )		
 
 			$.ajax({
 				url: update_car_status_url,
@@ -50,7 +42,7 @@ var UpdateCarStatus = (function() {
 
 	var init = function() {
 		fetchElements();
-		getSelectedOptions();
+		
 		initializeEvents();
 	};
 

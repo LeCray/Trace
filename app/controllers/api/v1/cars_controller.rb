@@ -5,12 +5,12 @@ module Api
 				
 			def update_car_status	
 				email 			= params[:email]
-				carID 			= params[:carID]
+				vehicleReg 		= params[:vehicleReg]
 				carStatus		= params[:carStatus]
 	
 				::MadMobile::UpdateCarStatus.new(
 					email: 			email,
-					carID: 			carID,
+					vehicleReg: 	vehicleReg,
 					carStatus: 		carStatus,
 				).execute!	
 
