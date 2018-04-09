@@ -36,39 +36,42 @@
 					<strong id="email" data-email="<%=@driver.email%>">Email:</strong> <%= @driver.email %><br>
 					<hr>
 					<strong>Tel:</strong>  0<%=  number_to_phone(@driver.tel).chomp('.0') %> <br>
-
-					<% if admin_logged_in? %>
-						<br>
-
-			        	<button type="button" class="btn btn-outline btn-block" data-toggle="modal" data-target="#bookingModal" style="margin-top: 10px; text-align: left">
-			        		New Booking
-			        	</button>
-
-			            <button type="button" class="btn btn-outline btn-block" data-toggle="modal" data-target="#invoiceModal" style="margin-top: 10px; text-align: left">
-			            	New Invoice
-			        	</button> 
-
-			             <button type="button" class="btn btn-outline btn-block" data-toggle="modal" data-target="#quotationModal" style="margin-top: 10px; text-align: left">
-			             	New Quotation
-			         	</button>
-						
-						<%= link_to new_driver_car_path(@driver.id), class: 'btn btn-outline btn-block', 
-						style: "text-align: left" do %>
-			              Register New Car
-			            <% end %>
-			        <% end %>
-			        
-
-			        <%= link_to messages_path, class: 'btn btn-outline btn-block', style: "text-align: left" do %>
-			        	Enter Group Chat
-			        <% end %>
-			        
+					
+					<br>
+					<button id="bookings-btn" class="btn btn-outline btn-block" >Bookings</button>
+					<button id="invoices-btn" class="btn btn-outline btn-block" >Invoices</button>
+					<button id="quotations-btn" class="btn btn-outline btn-block" >Quotations</button>
+					<button id="cars-btn" class="btn btn-outline btn-block" >Cars</button>
+   
 				</div>
 				<div style="padding: 20px">	
-					<button id="bookings-btn" class="btn btn-outline-danger btn-block" >Bookings</button>
-					<button id="invoices-btn" class="btn btn-outline-danger btn-block" >Invoices</button>
-					<button id="quotations-btn" class="btn btn-outline-danger btn-block" >Quotations</button>
-					<button id="cars-btn" class="btn btn-outline-danger btn-block" >Cars</button>
+						<% if admin_logged_in? %>
+							<button type="button" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#bookingModal" style="margin-top: 10px; text-align: left">
+				        		New Booking
+				        	</button>
+
+				            <button type="button" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#carStatusModal" style="margin-top: 10px; text-align: left">
+				            	Car Servicing Status
+				        	</button>
+
+				            <button type="button" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#invoiceModal" style="margin-top: 10px; text-align: left">
+				            	New Invoice
+				        	</button> 
+
+				             <button type="button" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#quotationModal" style="margin-top: 10px; text-align: left">
+				             	New Quotation
+				         	</button>
+							
+							<%= link_to new_driver_car_path(@driver.id), class: 'btn btn-outline-danger btn-block', 
+							style: "text-align: left" do %>
+				              Register New Car
+				            <% end %>
+			       		 <% end %>
+			        
+
+				        <%= link_to messages_path, class: 'btn btn-outline-danger btn-block', style: "text-align: left" do %>
+				        	Enter Group Chat
+				        <% end %>
 				</div>
 			</div>
 			<!-- END -->
@@ -134,7 +137,7 @@
 				<!-- END of Bookings -->
 
 				<!-- Cars -->
-				<div id="cars" class="cars">
+				<div id="cars" class="cars" style="height: 400px">
 
 					<% if @driver.cars.size > 0 %>
 						<%= render partial: 'car_list', locals: { cars: @cars} %>
@@ -157,12 +160,14 @@
 <%= render partial: "invoice_modal" %>
 <%= render partial: "quotation_modal" %>
 <%= render partial: "booking_modal" %>
+<%= render partial: "car_status_modal" %>
 <%= render partial: "parameters" %>
 
 
 
 <%= javascript_include_tag 'drivers/show.js' %>
 <%= javascript_include_tag 'drivers/Bookings.js' %>
+<%= javascript_include_tag 'drivers/UpdateCarStatus.js' %>
 
 
 

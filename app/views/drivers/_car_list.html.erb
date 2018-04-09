@@ -4,12 +4,13 @@
     <hr>
     <strong>Make:</strong> <i style="font-style: italic"> <%= c.make %></i><br>
     <strong>Model:</strong> <i style="font-style: italic"> <%= c.model %></i><br>
-    <strong>Reg:</strong> <i style="font-style: italic"> <%= c.vehicle_reg %> </i>
+    <strong>Reg:</strong> <i style="font-style: italic"> <%= c.vehicle_reg %> </i><br>
+    <strong>Servicing Status:</strong> <i style="font-style: italic"> <%= c.status %> </i>
   </p>
-    <button id="dataStreamBtn" class="btn btn-outline-primary" > Live Data Stream </button>
-	
-	<hr>
+  <button id="servicingBtn" class="btn btn-outline-primary" > Servicing </button>
+  <button id="dataStreamBtn" class="btn btn-outline-primary" > Live Data Stream </button>
 
+	<hr>
   <p>
   	<span  id="car_rpm"> </span>
   	<br>
@@ -38,11 +39,17 @@
 <% end %> 
 
 <script type="text/javascript">
+  $(document).ready(function(){
 
   $('#dataStreamBtn').click(function(){
     document.location.reload();
   });
-   
+
+  $('#servicingBtn').click(function(){
+    $('#servicing').slideToggle('slow');
+  });
+    
+  }); 
 </script>
 
 

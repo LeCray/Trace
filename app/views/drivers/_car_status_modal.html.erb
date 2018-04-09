@@ -1,0 +1,25 @@
+<!-- Modal -->
+
+<div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+
+<div id="carStatusModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title" > 
+                    <h6>
+                        Car Status Update<br>
+                        <%=@driver.first_name%> <%=@driver.last_name%>
+                    </h4>
+                </div>
+            </div>
+            <div class="modal-body">
+                <%= render partial: 'update_car_status'%>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

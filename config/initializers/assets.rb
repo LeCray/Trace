@@ -15,5 +15,6 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 Rails.application.config.assets.precompile += %w( drivers/show.js )
 Rails.application.config.assets.precompile += %w( drivers/Bookings.js )
+Rails.application.config.assets.precompile += %w( drivers/UpdateCarStatus.js )
 
 

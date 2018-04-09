@@ -1,0 +1,30 @@
+<% if !@car.errors.empty? %>
+   <div class = "alert alert-error">
+      
+      <ul>
+         <% @car.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+         <% end %>
+      </ul>
+      
+   </div>
+<% end %>
+
+<div class = "well">
+    <p style="display: inline-block">Select Vehicle </p>
+    <select id="vehicle-reg" style="width: 200px; margin-left: 10px; display: inline-block">
+        <% @cars.each do |c| %>
+            <option value="#{c.vehicle_reg}"><%= c.vehicle_reg %></option>
+        <% end %>
+    </select><br>
+
+    <p style="display: inline-block">Service Status</p>
+    <select id="car-status" style="width: 200px; margin-left: 10px; display: inline-block">
+        <option value="maintenanceBay">In Maintenance Bay</option>
+        <option value="washBay">In Wash Bay</option>
+        <option value="readyForCollection">Ready for Collection</option>
+    </select>
+    <br>
+
+    <button id="notifyDriverBtn" class="btn btn-outline" > Notify Driver </button>
+</div>

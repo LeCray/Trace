@@ -8,14 +8,12 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        
         <div class="modal-title" > 
-	        <h5 style="text-align: center">
-	        	NEW INVOICE FOR<br>
-	        </h5>
-	        <h4 style="font-style: italic; text-align: center">
-	        	<%=@driver.first_name.upcase %> <%=@driver.last_name.upcase%>
-	        </h4>
+	        <h6>
+	        	NEW INVOICE:<br>
+	        	<%=@driver.first_name%> <%=@driver.last_name%>
+	        </h6>
 	    </div>
       </div>
       <div class="modal-body">

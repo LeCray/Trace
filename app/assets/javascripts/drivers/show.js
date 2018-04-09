@@ -55,6 +55,7 @@ $(document).ready(function(){
     });
 
    Bookings.init();
+   UpdateCarStatus.init();
 
 });
 
