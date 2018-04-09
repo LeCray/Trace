@@ -11,9 +11,16 @@ var UpdateCarStatus = (function() {
 		$notifyDriverBtn       	= $('#notifyDriverBtn');
 		$parameters 			= $('#parameters');
 		$email 					= $parameters.data('email');
-		$vehicleReg 			= $('#vehicle-reg option:selected').text();
-		$carStatus 				= $('#car-status').val;
 	};
+
+	var getSelectedOptions = function() {
+		$('#vehicle-reg').change(function(){
+			$vehicleReg = $(this).find(":selected").text();
+		});
+		$('#car-status').change(function(){
+			$carStatus = $(this).find(":selected").text();
+		});
+	 };
 
 
 	var initializeEvents = function() {
@@ -22,7 +29,7 @@ var UpdateCarStatus = (function() {
 			var email = $email;
 			var vehicleReg = $vehicleReg;
 			var carStatus = $carStatus;
-			console.log("Car Status Updated. Vehicle Reg: "+vehicleReg+ "email: "+email )		
+			console.log("Car Status Updated. Status:" +carStatus+ ", Vehicle Reg:" +vehicleReg+ ", email:" +email )		
 
 			$.ajax({
 				url: update_car_status_url,
@@ -43,6 +50,7 @@ var UpdateCarStatus = (function() {
 
 	var init = function() {
 		fetchElements();
+		getSelectedOptions();
 		initializeEvents();
 	};
 
