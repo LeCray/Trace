@@ -33,7 +33,7 @@ class DriversController < ApplicationController
 		@driverID = @driver.id
 
 		
-		@cars = @driver.cars.all.order('created_at DESC')
+		@cars = @driver.cars.all.order('created_at DESC').paginate(page: params[:page], per_page: 1)
 		@invoices = @driver.invoices.all.order('created_at DESC').paginate(page: params[:page], per_page:10)
 		@quotations = @driver.quotations.all.order('created_at DESC').paginate(page: params[:page], per_page:10)
 		@booking = @driver.booking

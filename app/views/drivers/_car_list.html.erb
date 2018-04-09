@@ -1,5 +1,5 @@
 <strong>Registered Cars</strong> <br>
-<% cars.each do |c| %>
+<% @cars.each do |c| %>
   <p>
     <hr>
     <strong>Make:</strong> <i style="font-style: italic"> <%= c.make %></i><br>
@@ -7,7 +7,6 @@
     <strong>Reg:</strong> <i style="font-style: italic"> <%= c.vehicle_reg %> </i><br>
     <strong>Servicing Status:</strong> <i style="font-style: italic"> <%= c.status %> </i>
   </p>
-  <button id="servicingBtn" class="btn btn-outline-primary" > Servicing </button>
   <button id="dataStreamBtn" class="btn btn-outline-primary" > Live Data Stream </button>
 
 	<hr>
@@ -38,15 +37,15 @@
   </p> 
 <% end %> 
 
+<div style="text-align: center">
+  <%= will_paginate @cars, renderer: BootstrapPagination::Rails %>
+</div>
+
 <script type="text/javascript">
   $(document).ready(function(){
 
   $('#dataStreamBtn').click(function(){
     document.location.reload();
-  });
-
-  $('#servicingBtn').click(function(){
-    $('#servicing').slideToggle('slow');
   });
     
   }); 

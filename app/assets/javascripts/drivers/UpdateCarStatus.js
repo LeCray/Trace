@@ -18,6 +18,11 @@ var UpdateCarStatus = (function() {
 	var initializeEvents = function() {
 
 		$notifyDriverBtn.on("click", function() {
+
+			$('#notifyDriverBtn').prop('disabled', true);
+			document.getElementById("notifyDriverBtn").innerHTML = "Updating..."
+
+
 			var email = $email;
 			var vehicleReg = $('#vehicle-reg').find(":selected").text();
 			var carStatus = $('#car-status').find(":selected").text();
@@ -34,7 +39,8 @@ var UpdateCarStatus = (function() {
 				},
 
 				success: function(response) {
-					
+					document.getElementById("button").innerHTML = "CAR STATUS HAS BEEN UPDATED"
+					setTimeout(location.reload.bind(location), 1000);
 				}
 			});
 		});

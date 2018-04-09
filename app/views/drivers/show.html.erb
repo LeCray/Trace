@@ -51,7 +51,7 @@
 				        	</button>
 
 				            <button type="button" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#carStatusModal" style="margin-top: 10px; text-align: left">
-				            	Car Servicing Status
+				            	Car Service Status
 				        	</button>
 
 				            <button type="button" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#invoiceModal" style="margin-top: 10px; text-align: left">
@@ -137,7 +137,7 @@
 				<!-- END of Bookings -->
 
 				<!-- Cars -->
-				<div id="cars" class="cars" style="height: 400px">
+				<div id="cars" class="cars sort_paginate_ajax">
 
 					<% if @driver.cars.size > 0 %>
 						<%= render partial: 'car_list', locals: { cars: @cars} %>
