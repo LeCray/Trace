@@ -30,10 +30,12 @@ module Api
 				carStatus 	= []
 
 				@cars.each do |c|
-					vehicleReg.push(c.vehicle_reg)
-					carMake.push(c.make)
-					carModel.push(c.model)
-					carStatus.push(c.status)
+					if c.status != "None" && c.status != nil
+						vehicleReg.push(c.vehicle_reg)
+						carMake.push(c.make)
+						carModel.push(c.model)
+						carStatus.push(c.status)
+					end
 				end
 
 				carsArray.push(vehicleReg)
