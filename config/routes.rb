@@ -39,7 +39,8 @@ Rails.application.routes.draw do
 			post '/get_invoices'			=> 'invoices#get_invoices'
 			post '/get_quotations'			=> 'quotations#get_quotations'
 			post '/update_quotation_status' => 'quotations#update_quotation_status'	
-			post '/update_car_status' 		=> 'cars#update_car_status'			
+			post '/update_car_status' 		=> 'cars#update_car_status'
+			post '/get_car_status'	 		=> 'cars#get_car_status'			
 
 			post '/fcm'						=> 'fcm#update_fcm_token'
 			post '/data_stream' 			=> 'data_stream#data_stream'

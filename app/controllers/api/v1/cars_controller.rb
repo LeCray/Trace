@@ -15,7 +15,34 @@ module Api
 				).execute!	
 
 				render json: {carStatus: carStatus}						
-			end    
+			end 
+
+			def get_car_status
+				email 		= params[:email]
+
+				@driver = Driver.find_by(email: email)
+				@cars   = @driver.cars
+
+				carsArray 	= []
+				vehicleReg 	= []
+				carMake 	= []
+				carModel 	= []
+				carStatus 	= []
+
+				@cars.each do |c|
+					vehicleReg.push(c.vehicle_reg)
+					carMake.push(c.make)
+					carModel.push(c.model)
+					carStatus.push(c.status)
+				end
+
+				carsArray.push(vehicleReg)
+				carsArray.push(carMake)
+				carsArray.push(carModel)
+				carsArray.push(carStatus)
+
+				render json: {carsArray: carsArray}
+			end   
 
 		end
 	end
