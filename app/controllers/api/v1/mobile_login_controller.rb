@@ -13,8 +13,6 @@ module Api
 				admin = Admin.find_by(email: email)
 				driver = Driver.find_by(email: email)
 
-				
-
 				if admin && admin.authenticate(password)
 					admin_log_in admin
 
@@ -34,13 +32,16 @@ module Api
 					 	email: driver.email 
 					}
 				else
-					render json: {authenticated: false, email: email}
+					render json: {
+							authenticated: false, 
+							email: email
+					}
 				end
 			end
 
 			def verify_params
 				if !params[:email] || !params[:password]
-					render json: {MSG: "No params"}
+					render json: {Error: "No params"}
 				end	
 			end
 
