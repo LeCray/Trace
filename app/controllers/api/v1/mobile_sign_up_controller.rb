@@ -18,7 +18,7 @@ module Api
 									email: email, tel: tel, password: password, 
 									password_confirmation: password_confirmation)
 		
-				if @driver.save!
+				if @driver.save
 		      		render json: {signUp: "Successfull"}
 				else
 					render json: {signUp: "Unsuccessfull"}
@@ -29,7 +29,7 @@ module Api
 				if !params[:email] || !params[:password]
 					render json: {Error: "No params"}
 				end	
-			endx
+			end
 
 			def authenticated?(attribute, token)
 				digest = send("#{attribute}_digest")
