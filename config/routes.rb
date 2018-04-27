@@ -30,6 +30,7 @@ Rails.application.routes.draw do
 	namespace :api do
 		namespace :v1 do
 			post '/mobile_login' 			=> 'mobile_login#mobile_login'
+			post '/mobile_sign_up' 			=> 'mobile_sign_up#sign_up'
 
 			post '/new_booking'				=> 'bookings#new_booking'
 			post '/cancel_booking' 			=> 'bookings#cancel_booking'
