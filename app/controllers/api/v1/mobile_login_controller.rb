@@ -20,7 +20,9 @@ module Api
 
 					render json: { 
 						admin_authenticated: true, 
-						email: admin.email 
+						email: admin.email,
+						first_name: admin.first_name,
+						last_name: admin.last_name 
 					}
 				elsif driver && driver.authenticate(password)
 					driver_log_in driver
@@ -29,7 +31,9 @@ module Api
 
 					render json: { 
 						driver_authenticated: true,
-					 	email: driver.email 
+					 	email: driver.email,
+					 	first_name: driver.first_name,
+						last_name: driver.last_name 
 					}
 				else
 					render json: {
